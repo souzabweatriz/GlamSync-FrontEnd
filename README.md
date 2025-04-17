@@ -30,7 +30,8 @@
 
 ```bash
 npm install
-# or
+```
+```bash
 npm run dev
 ```
 
