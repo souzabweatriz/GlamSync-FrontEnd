@@ -7,7 +7,7 @@ export default function Home() {
     const router = useRouter();
 
     useEffect(() => {
-        router.push("/signin");
+        router.push("/signUp");
     }, [router]);
 	
 return (
