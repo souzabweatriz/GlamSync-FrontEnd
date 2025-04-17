@@ -10,7 +10,7 @@
 
 ### Ana Souza
 
-#### Sou Ana Souza, uma desenvolvedora apaixonada por DS, Minhas funções atuais na equipe são cuidar do Banco de Dados e Front-End. Nos meus momentos livres, adoro ler e me perder em novas histórias. 📚💻
+#### Sou Ana Souza, desenvolvedora da equipe GlamSync. Atualmente, atuo cuidando do Banco de Dados e do Front-End, unindo lógica e visual para entregar soluções completas. Nos meus momentos livres, adoro me perder em novas histórias e explorar mundos através da leitura. 📚💻
 
 ### Julia Neves
 
