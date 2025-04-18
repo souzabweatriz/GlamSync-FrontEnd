@@ -33,6 +33,25 @@ export default function SignUp() {
                     </div>
 
                     <button>Sign Up</button>
+                    <div className={styles.check}>
+                        <input className={styles.checkbox} type="checkbox" />
+                        <p>Remembre Me</p>
+                    </div>
+                </div>
+                <div className={styles.otherWay}>
+                    <div className={styles.lineArea}>
+                        <div className={styles.line}></div>
+                        <p>Or continue with</p>
+                        <div className={styles.line}></div>
+                    </div>
+                    <div className={styles.signUpIcon}>
+                        <img className={styles.icon} src="/google-icon.png" alt="" />
+                        <img className={styles.icon} src="/apple-icon.png" alt="" />
+                    </div>
+                    <p className={styles.text}>
+                        Already have an account?{""}
+                        <span onClick={() => router.push("/login")}> Log In</span>
+                    </p>
                 </div>
             </div>
         </div>
