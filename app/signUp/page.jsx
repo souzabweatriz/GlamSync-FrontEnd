@@ -42,7 +42,6 @@ export default function SignUp() {
                     <Image className={styles.icon} src={PadlockIcon} alt="Cadeado rosa de senha" width={32} height={32} />
                         <input type= {showPassword ? "text": "password"} 
                         placeholder="Password"/>
-                        <input type= {showPassword ? "text": "password"} />
                         <img className={styles.eye_icon} src={showPassword ? "/iconEye.png" : "/olho.png"} alt="" onClick={togglePasswordVisibility} /> {/* responsável por exibir ou esconder a senha quando clicar} */}
                     </div>
                     
