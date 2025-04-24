@@ -6,7 +6,7 @@
 
 #### A GlamSync é a rede social perfeita para fashionistas, criadores de estilo e amantes de tendências. Compartilhe seus looks, descubra inspirações, siga ícones da moda e crie sua vitrine pessoal. Aqui, cada post é uma passarela e cada curtida, um aplauso. Mostre seu estilo, conecte-se com quem vive a moda como você e sincronize-se com o glamour!
 
-## 👩‍💻🧑‍💻 Contribuidores
+## 👩‍💻🧑‍💻 Contribuidoras do Front-End
 
 ### Ana Souza
 

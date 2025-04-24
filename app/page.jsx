@@ -9,10 +9,7 @@ export default function Home() {
     const router = useRouter();
 
     useEffect(() => {
- AnaSouza
-        router.push("/");
-
- main
+        router.push("/signUp")
     }, [router]);
 	
 return (
