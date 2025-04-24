@@ -34,8 +34,11 @@ export default function SignIn() {
 
     return (
         <main className={styles.container}>
+            <div className={styles.header}>
             <Image className={styles.logo} src={Logo} alt="Logo do App, Flor rosa" />
+            </div>
             <div className={styles.card}>
+                <div className={styles.cardcontainer}>
                 <h1 className={styles.title}>Welcome Back!</h1>
                 <p className={styles.description}>Log in to your account</p>
                 <div className={styles.inputs}>
@@ -66,6 +69,7 @@ export default function SignIn() {
                 <Button action={handleCheck} props="Log In" />
                 {match !== null && <p>{error}</p>}{""}
             </div>
+            </div>
         </main>
-    )
+    );
 }
