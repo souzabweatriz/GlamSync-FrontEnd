@@ -49,7 +49,7 @@ export default function SignUp() {
                     <button>Sign Up</button>
                     <div className={styles.check}>
                         <input className={styles.checkbox} type="checkbox" />
-                        <p>Remembre Me</p>
+                        <p>Remember Me</p>
                     </div>
                 </div>
                 <div className={styles.otherWay}>
