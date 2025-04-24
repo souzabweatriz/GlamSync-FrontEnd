@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useRouter } from "next/navigation";
 import styles from "./signUp.module.css";
 import { useState } from "react";
@@ -38,6 +39,9 @@ export default function SignUp() {
                         <input type= {showPassword ? "text": "password"} 
                         placeholder="password"/>
                         <img className={styles.eye_icon} src={showPassword ? "/iconEye.png" : "/olho.png"} alt="" onClick={togglePasswordVisibility} /> {/* responsável por exibir ou esconder a senha quando clicar} */}
+                        <div>
+                            <h1> TESTE </h1>
+                        </div>
                     </div>
                     
 
