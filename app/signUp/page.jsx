@@ -2,9 +2,15 @@
 
 import { useRouter } from "next/navigation";
 import styles from "./signUp.module.css";
+import { useState } from "react";
 
 export default function SignUp() {
     const router = useRouter();
+    const [showPassword, setShowPassword] = useState(false); // controla a visibilidade d senha
+
+    const togglePasswordVisibility = () => {
+        setShowPassword(!showPassword);
+    }
 
     return (
         <div className={styles.signUp}>
@@ -17,7 +23,7 @@ export default function SignUp() {
                     <h2>Create your new acount</h2>
                 </div>
             </div>
-            <div className={styles.main}>
+            <div className={styles.main}> 
                 <div className={styles.inputs}>
                     <div className={styles.input}>
                         <img className={styles.icon} src="/user-icon.png" alt="" />
@@ -29,8 +35,11 @@ export default function SignUp() {
                     </div>
                     <div className={styles.input}>
                         <img className={styles.icon} src="/padlock-icon.png" alt="" />
-                        <input type="password" placeholder="Password" />
+                        <input type= {showPassword ? "text": "password"} 
+                        placeholder="password"/>
+                        <img className={styles.eye_icon} src={showPassword ? "/iconEye.png" : "/olho.png"} alt="" onClick={togglePasswordVisibility} /> // responsável por exibir ou esconder a senha quando clicar
                     </div>
+                    
 
                     <button>Sign Up</button>
                     <div className={styles.check}>
