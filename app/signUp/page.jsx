@@ -2,9 +2,8 @@
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import styles from "./signUp.module.css";
-import Image from "next/image";
 import UserIcon from "../../public/UserIcon.png"
-import PadlockIcon from "../../public/PadlockIcon.png"
+import UserIcon from "/UserIcon.png";
 import GoogleIcon from "../../public/GoogleIcon.png";
 import AppleIcon from "../../public/AppleIcon.png";
 import { useState } from "react";
@@ -40,14 +39,14 @@ export default function SignUp() {
                         <input type="text" placeholder="user@gmail.com" />
                     </div>
                     <div className={styles.input}>
+                    <Image className={styles.icon} src="/PadlockIcon.png" alt="Cadeado rosa de senha" />
+                        <input type= {showPassword ? "text": "password"} 
+                        placeholder="Password"/>
                         <Image className={styles.icon} src={PadlockIcon} alt="Cadeado rosa de senha" />
                         <input type="password" placeholder="Password" />
                         <img className={styles.icon} src="/padlock-icon.png" alt="" />
                         <input type= {showPassword ? "text": "password"} />
                         <img className={styles.eye_icon} src={showPassword ? "/iconEye.png" : "/olho.png"} alt="" onClick={togglePasswordVisibility} /> {/* responsável por exibir ou esconder a senha quando clicar} */}
-                        <div>
-                            <h1> TESTE </h1>
-                        </div>
                     </div>
                     
 
