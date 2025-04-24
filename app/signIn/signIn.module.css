@@ -1,0 +1,15 @@
+.container{
+    background-color: #f79489;
+    height: 34.9rem;
+}
+
+.card{
+    border-top-left-radius: 5rem;
+    border-top-right-radius: 5rem;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(255, 255, 255);
+    flex-direction: column;
+    align-items: center
+}
