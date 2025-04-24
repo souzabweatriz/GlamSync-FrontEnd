@@ -1,8 +1,13 @@
 "use client";
-
 import { useRouter } from "next/navigation";
 import styles from "./signUp.module.css";
+import Image from "next/image";
+import UserIcon from "../../public/UserIcon.png"
+import PadlockIcon from "../../public/PadlockIcon.png"
+import GoogleIcon from "../../public/GoogleIcon.png";
+import AppleIcon from "../../public/AppleIcon.png";
 import { useState } from "react";
+
 
 export default function SignUp() {
     const router = useRouter();
@@ -26,7 +31,7 @@ export default function SignUp() {
             <div className={styles.main}> 
                 <div className={styles.inputs}>
                     <div className={styles.input}>
-                        <img className={styles.icon} src="/user-icon.png" alt="" />
+                    <Image className={styles.icon} src={UserIcon} alt="icon rosa de usuário"/>
                         <input type="text" placeholder="Full Name" />
                     </div>
                     <div className={styles.input}>
@@ -34,6 +39,8 @@ export default function SignUp() {
                         <input type="text" placeholder="user@gmail.com" />
                     </div>
                     <div className={styles.input}>
+                        <Image className={styles.icon} src={PadlockIcon} alt="Cadeado rosa de senha" />
+                        <input type="password" placeholder="Password" />
                         <img className={styles.icon} src="/padlock-icon.png" alt="" />
                         <input type= {showPassword ? "text": "password"} 
                         placeholder="password"/>
@@ -54,12 +61,12 @@ export default function SignUp() {
                         <div className={styles.line}></div>
                     </div>
                     <div className={styles.signUpIcon}>
-                        <img className={styles.icon} src="/google-icon.png" alt="" />
-                        <img className={styles.icon} src="/apple-icon.png" alt="" />
+                    <Image className={styles.icon} src={GoogleIcon} alt="Logo do Google" />
+                    <Image className={styles.icon} src={AppleIcon} alt="Logo da Apple" />
                     </div>
                     <p className={styles.text}>
                         Already have an account?{""}
-                        <span onClick={() => router.push("/login")}> Log In</span>
+                        <span onClick={() => router.push("/signIn")}> Log In</span>
                     </p>
                 </div>
             </div>
