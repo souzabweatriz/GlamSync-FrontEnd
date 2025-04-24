@@ -1,5 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 .signUp {
     width: 100%;
-    height: 100%;
-    background-color: #099;
+    height: 100vh;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.header {
+    width: 100%;
+    height: 20vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 1rem;
+}
+
+.header .icon {
+    position: fixed;
+    left: 3rem;
+}
+
+.icon .back_icon{
+    width: 50px;
+    height: 50px;
+}
+
+.header .text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.text h1 {
+    color: #DD776C;
+    font-size: 5rem;
+}
+
+.text h2 {
+    color: #A4A4A4;
+    font-size: 1.7rem;
+}
+
+.main {
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    position: fixed;
+    bottom: 0;
+}
+
+.main .inputs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+}
+
+.inputs .input {
+    width: 90%;
+    height: 3rem;
+    margin: 1rem 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    box-shadow: inset 0 0 7px rgba(0, 0, 0, 0.2);
+    border-radius: 50px;
+    background-color: rgba(240, 240, 240, 0.445);
+}
+
+.inputs .input input {
+    width: 80%;
+    height: 80%;
+    border: none;
+    outline: none;
+    padding-left: 1rem;
+    font-size: 1rem;
+    font-family: 'Figtree', sans-serif;
+    background-color: #ffffff00;
+}
+
+.input .icon {
+    width: 30px;
+    height: 30px;
+}
+
+.inputs button {
+    width: 40%;
+    height: 2rem;
+    margin: 1rem 0;
+    background-color: #DD776C;
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 200;
+}
+
+.inputs button:hover {
+    background-color: #C65A4D;
+    cursor: pointer;
+}
+.inputs button:active {
+    background-color: #d66d55;
+}
+
+.inputs .check {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 30%;
+    gap: 0.5rem;
+}
+
+.inputs .check input:hover {
+    cursor: pointer;
+}
+
+.check p {
+    color: #757575;
+}
+
+.otherWay {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.otherWay .lineArea {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 500px;
+}
+
+.lineArea .line {
+    width: 100%;
+    height: 1px;
+    background-color: #A4A4A4;
+}
+
+.lineArea p {
+    color: #757575;
+    font-size: 1rem;
+    font-weight: 200;
+    margin: 0 1rem;
+    width: 55%;
+}
+
+.otherWay .signUpIcon {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    width: 20%;
+    gap: 1rem;
+}
+
+.signUpIcon .icon {
+    width: 30px;
+    height: 30px;
+}
+
+.signUpIcon .icon:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+.signUpIcon .icon:active {
+    transform: scale(0.9);
+}
+
+.otherWay .text span{
+    color: #DD776C;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.otherWay .text span:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+.otherWay .text span:active {
+    text-decoration: none;
 }
