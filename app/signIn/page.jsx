@@ -34,7 +34,8 @@ export default function SignIn() {
 
     return (
         <main className={styles.container}>
-            <div className={styles.header}>
+            <div className={styles.circle}></div>
+            <div className={styles.image}>
             <Image className={styles.logo} src={Logo} alt="Logo do App, Flor rosa" />
             </div>
             <div className={styles.card}>

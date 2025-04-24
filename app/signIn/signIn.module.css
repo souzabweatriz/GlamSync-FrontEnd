@@ -2,6 +2,7 @@
     background-color: #f79489;
     height: 100%;
     width: 100%;
+    background:  radial-gradient(circle, #8b2e0b, #f79489,);
 }
 
 .card{
@@ -15,13 +16,21 @@
     align-items: center
 }
 
+.circle{
+    background:  radial-gradient(circle at 100%, #f3897d, #ffc1b9);
+    box-shadow: 6px 5px 10px #f3897d;
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+}
+
 .logo{
     display: flex;
     width: 20rem;
     height: 20rem;
 }
 
-.header{
+.image{
     display: flex;
     justify-content: center;
 }
