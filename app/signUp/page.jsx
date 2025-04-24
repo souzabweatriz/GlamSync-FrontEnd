@@ -37,7 +37,7 @@ export default function SignUp() {
                         <img className={styles.icon} src="/padlock-icon.png" alt="" />
                         <input type= {showPassword ? "text": "password"} 
                         placeholder="password"/>
-                        <img className={styles.eye_icon} src={showPassword ? "/iconEye.png" : "/olho.png"} alt="" onClick={togglePasswordVisibility} /> // responsável por exibir ou esconder a senha quando clicar
+                        <img className={styles.eye_icon} src={showPassword ? "/iconEye.png" : "/olho.png"} alt="" onClick={togglePasswordVisibility} /> {/* responsável por exibir ou esconder a senha quando clicar} */}
                     </div>
                     
 
