@@ -210,3 +210,18 @@
     margin-left: -30px;
     position: relative;
 }
+
+.input {
+    position: relative;
+}
+
+.icon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.input {
+    padding-left: 30px;
+}
