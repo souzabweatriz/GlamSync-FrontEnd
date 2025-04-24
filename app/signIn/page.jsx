@@ -8,6 +8,7 @@ import PadlockIcon from "../../public/PadlockIcon.png";
 import Button from "../../components/ButtonLogin";
 import GoogleIcon from "../../public/GoogleIcon.png";
 import AppleIcon from "../../public/AppleIcon.png";
+import Logo from "../../public/Logo.png"
 
 export default function SignIn() {
 
@@ -33,17 +34,18 @@ export default function SignIn() {
 
     return (
         <main className={styles.container}>
+            <Image className={styles.logo} src={Logo} alt="Logo do App, Flor rosa" />
             <div className={styles.card}>
                 <h1 className={styles.title}>Welcome Back!</h1>
                 <p className={styles.description}>Log in to your account</p>
                 <div className={styles.inputs}>
                     <div className={styles.input}>
                         <Image className={styles.icon} src={UserIcon} alt="icon rosa de usuário" />
-                        <input type="text" placeholder="Username" />
+                        <input type="text" placeholder="Username" value={input1} onChange={(e) => setInput1(e.target.value)} />
                     </div>
                     <div className={styles.input}>
                         <Image className={styles.icon} src={PadlockIcon} alt="Cadeado rosa de senha" />
-                        <input type="password" placeholder="Password" />
+                        <input type="password" placeholder="Password" value={input2} onChange={(e) => setInput2(e.target.value)} />
                     </div>
                     <div className={styles.check}>
                         <input className={styles.checkbox} type="checkbox" />
