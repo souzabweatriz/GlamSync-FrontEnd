@@ -200,3 +200,11 @@
 .otherWay .text span:active {
     text-decoration: none;
 }
+
+.eye_icon {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    margin-left: -30px;
+    position: relative;
+}

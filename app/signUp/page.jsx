@@ -6,9 +6,16 @@ import UserIcon from "../../public/UserIcon.png"
 import PadlockIcon from "../../public/PadlockIcon.png"
 import GoogleIcon from "../../public/GoogleIcon.png";
 import AppleIcon from "../../public/AppleIcon.png";
+import { useState } from "react";
+
 
 export default function SignUp() {
     const router = useRouter();
+    const [showPassword, setShowPassword] = useState(false); // controla a visibilidade d senha
+
+    const togglePasswordVisibility = () => {
+        setShowPassword(!showPassword);
+    }
 
     return (
         <div className={styles.signUp}>
@@ -21,7 +28,7 @@ export default function SignUp() {
                     <h2>Create your new acount</h2>
                 </div>
             </div>
-            <div className={styles.main}>
+            <div className={styles.main}> 
                 <div className={styles.inputs}>
                     <div className={styles.input}>
                     <Image className={styles.icon} src={UserIcon} alt="icon rosa de usuário"/>
@@ -34,7 +41,12 @@ export default function SignUp() {
                     <div className={styles.input}>
                         <Image className={styles.icon} src={PadlockIcon} alt="Cadeado rosa de senha" />
                         <input type="password" placeholder="Password" />
+                        <img className={styles.icon} src="/padlock-icon.png" alt="" />
+                        <input type= {showPassword ? "text": "password"} 
+                        placeholder="password"/>
+                        <img className={styles.eye_icon} src={showPassword ? "/iconEye.png" : "/olho.png"} alt="" onClick={togglePasswordVisibility} /> {/* responsável por exibir ou esconder a senha quando clicar} */}
                     </div>
+                    
 
                     <button>Sign Up</button>
                     <div className={styles.check}>
