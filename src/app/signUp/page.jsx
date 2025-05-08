@@ -32,7 +32,11 @@ export default function SignUp() {
                     </div>
                     <div className={styles.input}>
                         <Image className={styles.icon} src="/icons/email-icon.png" alt="Icon de Email" width={32} height={32} />
-                        <input type="text" placeholder="user@gmail.com" />
+                        <input type="text" placeholder="yourname@gmail.com" />
+                    </div>
+                    <div className={styles.input}>
+                        <Image className={styles.icon} src="/icons/iconsTelefone.png" alt="Icon de Email" width={32} height={32} />
+                        <input type="text" placeholder="Phone number" />
                     </div>
                     <div className={styles.input}>
                         <Image className={styles.icon} src="/icons/PadlockIcon.png" alt="Cadeado rosa de senha" width={32} height={32} />
@@ -40,6 +44,7 @@ export default function SignUp() {
                             placeholder="Password" />
                         <Image className={styles.eye_icon} src={showPassword ? "/icons/iconEye.png" : "/icons/olho.png"} alt=""  width={32} height={32} onClick={togglePasswordVisibility} /> {/* responsável por exibir ou esconder a senha quando clicar} */}
                     </div>
+                    
 
 
                     <button>Sign Up</button>
