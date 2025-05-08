@@ -166,29 +166,6 @@
     width: 55%;
 }
 
-.otherWay .signUpIcon {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-    width: 20%;
-    gap: 1rem;
-}
-
-.signUpIcon .icon {
-    width: 30px;
-    height: 30px;
-}
-
-.signUpIcon .icon:hover {
-    cursor: pointer;
-    transform: scale(1.05);
-}
-
-.signUpIcon .icon:active {
-    transform: scale(0.9);
-}
-
 .otherWay .text span{
     color: #DD776C;
     font-weight: 600;
@@ -215,12 +192,6 @@
     position: relative;
 }
 
-.icon {
-    position: absolute;
-    left: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-}
 
 .input {
     padding-left: 30px;
@@ -228,7 +199,18 @@
 
 .signUpIcon {
     display: flex;
-    justify-content: center;
-    gap: 16px;
-    margin-top: 8px;
+    flex-direction: row;
+    align-items: center;
+    width: 20%;
+    height: 35%;
+    gap: 1rem;
+}
+
+.signUpIcon .icon:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+.signUpIcon .icon:active {
+    transform: scale(0.9);
 }
