@@ -34,3 +34,41 @@
     display: flex;
     justify-content: center;
 }
+
+.icon{
+    width: 2rem;
+    height: 2rem;
+}
+
+.icons{
+    display: flex;
+}
+
+.inputs .input {
+    width: 90%;
+    height: 3rem;
+    margin: 1rem 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    box-shadow: inset 0 0 7px rgba(0, 0, 0, 0.2);
+    border-radius: 50px;
+    background-color: rgba(240, 240, 240, 0.445);
+}
+
+.inputs input {
+    width: 80%;
+    height: 80%;
+    border: none;
+    outline: none;
+    padding-left: 1rem;
+    font-size: 1rem;
+    font-family: 'Figtree', sans-serif;
+    background-color: #ffffff00;
+}
+
+.input .icon {
+    width: 30px;
+    height: 30px;
+}
