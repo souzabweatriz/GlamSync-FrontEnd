@@ -40,8 +40,6 @@ export default function SignUp() {
                         placeholder="Password"/>
                         <img className={styles.eye_icon} src={showPassword ? "/icons/iconEye.png" : "/icons/olho.png"} alt="" onClick={togglePasswordVisibility} /> {/* responsável por exibir ou esconder a senha quando clicar} */}
                     </div>
-                    
-
                     <button>Sign Up</button>
                     <div className={styles.check}>
                         <input className={styles.checkbox} type="checkbox" />
