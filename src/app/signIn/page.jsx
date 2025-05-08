@@ -3,12 +3,7 @@ import styles from "./signIn.module.css"
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
-import UserIcon from "../../public/UserIcon.png";
-import PadlockIcon from "../../public/PadlockIcon.png";
-import Button from "../../components/ButtonLogin";
-import GoogleIcon from "../../public/GoogleIcon.png";
-import AppleIcon from "../../public/AppleIcon.png";
-import Logo from "../../public/Logo.png"
+import Button from "../../components/ButtonLogin.jsx"
 
 export default function SignIn() {
 
@@ -36,7 +31,7 @@ export default function SignIn() {
         <main className={styles.container}>
             <div className={styles.circle}></div>
             <div className={styles.image}>
-            <Image className={styles.logo} src={Logo} alt="Logo do App, Flor rosa" />
+            <Image className={styles.logo} src="/Logo.png" alt="Logo do App, Flor rosa" width={100} height={100}/>
             </div>
             <div className={styles.card}>
                 <div className={styles.cardcontainer}>
@@ -44,11 +39,11 @@ export default function SignIn() {
                 <p className={styles.description}>Log in to your account</p>
                 <div className={styles.inputs}>
                     <div className={styles.input}>
-                        <Image className={styles.icon} src={UserIcon} alt="icon rosa de usuário" />
+                        <Image className={styles.icon} src="/icons/UserIcon.png" alt="icon rosa de usuário" width={32} height={32}/>
                         <input type="text" placeholder="Username" value={input1} onChange={(e) => setInput1(e.target.value)} />
                     </div>
                     <div className={styles.input}>
-                        <Image className={styles.icon} src={PadlockIcon} alt="Cadeado rosa de senha" />
+                        <Image className={styles.icon} src="/icons/PadlockIcon.png" alt="Cadeado rosa de senha"  width={32} height={32}/>
                         <input type="password" placeholder="Password" value={input2} onChange={(e) => setInput2(e.target.value)} />
                     </div>
                     <div className={styles.check}>
@@ -63,12 +58,12 @@ export default function SignIn() {
                     <p className={styles.text}>Log In with</p>
                     <div className={styles.line} />
                     <div className={styles.SignInIcon}>
-                        <Image className={styles.icon} src={GoogleIcon} alt="Logo do Google" />
-                        <Image className={styles.icon} src={AppleIcon} alt="Logo da Apple" />
+                        <Image className={styles.icon} src="/icons/GoogleIcon.png" alt="Logo do Google" width={32} height={32}/>
+                        <Image className={styles.icon} src="/icons/AppleIcon.png" alt="Logo da Apple" width={32} height={32} />
                     </div>
                 </div>
                 <Button action={handleCheck} props="Log In" />
-                {match !== null && <p>{error}</p>}{""}
+                {match !== null && <p>{error}</p>}
             </div>
             </div>
         </main>
