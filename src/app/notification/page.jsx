@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "../../styles/notification.module.css";
 import NotificationItem from "../../components/NotificationItem";
+import Image from "next/image";
 import SuggestionItem from "../../components/SuggestionItem";
 
 const Notification = () => {
@@ -14,21 +15,30 @@ const Notification = () => {
     ];
 
     const suggestions = [
-        ["@mileycyrus", "followed by _.x.job"],
-        ["@cynthiaerivo", "followed by fernfj"],
-        ["@zendaya", "followed by user0908"],
-        ["@sia", "followed by user0908"],
-        ["@taylorswift", "followed by user0908"],
-        ["@dualipa", "followed by user0908"],
+        ["@mileycyrus", "followed by 4_yob", "https://rollingstone.com.br/media/uploads/miley_cyrus_na_kiss_fm_foto_john_phillipsgetty_images.jpg"],
+        ["@cynthiaerivo", "followed by fernfj", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyWrsp6WvWh4AgZnSo5zUCFCIOfc7cT_JJTA&s"],
+        ["@zendaya", "followed by user0908", "https://movieplayer.net-cdn.it/t/images/2020/01/27/zendaya_jpg_400x0_crop_q85.jpg"],
+        ["@sia", "followed by user0908", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyNiW6wNncxRPH95IPdtmFiXavImn8NV2UKQ&s"],
+        ["@taylorswift", "followed by user0908", "https://wallpapers.com/images/hd/taylor-swift-pictures-y8wyxeogqlr4f164.jpg"],
+        ["@dualipa", "followed by user0908", "https://pt.quizur.com/_image?href=https%3A%2F%2Fimg.quizur.com%2Ff%2Fimg631e7c61106420.53307376.jpg%3FlastEdited%3D1662942308&w=400&h=400&f=webp"],
     ];
 
     return (
         <div className={styles.body}>
             <div className={styles.container}>
                 <div className={styles.header}>
-                    <div className={styles.backButton}>←</div>
+                    <Image
+                        className={styles.back_icon}
+                        src="/icons/back-icon.png"
+                        alt="icon de voltar"
+                        width={50}
+                        height={50}
+                    />
                     <div className={styles.logo}>GlamSync</div>
-                    <div className={styles.menu}>•••</div>
+                    <div className={styles.icons}>
+                        <div className={styles.bellIcon}></div>
+                        <div className={styles.menu}></div>
+                    </div>
                 </div>
                 <div className={styles.content}>
                     <div className={styles.notifications}>
@@ -47,11 +57,12 @@ const Notification = () => {
                     <div className={styles.suggestions}>
                         <h2 className={styles.title}>Suggestions for you</h2>
                         <div>
-                            {suggestions.map(([username, text], i) => (
+                            {suggestions.map(([username, text, image], i) => (
                                 <SuggestionItem
                                     key={i}
                                     username={username}
                                     text={text}
+                                    image={image}
                                 />
                             ))}
                         </div>

@@ -1,15 +1,21 @@
 import React from "react";
 import styles from "../styles/notification.module.css";
 
-const SuggestionItem = ({ username, text }) => {
+const SuggestionItem = ({ username, text, image }) => {
     return (
         <div className={styles.suggestion}>
-            <div className={styles.profilePic}></div>
-            <div className={styles.info}>
-                <p className={styles.username}>{username}</p>
-                <p className={styles.followed}>{text}</p>
+            <img
+                className={styles.profilePic}
+                src={image}
+                alt={`Foto de ${username}`}
+                width={50}
+                height={50}
+            />
+            <div className={styles.text}>
+                <div className={styles.username}>{username}</div>
+                <div className={styles.description}>{text}</div>
             </div>
-            <button className={styles.followButton}>Seguir</button>
+            <button className={styles.followButton}>Follow</button>
         </div>
     );
 };
