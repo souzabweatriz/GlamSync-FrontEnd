@@ -26,10 +26,6 @@ export default function SignIn() {
 
     return (
         <main className={styles.container}>
-            <div className={styles.image}>
-                <Image className={styles.logo} src="/Logo.png" alt="Logo do App, Flor rosa" width={100} height={100} />
-            </div>
-
             <div className={styles.card}>
                 <h1 className={styles.title}>Welcome Back!</h1>
                 <p className={styles.description}>Log in to your account</p>
