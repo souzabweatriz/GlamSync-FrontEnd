@@ -6,7 +6,7 @@ const NotificationItem = ({ user, action, date }) => {
     return (
         <div className={styles.notification}>
             <div className={styles.avatar}>
-                <FaUser size={24} /> {/* Ícone de usuário */}
+                <FaUser size={24} /> {}
             </div>
             <div className={styles.text}>
                 <p className={styles.p}>

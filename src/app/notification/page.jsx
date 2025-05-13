@@ -1,9 +1,8 @@
 import React from "react";
 import styles from "../../styles/notification.module.css";
 import NotificationItem from "../../components/NotificationItem";
+import Image from "next/image";
 import SuggestionItem from "../../components/SuggestionItem";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBell } from "@fortawesome/free-solid-svg-icons";
 
 const Notification = () => {
     const notifications = [
@@ -28,10 +27,21 @@ const Notification = () => {
         <div className={styles.body}>
             <div className={styles.container}>
                 <div className={styles.header}>
-                    <div className={styles.backButton}>←</div>
+                    <Image
+                        className={styles.back_icon}
+                        src="/icons/back-icon-claro.png"
+                        alt="icon de voltar"
+                        width={50}
+                        height={50}
+                    />
                     <div className={styles.logo}>GlamSync</div>
                     <div className={styles.bellIcon}>
-                        <FontAwesomeIcon icon={faBell} />
+                        <Image
+                            src="/icons/iconSino.png"
+                            alt="Ícone de sino"
+                            width={30}
+                            height={30}
+                        />
                     </div>
                     <div className={styles.menu}>•••</div>
                 </div>
