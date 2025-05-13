@@ -1,4 +1,7 @@
 .container{
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -6,43 +9,43 @@
     background-position:center ;
     background-repeat: no-repeat;
     min-height: 100vh;
-    padding: 2rem;
-    gap: 2rem;
-    flex-direction: column;
     min-width: 100vh;
     background-attachment: fixed;
     background-image: url("../../../public/Fundo.png");
 }
 
+.title{
+    color: #f79489;
+    font-weight: 500;
+    font-size: 2.3rem;
+    font-style: italic;
+}
+
+.description{
+    color: #A4A4A4;
+    font-weight: 500;
+    font-size: 1.2rem;
+}
+
 .card{
-    margin-top: 9rem;
+    margin-top: 1rem;
     border-top-left-radius: 5rem;
     border-top-right-radius: 5rem;
     display: flex;
-    width: 100%;
-    height: 40rem;
+    width: 90%;
+    height: 66vh;
     background-color: rgb(255, 255, 255);
     flex-direction: column;
-    align-items: center
-}
-
-.circle{
-    background:  radial-gradient(circle at 100%, #f3897d, #ffc1b9);
-    box-shadow: 6px 5px 10px #f3897d;
-    width: 10rem;
-    height: 10rem;
-    border-radius: 50%;
-}
-
-.logo{
-    display: flex;
-    width: 20rem;
-    height: 20rem;
+    align-items: center;
+    justify-content: center;
 }
 
 .image{
+    width: 22rem;
+    height: 22rem;
     display: flex;
     justify-content: center;
+    background-image: url(../../../public/Logo.png);
 }
 
 .icon{
@@ -54,31 +57,193 @@
     display: flex;
 }
 
-.inputs .input {
-    width: 90%;
+.inputContainer {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input {
+    width: 20rem;
     height: 3rem;
     margin: 1rem 0;
+    padding-left: 5rem; 
+    border-radius: 2rem;
+    border: 1px solid #ccc;
+    outline: none;
+    font-size: 16px;
+    box-shadow: inset 0 0 7px rgba(0, 0, 0, 0.2);
+    background-color: #ffffff00;
+    background-color: rgba(240, 240, 240, 0.445);
+}
+
+.iconInput {
+    padding-left: 2rem; 
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    width: 32px;
+    height: 32px;
+}
+
+
+.check {
+    margin: 1rem 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem; 
+    cursor: pointer;
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+}
+
+.label{
+    display: flex;
+}
+
+.checkbox {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.checkCustom {
+    width: 20px;
+    height: 20px;
+    background-color: #fcbdb5;
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+}
+
+
+.checkbox:checked + .checkCustom {
+    background-color: #f79489; 
+    box-shadow: 0 0 6px #ce7167;
+}
+
+
+.checkCustom:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.checkbox:checked + .checkCustom:after {
+    display: block;
+    left: 7px;
+    top: 3px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+
+.text{
+    font-weight: 400;
+    margin-top: 1rem;
+}
+
+.error{
+    display: flex;
+    align-items: center
+}
+
+.span{
+    color: #f79489;
+    font-weight: 600;
+    text-decoration: underline;
+    cursor: pointer;
+    margin: 2rem 0;
+}
+.otherWay {
+    margin: 1.5rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.otherWay .lineArea {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    box-shadow: inset 0 0 7px rgba(0, 0, 0, 0.2);
-    border-radius: 50px;
-    background-color: rgba(240, 240, 240, 0.445);
+    width: 500px;
 }
 
-.inputs input {
-    width: 80%;
-    height: 80%;
-    border: none;
-    outline: none;
-    padding-left: 1rem;
+.lineArea .line {
+    width: 100%;
+    height: 1px;
+    background-color: #A4A4A4;
+}
+
+.lineArea p {
+    color: #757575;
+    white-space: nowrap;
     font-size: 1rem;
-    font-family: 'Figtree', sans-serif;
-    background-color: #ffffff00;
+    font-weight: 200;
+    margin: 0 1rem;
+    width: 55%;
 }
 
-.input .icon {
-    width: 30px;
-    height: 30px;
+.otherWay .text span{
+    color: #DD776C;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.otherWay .text span:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+.otherWay .text span:active {
+    text-decoration: none;
+}
+
+.button{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.eye_icon {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    margin-left: -30px;
+    position: relative;
+}
+
+.back{
+    display: flex;
+}
+
+.header {
+    width: 100%;
+    height: 20vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    position: fixed;
+    top: 1rem;
+    margin-left: 10rem;
+}
+
+.header .icon {
+    position: fixed;
+    left: 3rem;
+}
+
+.back-icon{
+ cursor: pointer;
+ display: flex;
 }
