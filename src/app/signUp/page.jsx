@@ -35,6 +35,52 @@ export default function SignUp() {
                         <input type="text" placeholder="user@gmail.com" />
                     </div>
                     <div className={styles.input}>
+                        <Image className={styles.icon} src="/icons/iconsTelefone.png" alt="Icon de Email" width={32} height={32} />
+                        <select className={styles.ddd}>
+                            <option value="+11">+11 (SP)</option>
+                            <option value="+21">+21 (RJ)</option>
+                            <option value="+61">+61 (DF)</option>
+                            <option value="+51">+51 (RS)</option>
+                            <option value="+31">+31 (MG)</option>
+                            <option value="+41">+41 (PR)</option>
+                            <option value="+51">+51 (SC)</option>
+                            <option value="+71">+71 (BA)</option>
+                            <option value="+41">+41 (PE)</option>
+                            <option value="+62">+62 (GO)</option>
+                            <option value="+62">+62 (MS)</option>
+                            <option value="+84">+84 (RN)</option>
+                            <option value="+85">+85 (CE)</option>
+                            <option value="+19">+19 (SP)</option>
+                            <option value="+62">+62 (MT)</option>
+                            <option value="+32">+32 (ES)</option>
+                            <option value="+68">+68 (AC)</option>
+                            <option value="+91">+91 (AP)</option>
+                            <option value="+92">+92 (AM)</option>
+                            <option value="+93">+93 (PA)</option>
+                            <option value="+99">+99 (RO)</option>
+                            <option value="+98">+98 (RR)</option>
+                            <option value="+97">+97 (TO)</option>
+                            <option value="+79">+79 (SE)</option>
+                            <option value="+98">+98 (PI)</option>
+                            <option value="+1">+1 (US)</option>
+                            <option value="+55">+55 (BR)</option>
+                            <option value="+44">+44 (UK)</option>
+                            <option value="+91">+91 (IN)</option>
+                            <option value="+81">+81 (JP)</option>
+                            <option value="+33">+33 (FR)</option>
+
+                        </select>
+                        <input type="text" placeholder="Phone number" />
+                    </div>
+                    <div className={styles.input}>
+                        <Image className={styles.icon} src="/icons/PadlockIcon.png" alt="Cadeado rosa de senha" width={32} height={32} />
+                        <input type={showPassword ? "text" : "password"}
+                            placeholder="Password" />
+                        <Image className={styles.eye_icon} src={showPassword ? "/icons/iconEye.png" : "/icons/olho.png"} alt="" width={32} height={32} onClick={togglePasswordVisibility} /> {/* responsável por exibir ou esconder a senha quando clicar} */}
+                    </div>
+
+
+
                     <Image className={styles.icon} src="/icons/PadlockIcon.png" alt="Cadeado rosa de senha"  width={32} height={32}/>
                         <input type= {showPassword ? "text": "password"} 
                         placeholder="Password"/>
@@ -62,6 +108,5 @@ export default function SignUp() {
                     </p>
                 </div>
             </div>
-        </div>
     )
 }
