@@ -1,0 +1,22 @@
+.fundo{
+    background-size: cover;
+    background-position:center ;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    min-width: 100vh;
+    background-attachment: fixed;
+    background-image: url(../../../public/Fundo.png);
+}
+
+.title{
+    color: white;
+    font-weight: 800;
+    font-size: 2.5rem;
+}
+
+.logo{
+    display: flex;
+    background-image: url(../../../public/LogoGrande.png);
+    height: 32rem;
+    width: 32rem;
+}
