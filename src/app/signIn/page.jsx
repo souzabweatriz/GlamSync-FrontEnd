@@ -8,6 +8,11 @@ import Button from "../../components/ButtonLogin.jsx";
 export default function SignIn() {
     const router = useRouter();
 
+    const [showPassword, setShowPassword] = useState(false); 
+
+    const togglePasswordVisibility = () => {
+        setShowPassword(!showPassword);
+    }
     const [input1, setInput1] = useState("");
     const [input2, setInput2] = useState("");
     const [match, setMatch] = useState(null);
@@ -26,42 +31,79 @@ export default function SignIn() {
 
     return (
         <main className={styles.container}>
+              <div className={styles.header}>
+                    <Image className={styles.back_icon} src="/icons/back-icon-claro.png" alt="icon de voltar"  width={50} height={50} />
+                </div>
+                <div className={styles.image}></div>
             <div className={styles.card}>
                 <h1 className={styles.title}>Welcome Back!</h1>
                 <p className={styles.description}>Log in to your account</p>
                 <div className={styles.inputs}>
-                    <div className={styles.input}>
-                        <Image className={styles.icon} src="/icons/UserIcon.png" alt="icon rosa de usuário" width={32} height={32} />
-                        <input className={styles.input} type="text" placeholder="Username" value={input1} onChange={(e) => setInput1(e.target.value)} />
+                    <div className={styles.inputContainer}>
+                        <input
+                            className={styles.input}
+                            type="text"
+                            placeholder="Username"
+                            value={input1}
+                            onChange={(e) => setInput1(e.target.value)}
+                        />
+                        <Image
+                            className={styles.iconInput}
+                            src="/icons/UserIcon.png"
+                            alt="icon rosa de usuário"
+                            width={32}
+                            height={32}
+                        />
                     </div>
-                    <div className={styles.input}>
-                        <Image className={styles.icon} src="/icons/PadlockIcon.png" alt="Cadeado rosa de senha" width={32} height={32} />
-                        <input className={styles.input} type="password" placeholder="Password" value={input2} onChange={(e) => setInput2(e.target.value)} />
+                    <div className={styles.inputContainer}>
+                        <input
+                            className={styles.input}
+                            type={showPassword ? "text" : "password"}
+                            placeholder="Password"
+                            value={input2}
+                            onChange={(e) => setInput2(e.target.value)}
+                        />
+                        <Image
+                            className={styles.iconInput}
+                            src="/icons/PadlockIcon.png"
+                            alt="Cadeado rosa de senha"
+                            width={32}
+                            height={32}
+                        />
+                        <Image className={styles.eye_icon} src={showPassword ? "/icons/iconEye.png" : "/icons/olho.png"} alt="" width={32} height={32} onClick={togglePasswordVisibility} />
                     </div>
+                <div className={styles.label}>
+                    <label className={styles.check}>
+                        <input
+                            className={styles.checkbox}
+                            type="checkbox" checked={rememberMe}
+                            onChange={(e) => setRememberMe(e.target.checked)}
+                        />
+                        <span className={styles.checkCustom}></span>
+                        <p className={styles.description}>Remember Me</p>
+                    </label>
                 </div>
-
-
-                <div className={styles.check}>
-                    <input className={styles.checkbox} type="checkbox" checked={rememberMe} onChange={(e) => setRememberMe(e.target.checked)} />
-                    <p>Remember Me</p>
+                <div className={styles.button}>
+                <Button action={handleCheck} props="Log In" className={styles.button} />
+                {match !== null && <p className={styles.error}>{error}</p>}
                 </div>
-
+                </div>
                 <p className={styles.text}>
                     Don't have an account?{" "}
-                    <span onClick={() => router.push("/signUp")}>Sign Up</span>
+                    <span className={styles.span} onClick={() => router.push("/signUp")}>Sign Up</span>
                 </p>
 
-                <div className={styles.line} />
-                <p className={styles.text}>Log In with</p>
-                <div className={styles.line} />
-
-                <div className={styles.SignInIcon}>
-                    <Image className={styles.icon} src="/icons/GoogleIcon.png" alt="Logo do Google" width={32} height={32} />
-                    <Image className={styles.icon} src="/icons/AppleIcon.png" alt="Logo da Apple" width={32} height={32} />
+                <div className={styles.otherWay}>
+                    <div className={styles.lineArea}>
+                        <div className={styles.line}></div>
+                        <p>Login With</p>
+                        <div className={styles.line}></div>
+                    </div>
+                    <div className={styles.signUpIcon}>
+                        <Image className={styles.icon} src="/icons/GoogleIcon.png" alt="Logo do Google" width={32} height={32} />
+                        <Image className={styles.icon} src="/icons/AppleIcon.png" alt="Logo da Apple" width={32} height={32} />
+                    </div>
                 </div>
-
-                <Button action={handleCheck} props="Log In" />
-                {match !== null && <p>{error}</p>}
             </div>
         </main>
     );
