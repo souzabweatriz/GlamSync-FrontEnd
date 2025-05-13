@@ -37,14 +37,14 @@
     z-index: 10;
 }
 
-.teste{
-display: flex;
+.buttons {
+    flex-direction: column;
+    display: flex;
 }
 
-.buttons {
+.container{
+    justify-content: flex-end;
     display: flex;
-    gap: 1rem; 
-    justify-content: center;
 }
 
 .button {
@@ -64,6 +64,7 @@ display: flex;
 }
 
 .icon {
+    margin-left: 5rem;
     font-size: 1.2rem; 
 }
 
