@@ -33,7 +33,7 @@
     border-top-right-radius: 5rem;
     display: flex;
     width: 90%;
-    height: 66vh;
+    height: 90vh;
     background-color: rgb(255, 255, 255);
     flex-direction: column;
     align-items: center;
@@ -247,3 +247,4 @@
  cursor: pointer;
  display: flex;
 }
+
