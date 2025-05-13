@@ -1,0 +1,44 @@
+/* filepath: c:\Users\Aluno DS\Desktop\projetos_glamsync\GlamSync-FrontEnd\src\app\notification\notification.module.css */
+.body {
+    background-color: #f9f9f9;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 800px;
+    padding: 20px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.backButton {
+    cursor: pointer;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.menu {
+    cursor: pointer;
+}
+
+.content {
+    margin-top: 20px;
+}
+
+.notifications, .suggestions {
+    margin-bottom: 20px;
+}
+
+.title {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
