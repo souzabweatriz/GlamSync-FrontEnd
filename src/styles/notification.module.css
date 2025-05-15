@@ -54,29 +54,35 @@
     display: flex;
     flex-direction: row;
     padding: 24px;
-    gap: 24px;
+    gap: 60px;
+    align-items: stretch;
 }
 
 .notifications,
 .suggestions {
     flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-self: flex-start;
 }
 
 .title {
     font-size: 20px;
     font-weight: bold;
     margin-bottom: 16px;
+    margin-top:80px;
 }
 
 .notification {
     display: flex;
-    align-items: center;
-    padding: 12px;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-    margin-bottom: 16px;
-    gap: 12px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    background-color: #fff;
+    border-radius: 16px;
+    padding: 18px;
+    margin-bottom: 10px;
+    position: relative;
 }
 
 .avatar {
@@ -84,6 +90,7 @@
     align-items: center;
     justify-content: center;
     width: 40px;
+    margin-right: 12px;
     height: 40px;
     background-color: #ccc;
     border-radius: 50%;
@@ -92,17 +99,23 @@
 
 .text {
     flex: 1;
+    position: relative;
 }
 
 .p {
     margin: 0;
     font-size: 14px;
+    line-height: 1.4;
 }
 
 .date {
     font-size: 12px;
     color: #888;
-    margin-left: 8px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    white-space: nowrap;
+
 }
 
 .date-container {
@@ -114,12 +127,11 @@
 .suggestion {
     display: flex;
     padding: 12px;
-    border-radius: 8px;
-    justify-content: space-between;
+    border-radius: 18px;
     align-items: center;
     justify-content: flex-start;
     background-color: white;
-    margin-bottom: 16px;
+    margin-bottom: 10px;
 }
 
 .profilePic {
@@ -168,8 +180,7 @@
 
 .suggestions {
     border-radius: 8px;
-    padding: 12px;
-    margin-bottom: 16px;
+    margin-bottom: 10px;
 }
 
 .suggestion:last-child {
@@ -221,3 +232,19 @@
     margin-left: 980px;
 }
 
+.followButton {
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+
+.following {
+    background-color: #28a745;
+    color: white;
+    padding: 6px 12px;
+    font-size: 12px;
+}

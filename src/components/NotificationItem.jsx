@@ -1,5 +1,5 @@
 import React from "react";
-import { FaUser } from "react-icons/fa"; // Importando o ícone de usuário
+import { FaUser } from "react-icons/fa"; 
 import styles from "../styles/notification.module.css";
 
 const NotificationItem = ({ user, action, date }) => {

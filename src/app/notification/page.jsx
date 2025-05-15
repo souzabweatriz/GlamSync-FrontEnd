@@ -15,12 +15,12 @@ const Notification = () => {
     ];
 
     const suggestions = [
-        ["@mileycyrus", "followed by 4_yob", "https://rollingstone.com.br/media/uploads/miley_cyrus_na_kiss_fm_foto_john_phillipsgetty_images.jpg"],
-        ["@cynthiaerivo", "followed by fernfj", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyWrsp6WvWh4AgZnSo5zUCFCIOfc7cT_JJTA&s"],
-        ["@zendaya", "followed by user0908", "https://movieplayer.net-cdn.it/t/images/2020/01/27/zendaya_jpg_400x0_crop_q85.jpg"],
-        ["@sia", "followed by user0908", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyNiW6wNncxRPH95IPdtmFiXavImn8NV2UKQ&s"],
-        ["@taylorswift", "followed by user0908", "https://wallpapers.com/images/hd/taylor-swift-pictures-y8wyxeogqlr4f164.jpg"],
-        ["@dualipa", "followed by user0908", "https://pt.quizur.com/_image?href=https%3A%2F%2Fimg.quizur.com%2Ff%2Fimg631e7c61106420.53307376.jpg%3FlastEdited%3D1662942308&w=400&h=400&f=webp"],
+        ["@mileycyrus", "followed by 4_yob", "https://br.web.img2.acsta.net/c_162_216/pictures/20/01/08/03/01/2316985.jpg"],
+        ["@cynthiaerivo", "followed by fernfj", "https://i.pinimg.com/736x/cb/76/1f/cb761ff18514ca115e2958d0e0f012f3.jpg"],
+        ["@zendaya", "followed by user0908", "https://i.pinimg.com/236x/0e/3c/c9/0e3cc946d2d82e043438fcc45cf05360.jpg"],
+        ["@sia", "followed by user0908", "https://www.hollywoodreporter.com/wp-content/uploads/2019/07/siaperforming.jpg?w=200&h=200&crop=1"],
+        ["@taylorswift", "followed by user0908", "https://i.pinimg.com/736x/f0/83/25/f0832526353cd4326d7f4d86f9532f69.jpg"],
+        ["@dualipa", "followed by user0908", "https://i.pinimg.com/564x/23/a5/9a/23a59a9ac6b4e82543cf05c118fe3b35.jpg"],
     ];
 
     return (
