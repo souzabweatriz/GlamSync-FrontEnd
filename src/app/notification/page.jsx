@@ -36,8 +36,9 @@ const Notification = () => {
                     />
                     <div className={styles.logo}>GlamSync</div>
                     <div className={styles.icons}>
-                        <div className={styles.bellIcon}></div>
                         <div className={styles.menu}></div>
+                        <div className={styles.chatIcon}></div>
+                        <div className={styles.bellIcon}></div>
                     </div>
                 </div>
                 <div className={styles.content}>
