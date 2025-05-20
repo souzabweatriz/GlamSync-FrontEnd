@@ -17,7 +17,7 @@ export default function SignIn() {
     const [input2, setInput2] = useState("");
     const [match, setMatch] = useState(null);
     const [error, setError] = useState(null);
-    const [rememberMe, setRememberMe] = useState(false); // Faltava isso
+    const [rememberMe, setRememberMe] = useState(false);
 
     const handleCheck = () => {
         if (input1.length === 0 || input2.length === 0) {

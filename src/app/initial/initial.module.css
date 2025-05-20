@@ -6,58 +6,59 @@
     min-width: 100vh;
     background-attachment: fixed;
     background-image: url(../../../public/Fundo.png);
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    gap: 6rem;
 }
 
 .title{
     color: white;
     font-weight: 800;
-    font-size: 2.5rem;
-    justify-content: space-around;
+    font-size: 3rem;
     display: flex;
-    position: absolute;
-    top: 4rem;
-    left: 14rem;
 }
 
 .logo{
+    display: flex;
     background-image: url(../../../public/LogoGrande.png);
-    height: 25rem;
-    width: 25rem;
-    position: absolute;
-    top: 6rem;
-    left: 9rem;
-    z-index: 10;
+    height: 27rem;
+    width: 28rem;
 }
 
 .description{
     color: white;
-    position: absolute;
-    top: 24rem;
-    left: 7rem;
-    z-index: 10;
+    display: flex;
+    justify-content: justify;
+    flex-direction: column
 }
 
 .buttons {
-    flex-direction: column;
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
 }
 
 .container{
-    justify-content: flex-end;
     display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .button {
+    background-image: linear-gradient(to right, rgba(255,0,0,0), rgba(0, 0, 0, 0.137));
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 0.5rem; 
-    width: 30rem;
+    width: 20rem;
     height: 4rem;
     background-color: #ffffff; 
-    color: rgb(0, 0, 0);
+    color: #5F5F5F;
     font-size: 1rem;
-    font-weight: bold;
+    font-weight: 600;
     border: none;
     border-radius: 2rem;
     cursor: pointer;
