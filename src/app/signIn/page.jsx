@@ -28,7 +28,7 @@ export default function SignIn() {
             setMatch(true);
             setError("Sucesso ao entrar!");
             setTimeout(() => {
-                router.push("/initial"); 
+                router.push("/Feed"); 
             }, 1000);
         }
     };
