@@ -35,10 +35,12 @@ const Notification = () => {
                         height={50}
                     />
                     <div className={styles.logo}>GlamSync</div>
-                    <div className={styles.icons}>
+                    <div className={styles.iconsContainer}>
+                        <div className={styles.iconCasa}></div>
+                        <div className={styles.iconAdicionar}></div>
+                        <div className={styles.iconChat}></div>
                         <div className={styles.menu}></div>
-                        <div className={styles.chatIcon}></div>
-                        <div className={styles.bellIcon}></div>
+                        <div className={styles.iconSino}></div>
                     </div>
                 </div>
                 <div className={styles.content}>
