@@ -1,0 +1,79 @@
+.body {
+    padding: 0px;
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    background: radial-gradient(circle, #FDE7E5, #FFFFFF);
+    font-family: Arial, sans-serif;
+}
+
+
+.header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    padding: 25px 30px;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    height: 60px;
+    background: #fff;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin-left: 10px;
+}
+
+.iconsContainer {
+    display: flex;
+    gap: 10px;
+    margin-left: auto;
+}
+
+.iconCasa,
+.iconAdicionar,
+.iconChat {
+    width: 24px;
+    height: 24px;
+}
+
+.iconsContainer {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-left: auto;
+    margin-right: 48px;
+}
+
+.menu, .iconCasa, .iconAdicionar, .iconSino, .iconChat{
+    width: 40px;
+    height: 40px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+
+.iconCasa {
+    background-image: url('/icons/iconCasa.png');
+}
+.iconAdicionar {
+    background-image: url('/icons/iconAdicionar.png');
+}
+.menu {
+    background-image: url('/icons/users.png');
+}
+.iconSino {
+    background-image: url('/icons/iconSino.png');
+}
+.iconChat {
+    background-image: url('/icons/iconChat.png');
+}
