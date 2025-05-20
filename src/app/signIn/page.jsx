@@ -34,7 +34,13 @@ export default function SignIn() {
               <div className={styles.header}>
                     <Image className={styles.back_icon} src="/icons/back-icon-claro.png" alt="icon de voltar"  width={50} height={50} />
                 </div>
+                <div className={styles.initial}>
                 <div className={styles.image}></div>
+                <div className={styles.texts}>
+                    <p>Fashion that conects</p>
+                    <p>Style that impacts</p>
+                </div>
+                </div>
             <div className={styles.card}>
                 <h1 className={styles.title}>Welcome Back!</h1>
                 <p className={styles.description}>Log in to your account</p>
