@@ -6,7 +6,7 @@ export default function PrincipalFeed(){
         <main className={styles.main}>
             <header className={styles.header}>
         <div className={styles.iconsContainer}>
-            <Image src="/icons/home.png" alt="ícone de casa marrom" width={20} height={20} />
+            <Image src="/icons/home.png" alt="ícone de casa marrom" width={24} height={24} />
         </div>
         <div className={styles.iconsContainer}>
             <Image src="/icons/iconAdicionar.png" alt="ícone de Adicionar marrom" width={20} height={20} />
