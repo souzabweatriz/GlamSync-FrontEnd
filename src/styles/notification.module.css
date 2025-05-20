@@ -49,7 +49,7 @@
     font-size: 22px;
     font-weight: bold;
     margin-bottom: 16px;
-    margin-top:80px;
+    margin-top: 19px;
 }
 
 .notification {
@@ -58,7 +58,7 @@
     justify-content: flex-start;
     background-color: #fff;
     border-radius: 16px;
-    padding: 18px;
+    padding: 16px;
     margin-bottom: 10px;
     position: relative;
 }
