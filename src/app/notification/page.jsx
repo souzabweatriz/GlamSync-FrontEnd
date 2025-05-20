@@ -3,6 +3,7 @@ import styles from "../../styles/notification.module.css";
 import NotificationItem from "../../components/NotificationItem";
 import Image from "next/image";
 import SuggestionItem from "../../components/SuggestionItem";
+import Header from "../../components/Header";
 
 const Notification = () => {
     const notifications = [
@@ -13,7 +14,6 @@ const Notification = () => {
         ["@username", "Started following you.", "28 Apr"],
         ["@username and more 22", "Liked your post.", "31 Mar"],
     ];
-
     const suggestions = [
         ["@mileycyrus", "followed by 4_yob", "https://br.web.img2.acsta.net/c_162_216/pictures/20/01/08/03/01/2316985.jpg"],
         ["@cynthiaerivo", "followed by fernfj", "https://i.pinimg.com/736x/cb/76/1f/cb761ff18514ca115e2958d0e0f012f3.jpg"],
@@ -26,23 +26,7 @@ const Notification = () => {
     return (
         <div className={styles.body}>
             <div className={styles.container}>
-                <div className={styles.header}>
-                    <Image
-                        className={styles.back_icon}
-                        src="/icons/back-icon.png"
-                        alt="icon de voltar"
-                        width={50}
-                        height={50}
-                    />
-                    <div className={styles.logo}>GlamSync</div>
-                    <div className={styles.iconsContainer}>
-                        <div className={styles.iconCasa}></div>
-                        <div className={styles.iconAdicionar}></div>
-                        <div className={styles.iconChat}></div>
-                        <div className={styles.menu}></div>
-                        <div className={styles.iconSino}></div>
-                    </div>
-                </div>
+                <Header />
                 <div className={styles.content}>
                     <div className={styles.notifications}>
                         <h2 className={styles.title}>Notifications Center</h2>
