@@ -46,7 +46,7 @@
 }
 
 .title {
-    font-size: 25px;
+    font-size: 22px;
     font-weight: bold;
     margin-bottom: 16px;
     margin-top:80px;
@@ -123,25 +123,12 @@
     background-color: #f79489;
     color: #fff;
     border: none;
-    border-radius: 6px;
+    border-radius: 19px;
     padding: 8px 16px;
     cursor: pointer;
     font-size: 14px;
     font-weight: bold;
     transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.bellIcon {
-    width: 41px;
-    height: 41px;
-    background-image: url('/icons/iconsSino.png');
-    background-size: cover; 
-    background-position: center;
-    background-repeat: no-repeat; 
-    margin-left: 1487px;
-    top: -18px;
-    position: relative;
-    cursor: pointer; 
 }
 
 .logo {
@@ -161,8 +148,6 @@
     background-image: url('/icons/users.png');
     cursor: pointer;
     position: relative;
-    margin-left: 1540px;
-    top: 26px;
 }
 
 .following {
@@ -172,9 +157,36 @@
     font-size: 14px;
 }
 
-.chatIcon {
-        margin-left: 10px;
-        background-image: url('/icons/batePapo.png');
-        cursor: pointer;
-        width: 45px;
-    }
+.iconsContainer {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-left: auto;
+    margin-right: 48px;
+}
+
+.menu, .iconCasa, .iconAdicionar, .iconSino, .iconChat{
+    width: 40px;
+    height: 40px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+
+.iconCasa {
+    background-image: url('/icons/iconCasa.png');
+}
+.iconAdicionar {
+    background-image: url('/icons/iconAdicionar.png');
+}
+.menu {
+    background-image: url('/icons/users.png');
+}
+.iconSino {
+    background-image: url('/icons/iconSino.png');
+}
+.iconChat {
+    background-image: url('/icons/iconChat.png');
+}
