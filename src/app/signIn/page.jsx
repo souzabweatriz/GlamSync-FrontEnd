@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import Button from "../../components/ButtonLogin.jsx";
+import Link from 'next/link';
 
 export default function SignIn() {
     const router = useRouter();
@@ -25,14 +26,19 @@ export default function SignIn() {
             setError("Preencha todos os Campos");
         } else {
             setMatch(true);
-            setError("Conta criada com sucesso!");
+            setError("Sucesso ao entrar!");
+            setTimeout(() => {
+                router.push("/initial"); 
+            }, 1000);
         }
     };
 
     return (
         <main className={styles.container}>
               <div className={styles.header}>
+              <Link href="/initial">
                     <Image className={styles.back_icon} src="/icons/back-icon-claro.png" alt="icon de voltar"  width={50} height={50} />
+              </Link>
                 </div>
                 <div className={styles.initial}>
                 <div className={styles.image}></div>

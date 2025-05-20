@@ -259,3 +259,90 @@
  display: flex;
 }
 
+@media (max-width: 1029px) {
+    .container {
+        flex-direction: column;
+        min-width: 100vw;
+        min-height: 100vh;
+        padding: 2rem 0;
+    }
+    .card {
+        width: 90vw;
+        height: auto;
+        min-height: 60vh;
+        padding: 2rem 1rem;
+    }
+    .image {
+        width: 20rem;
+        height: 18rem;
+    }
+    .otherWay .lineArea {
+        width: 80vw;
+    }
+}
+
+/* Tablet (até 768px) */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        min-width: 100vw;
+        min-height: 100vh;
+        padding: 1rem 0;
+    }
+    .card {
+        width: 96vw;
+        padding: 1rem 0.5rem;
+        min-height: 50vh;
+    }
+    .image {
+        width: 13rem;
+        height: 10rem;
+    }
+    .input {
+        width: 90vw;
+        min-width: 180px;
+    }
+    .otherWay .lineArea {
+        width: 90vw;
+    }
+}
+
+/* Celular (até 480px) */
+@media (max-width: 480px) {
+    .container {
+        padding: 0.5rem 0;
+        min-width: 100vw;
+        min-height: 100vh;
+    }
+    .card {
+        width: 98vw;
+        min-height: 40vh;
+        padding: 0.5rem 0.2rem;
+        border-radius: 1rem;
+    }
+    .image {
+        width: 9rem;
+        height: 7rem;
+    }
+    .title {
+        font-size: 1.2rem;
+    }
+    .description {
+        font-size: 0.9rem;
+    }
+    .input {
+        width: 90vw;
+        min-width: 120px;
+        height: 2.2rem;
+        font-size: 14px;
+        padding-left: 2.2rem;
+    }
+    .iconInput {
+        width: 20px;
+        height: 20px;
+        padding-left: 0.5rem;
+    }
+    .otherWay .lineArea {
+        width: 96vw;
+    }
+}

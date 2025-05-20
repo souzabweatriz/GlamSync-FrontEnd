@@ -3,9 +3,10 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import styles from "./signUp.module.css"; 
 import { useState } from "react";
-
+import Link from 'next/link';
 
 export default function SignUp() {
+    
     const router = useRouter();
     const [showPassword, setShowPassword] = useState(false); // controla a visibilidade d senha
 
@@ -13,11 +14,14 @@ export default function SignUp() {
         setShowPassword(!showPassword);
     }
 
+    
     return (
         <div className={styles.signUp}>
             <div className={styles.header}>
                 <div className={styles.icon}>
+                <Link href="/initial">
                     <Image className={styles.back_icon} src="/icons/back-icon.png" alt="icon de voltar"  width={32} height={32} />
+                    </Link>
                 </div>
                 <div className={styles.text}>
                     <h1>Sign Up</h1>
