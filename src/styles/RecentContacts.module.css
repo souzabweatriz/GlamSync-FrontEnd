@@ -1,0 +1,37 @@
+.box {
+    background: #fafafa;
+    padding: 16px;
+    border-radius: 8px;
+}
+
+.contact {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    background: #e0e0e0;
+    border-radius: 50%;
+    margin-right: 12px;
+}
+
+.details {
+    flex: 1;
+}
+
+.meta {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    background: #bdbdbd;
+    border-radius: 50%;
+    margin-top: 4px;
+}

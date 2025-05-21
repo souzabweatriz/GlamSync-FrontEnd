@@ -1,0 +1,10 @@
+.container {
+    padding: 24px;
+    background: #fff;
+    border-radius: 8px;
+}
+
+.content {
+    display: flex;
+    gap: 24px;
+}
