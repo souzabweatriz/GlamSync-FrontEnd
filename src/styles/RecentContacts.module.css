@@ -1,56 +1,75 @@
+
 .box {
-    background-color: white;
+    background-color: #fff;
     padding: 20px;
     border-radius: 12px;
     box-shadow: 2px 2px 8px #ddd;
-    width: 50%;
+    width: 100%;
+    max-width: 380px;
+}
+
+.box h3 {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 16px;
 }
 
 .contact {
     display: flex;
     align-items: center;
-    margin-bottom: 15px;
+    justify-content: space-between;
+    padding: 12px 0;
     border-bottom: 1px solid #eee;
-    padding-bottom: 10px;
+}
+
+.contact:last-child {
+    border-bottom: none;
 }
 
 .avatar {
     width: 40px;
     height: 40px;
-    background-color: #ccc;
+    background-color: #cfcfcf;
     border-radius: 50%;
     margin-right: 10px;
+    flex-shrink: 0;
 }
 
 .details {
-    flex: 1;
+    flex-grow: 1;
+    margin-left: 10px;
 }
 
 .details p {
     margin: 0;
+    font-size: 14px;
     font-weight: bold;
+    color: #333;
 }
 
 .details span {
+    display: block;
     font-size: 14px;
-    color: #555;
+    color: #666;
+    margin-top: 4px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 180px;
 }
 
 .meta {
-    text-align: right;
-}
-
-.meta p {
-    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
     font-size: 12px;
     color: #999;
+    gap: 6px;
 }
 
 .dot {
     width: 8px;
     height: 8px;
-    background-color: #008cff;
+    background-color: #007bff;
     border-radius: 50%;
-    margin-top: 5px;
-    margin-left: auto;
 }
