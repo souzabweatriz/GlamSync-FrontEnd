@@ -4,7 +4,7 @@ import styles from "../styles/OnlineContacts.module.css";
 const OnlineContacts = () => {
     return (
         <div className={styles.box}>
-            <h3>
+            <h3 className={styles.h3}>
                 Online Contacts <span className={styles.onlineDot} />
             </h3>
             <div className={styles.avatares}>
