@@ -1,0 +1,11 @@
+.container {
+    padding: 30px;
+    background:  radial-gradient(circle,#FDE7E5, #FFFFFF);
+}
+
+.content {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+}
+

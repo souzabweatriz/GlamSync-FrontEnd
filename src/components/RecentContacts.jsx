@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./styles/RecentContacts.module.css";
+import styles from "../styles/RecentContacts.module.css";
 
 const RecentContacts = () => {
     const contacts = [
