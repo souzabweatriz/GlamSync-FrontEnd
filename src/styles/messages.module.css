@@ -1,11 +1,9 @@
-.container {
-    padding: 30px;
+.body {
+    padding: 0px;
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
     background:  radial-gradient(circle,#FDE7E5, #FFFFFF);
+    font-family: Arial, sans-serif;
 }
-
-.content {
-    display: flex;
-    gap: 20px;
-    margin-top: 20px;
-}
-
