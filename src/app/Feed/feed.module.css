@@ -1,7 +1,35 @@
-.header{
+.main{
     display: flex;
-    height: 2rem;
-    width: 12rem;
-    border-radius: 1rem;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    min-width: 100vh;
+    background: linear-gradient(to bottom, #f79489, #f8afa6, #fadcd9, #f9f1f0 );
+}
+
+.icons{
+    display: flex;
+}
+
+.header{
+    justify-content: flex-end;
+    margin: 2rem;
+    display: flex;
+    height: 2.5rem;
+    width: 15rem;
+    align-items: center;
+    border-radius: 2rem;
     box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.384);
+    align-content: center;
+    justify-content: center;
+    gap: 1rem;
+    background-color: white;
+}
+
+.container{
+    display: flex;
+    align-items: flex-start;
 }

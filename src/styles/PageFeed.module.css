@@ -1,0 +1,56 @@
+.input {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    width: 50rem;
+    height: 2.3rem;
+    border-radius: 1rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.text {
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.sections {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+}
+
+.links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #333;
+    font-size: 1rem;
+}
+
+.list img {
+    background-color: white;
+    border-radius: 50%;
+    padding: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s;
+}
+
+.list:hover img {
+    background-color: #f8b3b3;
+}
+
+.list span {
+    margin-top: 8px;
+}
