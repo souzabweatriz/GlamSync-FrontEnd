@@ -1,26 +1,36 @@
 .searchContainer {
     display: flex;
     align-items: center;
-    margin: 20px 0;
+    gap: 5px;
+    margin-top: 20px;
+    background-color: #f8f3f3;
+    padding: 8px 12px;
+    border-radius: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    width: fit-content;
 }
 
-.input {
-    padding: 10px;
-    width: 250px;
-    border-radius: 10px 0 0 10px;
-    border: 1px solid #ccc;
+.searchContainer input {
+    border: none;
     outline: none;
+    padding: 8px 12px;
+    border-radius: 20px;
+    font-size: 14px;
+    width: 480px;
+    background-color: transparent;
 }
 
-.button {
-    padding: 10px;
-    background-color: white;
-    border: 1px solid #ccc;
-    border-left: none;
-    border-radius: 0 10px 10px 0;
+.searchContainer button {
+    background-color: transparent;
+    border: none;
     cursor: pointer;
+    font-size: 16px;
+    color: #333;
+    padding: 4px ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-
 
 
 
