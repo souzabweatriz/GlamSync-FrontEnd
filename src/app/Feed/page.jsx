@@ -1,31 +1,53 @@
 import styles from "./feed.module.css";
 import Image from "next/image";
-import Link from 'next/link';
 import PageFeed from "../../components/PageFeed"
 
 export default function PrincipalFeed() {
-
-    const navItems = [
-        { href: "/initial", src: "/icons/home.png", alt: "ícone de casa marrom", size: 24 },
-        { href: "/initial", src: "/icons/iconAdicionar.png", alt: "ícone de adicionar marrom", size: 27 },
-        { href: "/initial", src: "/icons/iconChat.png", alt: "ícone de chat marrom", size: 27 },
-        { href: "/initial", src: "/icons/users.png", alt: "ícone de usuário marrom", size: 27 },
-        { href: "/initial", src: "/icons/iconSino.png", alt: "ícone de sino marrom", size: 27 },
-    ];
-
     return (
-        <main className={styles.main}>
-            <div className={styles.header}>
-                {navItems.map((item, index) => (
-                    <Link href={item.href} key={index} className={styles.navLink}>
-                        <Image src={item.src} alt={item.alt} width={item.size} height={item.size} />
-                    </Link>
-                ))}
+        <div className={styles.container}>
+            <div className={styles.main}>
+            <div className={styles.image}>
+                <Image src="/Logo.png" alt="Logo GlamSync" width={300} height={300} />
             </div>
-            <div>
-                <Image src="/LogoGrande.png" alt="ícone de Chat marrom" width={300} height={300} />
+            <div className={styles.section}>
+                <Image
+                    src="/icons/home.png"
+                    alt="ícone de casa marrom"
+                    width={23}
+                    height={23}
+                    className={styles.iconsContainer}
+                />
+                <Image
+                    src="/icons/iconAdicionar.png"
+                    alt="ícone de Adicionar marrom"
+                    width={24}
+                    height={24}
+                    className={styles.iconsContainer}
+                />
+                <Image
+                    src="/icons/iconChat.png"
+                    alt="ícone de Chat marrom"
+                    width={24}
+                    height={24}
+                    className={styles.iconsContainer}
+                />
+                <Image
+                    src="/icons/users.png"
+                    alt="ícone de Usuário marrom"
+                    width={24}
+                    height={24}
+                    className={styles.iconsContainer}
+                />
+                <Image
+                    src="/icons/iconSino.png"
+                    alt="ícone de Sino marrom"
+                    width={24}
+                    height={24}
+                    className={styles.iconsContainer}
+                />
+            </div>
             </div>
             <PageFeed />
-        </main>
+        </div>
     )
 }

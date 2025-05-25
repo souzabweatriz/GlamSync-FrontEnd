@@ -6,14 +6,14 @@ export default function Feed() {
     return (
         <div className={styles.main}>
             <div className={styles.input}>
+                <input className={styles.text} type="text" placeholder="Search..." />
                 <Image
                     className={styles.lupa}
                     src="/icons/lupa.png"
                     alt="Ícone de Lupa"
-                    width={24}
-                    height={24}
+                    width={20}
+                    height={20}
                 />
-                <input className={styles.text} type="text" placeholder="Search..." />
             </div>
 
             <div className={styles.sections}>
