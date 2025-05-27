@@ -8,7 +8,7 @@ export default function PrincipalFeed() {
     const contentStyle = {
         margin: 0,
         height: '20rem',
-        color: '#fff',
+        color: 'black',
         lineHeight: '160px',
         textAlign: 'center',
         background: '#364d79',
@@ -16,6 +16,7 @@ export default function PrincipalFeed() {
 
     return (
         <div className={styles.container}>
+            <Image src="/fundofeed.png" alt="imagem de fundo" width={2000} height={500} />
             <div className={styles.main}>
                 <div className={styles.image}>
                     <Image src="/Logo.png" alt="Logo GlamSync" width={300} height={300} />
@@ -60,31 +61,50 @@ export default function PrincipalFeed() {
             </div>
             <PageFeed />
             <div className={styles.carousel}>
-                <>
-                    <Carousel arrows infinite={false}>
-                        <div>
-                            <h3 style={contentStyle}>
-                                <Image
-                                    src="/svg.svg"
-                                    alt="Svg para imagens não carregadas"
-                                    width={960}
-                                    height={480}
-                                />
-                            </h3>
-                        </div>
-                        <div>
-                            <h3 style={contentStyle}>2</h3>
-                        </div>
-                        <div>
-                            <h3 style={contentStyle}>3</h3>
-                        </div>
-                        <div>
-                            <h3 style={contentStyle}>4</h3>
-                        </div>
-                    </Carousel>
-                </>
+                <Carousel autoplay>
+                    <div>
+                        <h3 style={contentStyle}>
+                            <Image
+                                src="/carousel.png"
+                                alt="Svg para imagens não carregadas"
+                                width={960}
+                                height={320}
+                            />
+                        </h3>
+                    </div>
+                    <div>
+                        <h3 style={contentStyle}>
+                            <Image
+                                src="/carousel.png"
+                                alt="Svg para imagens não carregadas"
+                                width={960}
+                                height={320}
+                            />
+                        </h3>
+                    </div>
+                    <div>
+                        <h3 style={contentStyle}>
+                            <Image
+                                src="/carousel.png"
+                                alt="Svg para imagens não carregadas"
+                                width={960}
+                                height={320}
+                            />
+                        </h3>
+                    </div>
+                    <div>
+                        <h3 style={contentStyle}>
+                            <Image
+                                src="/carousel.png"
+                                alt="Svg para imagens não carregadas"
+                                width={960}
+                                height={320}
+                            />
+                        </h3>
+                    </div>
+                </Carousel>
             </div>
-                <Post />
+            <Post />
         </div>
     )
 }
