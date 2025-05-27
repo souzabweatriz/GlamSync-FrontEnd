@@ -1,9 +1,43 @@
-.body {
-    padding: 0px;
-    margin: 0;
-    height: 100vh;
-    width: 100vw;
-    overflow: hidden;
-    background:  radial-gradient(circle,#FDE7E5, #FFFFFF);
-    font-family: Arial, sans-serif;
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header h2 {
+    font-size: 24px;
+    color: #333;
+}
+
+.search {
+    display: flex;
+    align-items: center;
+    background: white;
+    padding: 10px 20px;
+    border-radius: 999px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.search input {
+    border: none;
+    outline: none;
+    padding: 5px;
+}
+
+.search button {
+    background: none;
+    border: none;
+    color: #b84c2d;
+    font-size: 1rem;
+}
+
+.search button:hover {
+    color: #a43c24;
+}
+
+.grid {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 2rem;
 }

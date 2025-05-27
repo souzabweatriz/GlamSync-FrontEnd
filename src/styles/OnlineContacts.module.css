@@ -1,65 +1,47 @@
-.box {
-    background-color: white;
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
-    width: fit-content;
-    min-width: 340px;
-}
-
-.h3 {
-    font-size: 16px;
-    font-weight: bold;
-    margin-bottom: 17px;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-
-}
-
-.avatars {
-    display: flex;
-    gap: 15px;
-    margin-top: 10px;
-}
-
-.user {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-size: 13px;
-    color: #333;
-}
-
-.avatar {
-    width: 50px;
-    height: 50px;
-    background-color: #cfcfcf;
-    border-radius: 50%;
-    position: relative;
-}
-
-.greenDot {
-    width: 10px;
-    height: 10px;
-    background-color: #00cc44;    
-    border-radius: 50%;
-    position: absolute;
-    bottom: 2px;
-    right: 2px;
-    border: 2px solid white;
+.container {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.15);
 }
 
 .onlineDot {
     width: 10px;
     height: 10px;
-    background-color: green;
+    background-color: limegreen;
     display: inline-block;
+    margin-left: 6px;
     border-radius: 50%;
 }
 
-.avatares {
+.avatars {
     display: flex;
-    gap: 20px;
-    align-items: center;
+    gap: 1.2rem;
+    margin-top: 1rem;
+}
+
+.avatar {
+   text-align: center;
+   font-size: 0.8rem;
+}
+
+.image {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: lightgray;
+    margin-bottom: 5px;
+    position: relative;
+}
+
+.image::after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: limegreen;
+    border-radius: 50%;
+    bottom: 0;
+    right: 0;
+    border: 2px solid white;
 }
