@@ -1,0 +1,54 @@
+.followBtn {
+    color: #ff6363;
+    border: 1.5px solid #ff6363;
+    background: #fff;
+    border-radius: 6px;
+    height: 2rem;
+    width: 7rem;
+    font-size: 1rem;
+    font-family: inherit;
+    cursor: pointer;
+    outline: none;
+    transition: background 0.2s, color 0.2s;
+    box-shadow: 0 2px 8px rgba(100, 0, 0, 0.04);
+    margin-left: 15rem;
+
+  }
+  
+  .followBtn:hover {
+    background: #ff6363;
+    color: #fff;
+  }
+
+  .plus {
+    font-weight: bold;
+    font-size: 1.1em;
+    margin-left: 2px;
+  }
+
+  .container{
+    display: flex;
+    flex-direction: column;
+
+  }
+
+  .title{
+    margin-bottom: 2rem;
+  }
+
+  .post{
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+  }
+
+.image{
+    display: flex;
+  }
+
+.user{
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    font-size: 1.2rem;
+}

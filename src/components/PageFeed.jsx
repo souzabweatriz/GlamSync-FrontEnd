@@ -1,21 +1,31 @@
-import React from "react";
+"use client"
+import React, { useEffect, useState } from 'react';
 import styles from "../styles/PageFeed.module.css";
 import Image from "next/image";
+import axios from 'axios';
+
 
 export default function Feed() {
+
+    const [search, setSearch] = useState("");
+
     return (
         <div className={styles.main}>
-            <div className={styles.input}>
-                <input className={styles.text} type="text" placeholder="Search..." />
+            <div className={styles.inputContainer}>
+                <input 
+                className={styles.input} 
+                type="text" 
+                placeholder="Search..." 
+                onChange={(e) => setSearch(e.target.value)}
+                />
                 <Image
-                    className={styles.lupa}
+                    className={styles.iconInput}
                     src="/icons/lupa.png"
                     alt="Ícone de Lupa"
                     width={20}
                     height={20}
                 />
             </div>
-
             <div className={styles.sections}>
                 <ul className={styles.links}>
                     <li>
