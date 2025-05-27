@@ -1,59 +1,58 @@
 .container {
     background-color: #fff;
-    border-radius: 10px;
+    max-width: 67%;
+    overflow-x: auto;
+    box-sizing: border-box;
+    align-items: center;
+    border-radius: 16px;
     padding: 1rem;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    flex-direction: column;
+    gap: 0.8rem;
+    margin-left: 290px;
+    flex-direction: row;
 }
 
 .list {
+    width: 100%;
+    overflow-x: auto;
     list-style: none;
     padding: 0;
-    margin-top: 1rem;
+    margin-top: 1.2rem;
+}
+
+.list li {
+    display: flex;
+    flex-direction: row;
 }
 
 .contact {
     display: flex;
     justify-content: space-between;
-    padding: 0.8rem 0;
+    align-items: flex-start;
+    padding: 1rem 0;
+    flex-wrap: wrap;
+    word-wrap: break-word;
     border-bottom: 1px solid #eee;
+    flex-direction: column;
 }
 
 .info {
     display: flex;
     gap: 1rem;
+    flex-direction: row;
 }
 
 .avatar {
-    width: 45px;
-    height: 45px;
-    background: lightgray;
-    border-radius: 50%;
+    width: 50px;
+    height: 50px;
 }
 .right {
-    text-align: right;
+    text-align: left;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    align-items: flex-end;
-
-}
-
-.badge {
-    background: #0a74ff;
-    color: white;
-    font-size: 12px;
-    font-weight: bold;
-    border-radius: 50%;
-    width: 20px;
-    height: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.badgeContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 4px;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 0.2rem;
+    min-width: 50px;
 }
