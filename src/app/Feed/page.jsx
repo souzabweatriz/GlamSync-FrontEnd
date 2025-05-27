@@ -3,6 +3,7 @@ import Image from "next/image";
 import PageFeed from "../../components/PageFeed";
 import { Carousel } from 'antd';
 import Post from "../../components/Post"
+import Link from "next/link";
 
 export default function PrincipalFeed() {
     const contentStyle = {
@@ -16,48 +17,57 @@ export default function PrincipalFeed() {
 
     return (
         <div className={styles.container}>
-            <Image src="/fundofeed.png" alt="imagem de fundo" width={2000} height={500} />
             <div className={styles.main}>
                 <div className={styles.image}>
                     <Image src="/Logo.png" alt="Logo GlamSync" width={300} height={300} />
                 </div>
-                <div className={styles.section}>
-                    <Image
-                        src="/icons/home.png"
-                        alt="ícone de casa marrom"
-                        width={23}
-                        height={23}
-                        className={styles.iconsContainer}
-                    />
-                    <Image
-                        src="/icons/iconAdicionar.png"
-                        alt="ícone de Adicionar marrom"
-                        width={24}
-                        height={24}
-                        className={styles.iconsContainer}
-                    />
-                    <Image
-                        src="/icons/iconChat.png"
-                        alt="ícone de Chat marrom"
-                        width={24}
-                        height={24}
-                        className={styles.iconsContainer}
-                    />
-                    <Image
-                        src="/icons/users.png"
-                        alt="ícone de Usuário marrom"
-                        width={24}
-                        height={24}
-                        className={styles.iconsContainer}
-                    />
-                    <Image
-                        src="/icons/iconSino.png"
-                        alt="ícone de Sino marrom"
-                        width={24}
-                        height={24}
-                        className={styles.iconsContainer}
-                    />
-                </div>
+               <div className={styles.section}>
+  <Link href="/home">
+    <Image
+      src="/icons/home.png"
+      alt="ícone de casa marrom"
+      width={23}
+      height={23}
+      className={styles.iconsContainer}
+    />
+  </Link>
+  <Link href="/adicionar">
+    <Image
+      src="/icons/iconAdicionar.png"
+      alt="ícone de Adicionar marrom"
+      width={24}
+      height={24}
+      className={styles.iconsContainer}
+    />
+  </Link>
+  <Link href="/chat">
+    <Image
+      src="/icons/iconChat.png"
+      alt="ícone de Chat marrom"
+      width={24}
+      height={24}
+      className={styles.iconsContainer}
+    />
+  </Link>
+  <Link href="/usuarios">
+    <Image
+      src="/icons/users.png"
+      alt="ícone de Usuário marrom"
+      width={24}
+      height={24}
+      className={styles.iconsContainer}
+    />
+  </Link>
+  <Link href="/notificacoes">
+    <Image
+      src="/icons/iconSino.png"
+      alt="ícone de Sino marrom"
+      width={24}
+      height={24}
+      className={styles.iconsContainer}
+    />
+  </Link>
+</div>
             </div>
             <PageFeed />
             <div className={styles.carousel}>
