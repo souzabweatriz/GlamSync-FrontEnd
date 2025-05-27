@@ -37,7 +37,12 @@ export default function Post() {
             <ToastContainer />
         <h1 className={styles.title}>Feed</h1>
         <div className={styles.post}>
-            <Image src="/user.png" alt="ícone de usuário na cor marrom" width={30} height={30} />
+            <Image 
+            src="/user.png" 
+            alt="ícone de usuário na cor marrom" 
+            width={40} 
+            height={40} 
+            />
             <p className={styles.user}>@username</p>
             <button className={styles.followBtn} onClick={handleFollow}>
             {showFollowing ? (
@@ -62,7 +67,6 @@ export default function Post() {
             />
             <div className={styles.aside}>
                 <h1 className={styles.title}>Comments</h1>
-                
             </div>
     </div>
     )
