@@ -1,7 +1,6 @@
 import React from "react";
 import styles from "../../styles/notification.module.css";
 import NotificationItem from "../../components/NotificationItem";
-import Image from "next/image";
 import SuggestionItem from "../../components/SuggestionItem";
 import Header from "../../components/Header";
 
