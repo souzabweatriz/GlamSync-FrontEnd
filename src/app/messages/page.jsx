@@ -22,7 +22,9 @@ const MessagesPage = () => {
                 </div>
                 <div className={styles.grid}>
                     <OnlineContacts />
-                    <RecentContacts />
+                    <div className={styles.RecentContacts}>
+                            <RecentContacts />
+                    </div>
                 </div>
             </div>
         </div>

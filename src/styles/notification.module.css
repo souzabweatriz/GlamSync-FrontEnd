@@ -3,7 +3,8 @@
     margin: 0;
     height: 100vh;
     width: 100vw;
-    overflow: hidden;
+    overflow-y: auto;
+    overflow-x: hidden;
     background:  radial-gradient(circle,#f8e3e1, #ffffff);
     font-family: Arial, sans-serif;
 }
