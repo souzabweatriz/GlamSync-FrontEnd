@@ -1,170 +1,175 @@
-"use client"
-import styles from "../styles/Post.module.css";
-import Image from "next/image";
-import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
+"use client";
+import { useState, useEffect } from "react";
+import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
-import { Modal, Button, Form, Input } from 'antd';
+import Image from "next/image";
+import styles from "../styles/Post.module.css";
+import { Pagination } from "antd";
+
+const HEADERS = { "x-api-key": process.env.NEXT_PUBLIC_API_KEY };
 
 export default function Post() {
-
-  const [modalInfo, setModalInfo] = useState ({
-    visible: false,
-    comment: null,
-    loading: false,
+  const [data, setData] = useState({
+    posts: [],
+    loading: true,
+    current: 1,
+    pageSize: 5,
   });
 
-  const comments = [
-  {
-    user: {
-      name: "arianagrande",
-      avatar: "/avatars/user.png",
-    },
-    text: "OMGGG beautiful dress!!",
-  },
-  {
-    user: {
-      name: "selenagomes",
-      avatar: "/avatars/user.png",
-    },
-    text: "Where I can buy it?!?!",
-  },
-  {
-    user: {
-      name: "dovecamaron",
-      avatar: "/avatars/user.png",
-    },
-    text: "I loved <3",
-  },
-  {
-    user: {
-      name: "sabrinacarpinter",
-      avatar: "/avatars/user.png",
-    },
-    text: "I wanna dress it on my show!!",
-  },
-  {
-    user: {
-      name: "lilnasx",
-      avatar: "/avatars/user.png",
-    },
-    text: "I loved this shade of pink",
-  },
-  {
-    user: {
-      name: "cardib",
-      avatar: "/avatars/user.png",
-    },
-    text: "So cutee",
-  },
-];
+  const [showLikes, setShowLikes] = useState({});
+  const [showFollowing, setShowFollowing] = useState({});
 
-    const [showFollowing, setFollowing] = useState(false);
-    const [showLikes, setShowLikes] = useState(false);
+  useEffect(() => {
+    const fetchPosts = async () => {
+      try {
+        const { data: posts } = await axios.get(
+          `${process.env.NEXT_PUBLIC_API_URL}/posts`,
+          { headers: HEADERS }
+        );
+        setData({
+          posts,
+          loading: false,
+          current: 1,
+          pageSize: 5,
+        });
+      } catch {
+        toast.error("Erro ao carregar posts");
+        setData({
+          posts: [],
+          loading: false,
+          current: 1,
+          pageSize: 5,
+        });
+      }
+    };
+    fetchPosts();
+  }, []);
 
-    const HeartVisibility = () => {
-      setShowLikes(!showLikes);
-    }
+  function paginatedPosts() {
+    const start = (data.current - 1) * data.pageSize;
+    return data.posts.slice(start, start + data.pageSize);
+  }
 
-    const handleFollow = () => {
-        setFollowing((prev) => !prev);
-      };
+  function handleLike(postId) {
+    setShowLikes({
+      ...showLikes,
+      [postId]: !showLikes[postId],
+    });
+  }
 
-      useEffect(() =>{
-        const fetchComments = async () => {
-            try {
-                const { data: comments  } = await axios.get(
-                    `${process.env.NEXT_PUBLIC_API_URL}/comments`,
-                    {
-                        headers: HEADERS,   
-                    }
-                );
-                setData({comments, loading: false, current: 1, pageSize: 5});
-            } catch (error) {
-                toast.error("Erro ao carregar Comentários");
-                setData((d) => ({ ...d, loading: false}));
-            }
-        };
-        fetchComments();
-      }, []);
+  function handleFollow(userId) {
+    setShowFollowing({
+      ...showFollowing,
+      [userId]: !showFollowing[userId],
+    });
+  }
 
-
-    return(
-        <div className={styles.container}>
-            <ToastContainer />
-        <h1 className={styles.title}>Feed</h1>
-         <div className={styles.header}>
-            <Image 
-            src="/user.png" 
-            alt="ícone de usuário" 
-            width={40} 
-            height={40} 
-            />
-            <p className={styles.user}>@username</p>
-            <button className={styles.followBtn} onClick={handleFollow}>
-            {showFollowing ? (
-            <>
-              Following
-              <span className={styles.following}></span>
-            </>
-          ) : (
-            <>
-              Follow
-              <span className={styles.plus}>+</span>
-            </>
-          )}
-            </button>  
-        </div>
-        <div className={styles.all}>
-        <div className={styles.postContent}>
-            <Image 
-            className={styles.image}
-            src="/gato.jpg"
-            alt="Imagem do Post"
-            width={500}
-            height={500}
-            onDoubleClick={HeartVisibility}
-            />
-            <div className={styles.icons}>
-        <Image 
-        className={styles.icon}
-        src={showLikes ? "/icons/coloredHeart.png" : "/icons/heart.png"} 
-        alt="Coração de Like" 
-        width={37} 
-        height={37} 
-        onClick={HeartVisibility} 
-        />
-        <Image
-        className={styles.icon}
-        src="/icons/comments.png"
-        alt="ícone de comentário"
-        width={37} 
-        height={37} 
-        />
-            </div>
-        </div> 
-
-            <aside className={styles.aside}>
-                <h1 className={styles.title}>Comments</h1>
-       <ul className={styles.commentList}>
-      {comments.map((comment, id) => (
-        <li key={id} className={styles.commentItem}>
+  return (
+    <div className={styles.main}>
+      <ToastContainer />
+      <h1 className={styles.title}>Feed</h1>
+      <div className={styles.container}>
+        {data.loading ? (
           <Image
-            src={comment.user.avatar}
-            alt={comment.user.name}
-            width={40}
-            height={40}
-            className={styles.avatar}
+            src="/media/loading.gif"
+            width={100}
+            height={100}
+            alt="Gif Carregando"
           />
-          <div>
-            <span className={styles.username}>@{comment.user.name}</span>
-            <div>{comment.text}</div>
-            </div>
-          </li>
-        ))}
-      </ul>
-            </aside>
-           </div> 
+        ) : (
+          <div className={styles.cardsContainer}>
+            {paginatedPosts().map((post) => (
+              <div className={styles.all} key={post.id}>
+                <div className={styles.postContent}>
+                  <Image
+                    className={styles.image}
+                    src={
+                      post.photo
+                        ? `http://localhost:3001/uploads/${post.photo}`
+                        : "/icons/220.svg"
+                    }
+                    alt={`Post de ${post.user_id}`}
+                    width={500}
+                    height={500}
+                    unoptimized
+                  />
+                  <div className={styles.icons}>
+                    <Image
+                      className={`${styles.icon} ${showLikes[post.id] ? styles.liked : ""}`}
+                      src={
+                        showLikes[post.id]
+                          ? "/icons/coloredHeart.png"
+                          : "/icons/heart.png"
+                      }
+                      alt="Coração de Like"
+                      width={30}
+                      height={30}
+                      onClick={() => handleLike(post.id)}
+                    />
+                    <span>{post.likes + (showLikes[post.id] ? 1 : 0)}</span>
+                    <Image
+                      className={styles.icon}
+                      src="/icons/comments.png"
+                      alt="ícone de comentário"
+                      width={31}
+                      height={31.2}
+                    />
+                    <span>{post.comments}</span>
+                  </div>
+                </div>
+                <div className={styles.header}>
+                  <Image
+                    src={
+                      post.user_photo
+                        ? `http://localhost:3001/uploads/${post.user_photo}`
+                        : "/icons/220.svg"
+                    }
+                    alt={`Foto de ${post.user_name}`}
+                    width={40}
+                    height={40}
+                    className={styles.avatar}
+                    unoptimized
+                  />
+                  <p className={styles.user}>@{post.user_name}</p>
+                  <button
+                    className={styles.followBtn}
+                    onClick={() => handleFollow(post.user_id)}
+                  >
+                    {showFollowing[post.user_id] ? (
+                      <>
+                        Following <span className={styles.following}></span>
+                      </>
+                    ) : (
+                      <>
+                        Follow <span className={styles.plus}>+</span>
+                      </>
+                    )}
+                  </button>
+                </div>
+                <p className={styles.contentText}>{post.content}</p>
+                <span className={styles.date}>
+                  {new Date(post.created_at).toLocaleString("pt-BR")}
+                </span>
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
+      <Pagination
+        className={styles.pagination}
+        current={data.current}
+        pageSize={data.pageSize}
+        total={data.posts.length}
+        onChange={(page, size) =>
+          setData({
+            ...data,
+            current: page,
+            pageSize: size,
+          })
+        }
+        showSizeChanger
+        pageSizeOptions={["5", "10", "100"]}
+      />
     </div>
-    )
+  );
 }

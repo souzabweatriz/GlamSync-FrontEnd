@@ -21,7 +21,7 @@ export default function PrincipalFeed() {
                 <div className={styles.image}>
                     <Image src="/Logo.png" alt="Logo GlamSync" width={300} height={300} />
                 </div>
-               <div className={styles.section}>
+              <div className={styles.section}>
   <Link href="/home">
     <Image
       src="/icons/home.png"
@@ -71,7 +71,7 @@ export default function PrincipalFeed() {
             </div>
             <PageFeed />
             <div className={styles.carousel}>
-                <Carousel autoplay>
+                <Carousel autoplay autoplaySpeed={2000}>
                     <div>
                         <h3 style={contentStyle}>
                             <Image
