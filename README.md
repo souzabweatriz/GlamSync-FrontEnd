@@ -6,7 +6,7 @@
 
 #### A GlamSync é a rede social perfeita para fashionistas, criadores de estilo e amantes de tendências. Compartilhe seus looks, descubra inspirações, siga ícones da moda e crie sua vitrine pessoal. Aqui, cada post é uma passarela e cada curtida, um aplauso. Mostre seu estilo, conecte-se com quem vive a moda como você e sincronize-se com o glamour!
 
-## 👩‍💻🧑‍💻 Contribuidoras do Front-End
+## 👩‍💻🧑‍💻 Principais Contribuidoras do Front-End
 
 ### Ana Souza
 
@@ -15,10 +15,6 @@
 ### Julia Neves
 
 #### Sou a Julia Neves, programadora apaixonada por front-end e banco de dados. Gosto de transformar ideias em interfaces bonitas e funcionais, sempre unindo organização com um toque de criatividade. Quando não estou codando, estou pintando – porque pra mim, tanto no código quanto na arte, cada detalhe importa.
-
-### Bruna Savelli
-
-#### Sou a Bruna Savelli, programadora focada em front-end e apaixonada por criar interfaces limpas, funcionais e intuitivas. A organização é meu ponto forte – gosto de manter tudo no seu lugar, do código à estrutura do projeto. Acredito que um bom design começa com uma boa lógica (e um bom checklist também!).
 
 ## 🛠 Tecnologias Utilizadas
 

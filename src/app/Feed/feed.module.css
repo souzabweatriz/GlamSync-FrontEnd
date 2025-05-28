@@ -5,10 +5,8 @@
   margin: 0;
   width: 100%;
   align-items: center;
-  background: linear-gradient(to bottom, #f79489, #f8afa6, #fadcd9, #f9f1f0);
+  background: linear-gradient(to bottom, #f79489, #f8afa6, #f9f1f0, white);
   position: relative;
-  padding-top: 2rem;
-
 }
 
 .section {
@@ -49,6 +47,7 @@
 }
 
 .carousel{
+  border-radius: 4rem;
   height: 30rem;
   width: 60rem;
   margin-top: 3rem;
