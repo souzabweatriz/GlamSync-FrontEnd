@@ -32,6 +32,7 @@ export default function Post() {
           current: 1,
           pageSize: 5,
         });
+        console.log(posts);
       } catch {
         toast.error("Erro ao carregar posts");
         setData({
@@ -85,7 +86,7 @@ export default function Post() {
                     className={styles.image}
                     src={
                       post.photo
-                        ? `http://localhost:3001/uploads/${post.photo}`
+                        ? `${process.env.NEXT_PUBLIC_IMG_URL}${post.photo}.jpg`
                         : "/icons/220.svg"
                     }
                     alt={`Post de ${post.user_id}`}
@@ -121,7 +122,7 @@ export default function Post() {
                   <Image
                     src={
                       post.user_photo
-                        ? `http://localhost:3001/uploads/${post.user_photo}`
+                        ? `${process.env.NEXT_PUBLIC_IMG_URL}${post.user_photo}.jpg`
                         : "/icons/220.svg"
                     }
                     alt={`Foto de ${post.user_name}`}

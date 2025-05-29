@@ -15,6 +15,7 @@ export default function PrincipalFeed() {
         background: '#364d79',
     };
 
+
     return (
         <div className={styles.container}>
             <div className={styles.main}>
