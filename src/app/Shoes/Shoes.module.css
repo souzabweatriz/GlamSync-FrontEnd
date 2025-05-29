@@ -1,0 +1,5 @@
+.container{
+    background: linear-gradient(to bottom, #f79489, #f8afa6, #f9f1f0, white);
+    width: auto;
+    height: 100vh;
+}

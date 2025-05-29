@@ -38,10 +38,10 @@
   }
 
   .header{
-    margin-bottom: 1.5rem;
     display: flex;
     gap: 1rem;
-    align-items: center
+    align-items: center;
+    margin-top: 5rem;
   }
 
 .image{
@@ -142,6 +142,7 @@
 
 .all{
   display: flex;
+  flex-direction: column;
 }
 
 .icon {
@@ -162,4 +163,9 @@
   100% {
     transform: scale(1);
   }
+}
+
+.contentText{
+  text-align: center;
+  display: flex;
 }
