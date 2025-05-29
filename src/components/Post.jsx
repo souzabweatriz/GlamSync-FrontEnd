@@ -95,7 +95,7 @@ export default function Post() {
                   />
                   <div className={styles.icons}>
                     <Image
-                      className={`${styles.icon} ${showLikes[post.id] ? styles.liked : ""}`}
+                      className={styles.icon} 
                       src={
                         showLikes[post.id]
                           ? "/icons/coloredHeart.png"

@@ -22,8 +22,8 @@ export default function Feed() {
                     className={styles.iconInput}
                     src="/icons/lupa.png"
                     alt="Ícone de Lupa"
-                    width={20}
-                    height={20}
+                    width={16}
+                    height={16}
                 />
             </div>
             <div className={styles.sections}>
