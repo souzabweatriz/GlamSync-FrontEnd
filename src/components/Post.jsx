@@ -16,6 +16,19 @@ export default function Post() {
     pageSize: 5,
   });
 
+
+  const [openCommentsPostId, setOpenCommentsPostId] = useState(null);
+
+
+  const comments = [
+    { user: { name: "arianagrande", avatar: "/avatars/user.png" }, text: "OMGGG beautiful dress!!" },
+    { user: { name: "selenagomes", avatar: "/avatars/user.png" }, text: "Where I can buy it?!?!" },
+    { user: { name: "dovecamaron", avatar: "/avatars/user.png" }, text: "I loved <3" },
+    { user: { name: "sabrinacarpinter", avatar: "/avatars/user.png" }, text: "I wanna dress it on my show!!" },
+    { user: { name: "lilnasx", avatar: "/avatars/user.png" }, text: "I loved this shade of pink" },
+    { user: { name: "cardib", avatar: "/avatars/user.png" }, text: "So cutee" },
+  ];
+
   const [showLikes, setShowLikes] = useState({});
   const [showFollowing, setShowFollowing] = useState({});
 
@@ -51,17 +64,23 @@ export default function Post() {
   }
 
   function handleLike(postId) {
-    setShowLikes({
-      ...showLikes,
-      [postId]: !showLikes[postId],
-    });
+    setShowLikes((prev) => ({
+      ...prev,
+      [postId]: !prev[postId],
+    }));
   }
 
   function handleFollow(userId) {
-    setShowFollowing({
-      ...showFollowing,
-      [userId]: !showFollowing[userId],
-    });
+    setShowFollowing((prev) => ({
+      ...prev,
+      [userId]: !prev[userId],
+    }));
+  }
+
+  function handleCommentIconClick(postId) {
+    setOpenCommentsPostId(prev =>
+      prev === postId ? null : postId
+    );
   }
 
   return (
@@ -87,12 +106,13 @@ export default function Post() {
                       post.photo
                         ? `${process.env.NEXT_PUBLIC_IMG_URL}${post.photo}.jpg`
                         : "/icons/220.svg"
-                      }
-                      alt={`Post de ${post.user_id}`}
-                      width={500}
-                      height={500}
-                      unoptimized
-                      />
+                    }
+                    alt={`Post de ${post.user_id}`}
+                    width={500}
+                    height={500}
+                    unoptimized
+                    onDoubleClick={() => handleLike(post.id)}
+                  />
                   <div className={styles.icons}>
                     <Image
                       className={styles.icon} 
@@ -113,6 +133,8 @@ export default function Post() {
                       alt="ícone de comentário"
                       width={31}
                       height={31.2}
+                      style={{ cursor: "pointer" }}
+                      onClick={() => handleCommentIconClick(post.id)}
                     />
                     <span>{post.comments}</span>
                   </div>
@@ -150,6 +172,28 @@ export default function Post() {
                 <span className={styles.date}>
                   {new Date(post.created_at).toLocaleString("pt-BR")}
                 </span>
+                {openCommentsPostId === post.id && (
+                  <aside className={styles.aside}>
+                    <h1 className={styles.title}>Comments</h1>
+                    <ul className={styles.commentList}>
+                      {comments.map((comment, id) => (
+                        <li key={id} className={styles.commentItem}>
+                          <Image
+                            src={comment.user.avatar}
+                            alt={comment.user.name}
+                            width={40}
+                            height={40}
+                            className={styles.avatar}
+                          />
+                          <div>
+                            <span className={styles.username}>@{comment.user.name}</span>
+                            <div>{comment.text}</div>
+                          </div>
+                        </li>
+                      ))}
+                    </ul>
+                  </aside>
+                )}
               </div>
             ))}
           </div>
