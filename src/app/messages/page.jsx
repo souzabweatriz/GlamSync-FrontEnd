@@ -5,6 +5,7 @@ import OnlineContacts from '../../components/OnlineContacts';
 import RecentContacts from '../../components/RecentContacts';
 import lupaIcon from "../../../public/icons/lupa.png";
 import Image from 'next/image';
+import Chat from '../../components/Chat';
 
 const MessagesPage = () => {
     return (
@@ -27,6 +28,7 @@ const MessagesPage = () => {
                     </div>
                 </div>
             </div>
+            <Chat/>
         </div>
     );
 };
