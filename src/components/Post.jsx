@@ -23,7 +23,7 @@ export default function Post() {
     const fetchPosts = async () => {
       try {
         const { data: posts } = await axios.get(
-          `${process.env.NEXT_PUBLIC_API_URL}/posts`,
+          `${process.env.NEXT_PUBLIC_API_URL}posts`,
           { headers: HEADERS }
         );
         setData({
@@ -32,7 +32,6 @@ export default function Post() {
           current: 1,
           pageSize: 5,
         });
-        console.log(posts);
       } catch {
         toast.error("Erro ao carregar posts");
         setData({
@@ -72,7 +71,7 @@ export default function Post() {
       <div className={styles.container}>
         {data.loading ? (
           <Image
-            src="/media/loading.gif"
+            src="/media/Flor.png"
             width={100}
             height={100}
             alt="Gif Carregando"
@@ -88,12 +87,12 @@ export default function Post() {
                       post.photo
                         ? `${process.env.NEXT_PUBLIC_IMG_URL}${post.photo}.jpg`
                         : "/icons/220.svg"
-                    }
-                    alt={`Post de ${post.user_id}`}
-                    width={500}
-                    height={500}
-                    unoptimized
-                  />
+                      }
+                      alt={`Post de ${post.user_id}`}
+                      width={500}
+                      height={500}
+                      unoptimized
+                      />
                   <div className={styles.icons}>
                     <Image
                       className={styles.icon} 
