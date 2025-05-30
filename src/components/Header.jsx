@@ -2,11 +2,11 @@ import React from "react";
 import Image from "next/image";
 import styles from "../styles/Header.module.css";
 
-const Header = () => (
+const Header = ({ImageProps}) => (
     <div className={styles.header}>
     <Image
         className={styles.back_icon}
-        src="/icons/back-icon.png"
+        src={ImageProps}
         alt="icon de voltar"
         width={50}
         height={50}
