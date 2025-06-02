@@ -12,7 +12,7 @@
     justify-content: flex-start;
     align-items: center;
     gap: 11px;
-    width: 80rem;
+    width: auto;
     height: 5rem;
     border-bottom-left-radius: 1rem;
     border-bottom-right-radius: 1rem;
