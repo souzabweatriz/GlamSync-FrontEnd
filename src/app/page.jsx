@@ -11,17 +11,17 @@ export default function Home() {
     useEffect(() => {
         router.push("/signIn")
     }, [router]);
-	
-return (
-  <main className={styles.redirector}>
-  <div className={styles.text}>
-      <p className={styles.description}>Você está sendo redirecionado...</p>
-  </div>
-  <Image
-  className={styles.gif}
-  src={florgif}
-  alt="gif de flor rosa girando"
-  />
-  </main>
-);
+
+    return (
+        <main className={styles.redirector}>
+            <div className={styles.text}>
+                <p className={styles.description}>Você está sendo redirecionado...</p>
+            </div>
+            <Image
+                className={styles.gif}
+                src={florgif}
+                alt="gif de flor rosa girando"
+            />
+        </main>
+    );
 }
