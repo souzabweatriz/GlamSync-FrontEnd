@@ -4,11 +4,10 @@ import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import Image from "next/image";
 import styles from "../styles/Post.module.css";
-import { Pagination } from "antd";
 
 const HEADERS = { "x-api-key": process.env.NEXT_PUBLIC_API_KEY };
 
-export default function Post({rota, title}) {
+export default function Post({ rota, title }) {
   const [data, setData] = useState({
     posts: [],
     loading: true,
@@ -16,19 +15,8 @@ export default function Post({rota, title}) {
     pageSize: 5,
   });
 
-
+  const [commentsByPostId, setCommentsByPostId] = useState({});
   const [openCommentsPostId, setOpenCommentsPostId] = useState(null);
-
-
-  const comments = [
-    { user: { name: "arianagrande", avatar: "/avatars/user.png" }, text: "OMGGG beautiful dress!!" },
-    { user: { name: "selenagomes", avatar: "/avatars/user.png" }, text: "Where I can buy it?!?!" },
-    { user: { name: "dovecamaron", avatar: "/avatars/user.png" }, text: "I loved <3" },
-    { user: { name: "sabrinacarpinter", avatar: "/avatars/user.png" }, text: "I wanna dress it on my show!!" },
-    { user: { name: "lilnasx", avatar: "/avatars/user.png" }, text: "I loved this shade of pink" },
-    { user: { name: "cardib", avatar: "/avatars/user.png" }, text: "So cutee" },
-  ];
-
   const [showLikes, setShowLikes] = useState({});
   const [showFollowing, setShowFollowing] = useState({});
 
@@ -58,10 +46,34 @@ export default function Post({rota, title}) {
     fetchPosts();
   }, []);
 
-  function paginatedPosts() {
-    const start = (data.current - 1) * data.pageSize;
-    return data.posts.slice(start, start + data.pageSize);
-  }
+  useEffect(() => {
+    if (!data.loading) {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  }, [data.current, data.pageSize]);
+
+  useEffect(() => {
+    const fetchComments = async () => {
+      if (!openCommentsPostId) return;
+
+      try {
+        const { data: comments } = await axios.get(
+          `${process.env.NEXT_PUBLIC_API_URL}comments/${openCommentsPostId}`,
+          { headers: HEADERS }
+        );
+
+        setCommentsByPostId((prev) => ({
+          ...prev,
+          [openCommentsPostId]: comments,
+        }));
+      } catch {
+        toast.error("Erro ao carregar comentários");
+      }
+    };
+
+    fetchComments();
+  }, [openCommentsPostId]);
+
 
   function handleLike(postId) {
     setShowLikes((prev) => ({
@@ -97,7 +109,7 @@ export default function Post({rota, title}) {
           />
         ) : (
           <div className={styles.cardsContainer}>
-            {paginatedPosts().map((post) => (
+            {data.posts.map((post) => (
               <div className={styles.all} key={post.id}>
                 <div className={styles.header}>
                   <Image
@@ -140,57 +152,49 @@ export default function Post({rota, title}) {
                     }
                     alt={`Post de ${post.user_id}`}
                     width={500}
-                    height={500}
+                    height={600}
                     unoptimized
                     onDoubleClick={() => handleLike(post.id)}
                   />
                   {openCommentsPostId === post.id && (
                     <aside className={styles.aside}>
                       <h1 className={styles.title}>Comments</h1>
-                      <ul className={styles.commentList}>
-                        {comments.map((comment, id) => (
-                          <li key={id} className={styles.commentItem}>
-                            <Image
-                              src={comment.user.avatar}
-                              alt={comment.user.name}
-                              width={40}
-                              height={40}
-                              className={styles.avatar}
-                            />
-                            <div>
-                              <span className={styles.username}>@{comment.user.name}</span>
-                              <div>{comment.text}</div>
-                            </div>
-                          </li>
-                        ))}
-                      </ul>
+                      {commentsByPostId[post.id]?.length ? (
+                        commentsByPostId[post.id].map((comment, index) => (
+                          <p key={index} className={styles.comment}>
+                            <strong>@{comment.user}:</strong> {comment.text}
+                          </p>
+                        ))
+                      ) : (
+                        <p className={styles.comment}>Nenhum comentário ainda.</p>
+                      )}
                     </aside>
                   )}
-                  </div>
-                  <div className={styles.icons}>
-                    <Image
-                      className={styles.icon} 
-                      src={
-                        showLikes[post.id]
-                          ? "/icons/coloredHeart.png"
-                          : "/icons/heart.png"
-                      }
-                      alt="Coração de Like"
-                      width={30}
-                      height={30}
-                      onClick={() => handleLike(post.id)}
-                    />
-                    <span>{post.likes + (showLikes[post.id] ? 1 : 0)}</span>
-                    <Image
-                      className={styles.icon}
-                      src="/icons/comments.png"
-                      alt="ícone de comentário"
-                      width={31}
-                      height={31.2}
-                      style={{ cursor: "pointer" }}
-                      onClick={() => handleCommentIconClick(post.id)}
-                    />
-                    <span>{post.comments}</span>
+                </div>
+                <div className={styles.icons}>
+                  <Image
+                    className={styles.icon}
+                    src={
+                      showLikes[post.id]
+                        ? "/icons/coloredHeart.png"
+                        : "/icons/heart.png"
+                    }
+                    alt="Coração de Like"
+                    width={30}
+                    height={30}
+                    onClick={() => handleLike(post.id)}
+                  />
+                  <span>{post.likes + (showLikes[post.id] ? 1 : 0)}</span>
+                  <Image
+                    className={styles.icon}
+                    src="/icons/comments.png"
+                    alt="ícone de comentário"
+                    width={31}
+                    height={31.2}
+                    style={{ cursor: "pointer" }}
+                    onClick={() => handleCommentIconClick(post.id)}
+                  />
+                  <span>{post.comments}</span>
                 </div>
                 <p className={styles.contentText}>{post.content}</p>
                 <span className={styles.date}>
@@ -200,21 +204,6 @@ export default function Post({rota, title}) {
             ))}
           </div>
         )}
-        <Pagination
-        className={styles.pagination}
-        current={data.current}
-        pageSize={data.pageSize}
-        total={data.posts.length}
-        onChange={(page, size) =>
-          setData({
-            ...data,
-            current: page,
-            pageSize: size,
-          })
-        }
-        showSizeChanger
-        pageSizeOptions={["5", "10", "100"]}
-      />
       </div>
     </div>
   );
