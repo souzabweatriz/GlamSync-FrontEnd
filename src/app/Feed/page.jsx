@@ -115,7 +115,7 @@ export default function PrincipalFeed() {
                     </div>
                 </Carousel>
             </div>
-            <Post />
+            <Post title={"Feed"} rota={`${process.env.NEXT_PUBLIC_API_URL}posts`} />
         </div>
     )
 }

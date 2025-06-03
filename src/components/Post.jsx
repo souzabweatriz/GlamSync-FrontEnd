@@ -8,7 +8,7 @@ import { Pagination } from "antd";
 
 const HEADERS = { "x-api-key": process.env.NEXT_PUBLIC_API_KEY };
 
-export default function Post() {
+export default function Post({rota, title}) {
   const [data, setData] = useState({
     posts: [],
     loading: true,
@@ -36,7 +36,7 @@ export default function Post() {
     const fetchPosts = async () => {
       try {
         const { data: posts } = await axios.get(
-          `${process.env.NEXT_PUBLIC_API_URL}posts`,
+          `${rota}`,
           { headers: HEADERS }
         );
         setData({
@@ -86,7 +86,7 @@ export default function Post() {
   return (
     <div className={styles.main}>
       <ToastContainer />
-      <h1 className={styles.title}>Feed</h1>
+      <h1 className={styles.title}>{title}</h1>
       <div className={styles.container}>
         {data.loading ? (
           <Image
