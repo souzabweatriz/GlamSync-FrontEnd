@@ -1,5 +1,5 @@
 .profilePageContainer {
-    background: #fafafa;
+    background: radial-gradient(circle, #FDE7E5, #FFFFFF);
     min-height: 100vh;
 }
 

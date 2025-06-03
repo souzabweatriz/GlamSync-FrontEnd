@@ -1,0 +1,29 @@
+.postsHeader {
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin: 0 0 0 48px;
+    padding: 24px 0 12px 0;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.arrowDown {
+    font-size: 1.1em;
+    margin-left: 6px;
+    color: #222;
+}
+
+.postsGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+    margin: 0;
+}
+
+.postImage {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 0;
+    background: #eee;
+}
