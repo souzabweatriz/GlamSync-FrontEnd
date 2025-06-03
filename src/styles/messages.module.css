@@ -1,117 +1,127 @@
-
 .body {
-    padding: 0;
-    margin: 0;
-    height: 100vh;
-    width: 100vw;
-    background:  radial-gradient(circle,#f8e3e1, #ffffff);
-    font-family: Arial, sans-serif;
-    box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  height: 100vh;
+  width: 100vw;
+  background: radial-gradient(circle, #f8e3e1, #ffffff);
+  font-family: Arial, sans-serif;
+  box-sizing: border-box;
 }
 
 .header h2 {
-    font-size: 2rem;
-    padding: 1.25rem;
-    color: #333;
-    margin-bottom: 2rem;
+  font-size: 2rem;
+  padding: 1.25rem;
+  color: #333;
+  margin-bottom: 2rem;
 }
 
 .search {
-    display: flex;
-    align-items: center;
-    background: rgb(233, 229, 229);
-    padding: 0.625rem 1.25rem;
-    border-radius: 999px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-    width: 90%;
-    max-width: 400px;
-    margin: 0 auto 1rem auto;
-} 
+  display: flex;
+  align-items: center;
+  background: rgb(233, 229, 229);
+  padding: 0.625rem 1.25rem;
+  border-radius: 999px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 400px;
+  margin: 0 auto 1rem auto;
+}
 
 .search input {
-    border: none;
-    outline: none;
-    padding: 0.3125rem;
-    flex: 2;
-    background: rgb(233, 229, 229);
-    font-size: 1rem;
+  border: none;
+  outline: none;
+  padding: 0.3125rem;
+  flex: 2;
+  background: rgb(233, 229, 229);
+  font-size: 1rem;
 }
 
 .search button {
-    background: none;
-    border: none;
-    color: #b84c2d;
-    font-size: 1rem;
-    margin-left: auto;
-    cursor: pointer;
+  background: none;
+  border: none;
+  color: #b84c2d;
+  font-size: 1rem;
+  margin-left: auto;
+  cursor: pointer;
 }
 
 .search button:hover {
-    color: #a43c24;
+  color: #a43c24;
 }
 
 .grid {
-    margin-top: 2rem;
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 2rem;
-    width: 100%;
-    box-sizing: border-box;
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 2rem;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .recentContacts {
-    max-height: 70vh;
-    overflow-y: auto;
-    overflow-x: hidden;
-    padding-right: 8px;
+  max-height: 70vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-right: 8px;
 }
 
-/*responsividade*/
+/* Responsividade */
 
+/* Tablets / telas médias */
 @media (max-width: 1024px) {
-    .header h2 {
-        font-size: 1.4rem;
-    }
-    .grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-    }
+  .header h2 {
+    font-size: 1.6rem;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
 }
 
+/* Pequenos tablets / grandes celulares */
 @media (max-width: 768px) {
-    .header h2 {
-        font-size: 1.2rem;
-    }
-    .grid {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-    }
-    .search {
-        max-width: 100%;
-        padding: 0.5rem 1rem;
-    }
-    .recentContacts {
-        max-height: 40vh;
-    }
+  .header h2 {
+    font-size: 1.4rem;
+    padding: 1rem 1.25rem;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .search {
+    max-width: 100%;
+    padding: 0.5rem 1rem;
+  }
+
+  .recentContacts {
+    max-height: 50vh;
+  }
 }
 
+/* Celulares */
 @media (max-width: 480px) {
-    .header h2 {
-        font-size: 1rem;
-        padding: 0.75rem;
-    }
-    .grid {
-        grid-template-columns: 1fr;
-        gap: 0.5rem;
-        margin-top: 1rem;
-    }
-    .search {
-        padding: 0.5rem 0.75rem;
-        width: 100%;
-        margin: 0 auto 0.5rem auto;
-    }
-    .search input,
-    .search button {
-        font-size: 0.875rem;
-    };
+  .header h2 {
+    font-size: 1.2rem;
+    padding: 0.75rem 1rem;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  .search {
+    padding: 0.5rem 0.75rem;
+    width: 100%;
+    margin: 0 auto 0.5rem auto;
+  }
+
+  .search input,
+  .search button {
+    font-size: 0.875rem;
+  }
 }

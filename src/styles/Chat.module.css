@@ -3,7 +3,7 @@
   margin: 40px auto;
   background: #fff;
   border-radius: 16px;
-  box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
   padding: 32px 24px;
 }
 
@@ -49,3 +49,49 @@
   text-overflow: ellipsis;
 }
 
+/* Responsividade: Tablets */
+@media (max-width: 768px) {
+  .container {
+    margin: 24px 16px;
+    padding: 24px 16px;
+  }
+
+  .chatItem {
+    flex-direction: row;
+    padding: 12px 14px;
+  }
+
+  .chatInfo h2 {
+    font-size: 1rem;
+  }
+
+  .chatInfo p {
+    font-size: 0.9rem;
+  }
+}
+
+/* Responsividade: Celulares */
+@media (max-width: 480px) {
+  .container {
+    margin: 16px 12px;
+    padding: 20px 12px;
+  }
+
+  .chatItem {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .chatInfo {
+    margin-left: 0;
+  }
+
+  .chatInfo h2 {
+    font-size: 0.95rem;
+  }
+
+  .chatInfo p {
+    font-size: 0.85rem;
+  }
+}
