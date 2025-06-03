@@ -6,7 +6,7 @@ const ProfileHeader = () => {
         <div className="profile-header">
             <div className="profile-info">
                 <Image 
-                    src="/path/to/avatar.png" 
+                    src="/user.png" 
                     alt="Profile Avatar" 
                     width={80} 
                     height={80} 
@@ -20,7 +20,7 @@ const ProfileHeader = () => {
                         <span>20 Followers</span>
                     </div>
                 </div>
-            </div>
+            </div>  
             <button className="follow-button">Follow +</button>
         </div>
     );
