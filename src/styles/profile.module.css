@@ -1,0 +1,13 @@
+.profilePageContainer {
+    background: radial-gradient(circle, #FDE7E5, #FFFFFF);
+    min-height: 100vh;
+}
+
+.profileContent {
+    max-width: 900px;
+    margin: 40px auto 0 auto;
+    padding: 0 24px 40px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px
+}

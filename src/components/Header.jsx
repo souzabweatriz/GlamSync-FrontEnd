@@ -5,13 +5,15 @@ import Link from 'next/link';
 
 const Header = ({ ImageProps }) => (
     <div className={styles.header}>
-        <Image
-            className={styles.back_icon}
-            src={ImageProps}
-            alt="icon de voltar"
-            width={50}
-            height={50}
-        />
+        {ImageProps ? (
+            <Image
+                className={styles.back_icon}
+                src={ImageProps}
+                alt="icon de voltar"
+                width={50}
+                height={50}
+            />
+        ) : null}
         <div className={styles.logo}>GlamSync</div>
         <div className={styles.iconsContainer}>
             <Link href="/Feed">
