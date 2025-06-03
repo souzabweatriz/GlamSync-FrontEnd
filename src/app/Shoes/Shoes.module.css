@@ -1,5 +1,9 @@
 .container{
-    background: linear-gradient(to bottom, #f79489, #f8afa6, #f9f1f0, white);
-    width: auto;
-    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    margin: 0;
+    width: 100%;
+    align-items: center;
+    background: linear-gradient(to bottom, #fbb0a8, #f9f1f0, white, white, white);
 }

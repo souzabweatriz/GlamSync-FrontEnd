@@ -55,15 +55,9 @@
   animation: pop 0.3s ease;
 }
 
-@keyframes pop {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.6); }
-  100% { transform: scale(1); }
-}
-
 .header {
   display: flex;
-
+  align-items: center;
   gap: 1rem;
   margin-bottom: 1rem;
 }
@@ -91,6 +85,7 @@
   outline: none;
   transition: background 0.2s, color 0.2s;
   box-shadow: 0 2px 8px rgba(100, 0, 0, 0.04);
+  margin-left: 12rem;
 }
 
 .followBtn:hover {
