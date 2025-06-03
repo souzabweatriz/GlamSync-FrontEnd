@@ -6,7 +6,7 @@ import PostsGrid from "../../components/PostsGrid";
 
 const ProfilePage = () => {
     return (
-        <div>
+        <div className="profile-page-container">
             <Header />
             <main className="profile-page">
                 <ProfileHeader />
@@ -15,6 +15,6 @@ const ProfilePage = () => {
             </main>
         </div>
     );
-}
+};
 
 export default ProfilePage;
