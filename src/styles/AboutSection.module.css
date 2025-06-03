@@ -1,0 +1,21 @@
+.aboutSection {
+    margin: 0 0 0 48px;
+    padding-bottom: 24px;
+}
+
+.aboutTitle {
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: 6px;
+}
+
+.aboutBio {
+    color: #222;
+    font-size: 1rem;
+    margin-bottom: 0;
+    max-width: 600px;
+}
+
+.aboutBio span {
+    display: block;
+}

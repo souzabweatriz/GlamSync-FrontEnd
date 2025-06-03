@@ -1,0 +1,41 @@
+.postsHeader {
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin: 0 0 0 48px;
+    padding: 24px 0 12px 0;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.arrowDown {
+    font-size: 1.1em;
+    margin-left: 6px;
+    color: #222;
+}
+
+.postsGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+    margin: 0;
+}
+
+.postImage {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 0;
+    background: #eee;
+}
+
+.postsHeaderWrapper {
+    width: fit-content;
+    margin: 0 0 0 48px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.4);
+    padding: 4px 18px;
+    display: flex;
+    align-items: center;
+}

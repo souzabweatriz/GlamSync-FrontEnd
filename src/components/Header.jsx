@@ -3,14 +3,14 @@ import Image from "next/image";
 import styles from "../styles/Header.module.css";
 import Link from 'next/link';
 
-const Header = ({ ImageProps }) => (
+const Header = () => (
     <div className={styles.header}>
         <Image
-            className={styles.back_icon}
-            src={ImageProps}
+            src="/flower.png"
             alt="icon de voltar"
             width={50}
             height={50}
+            className={styles.flowerIcon}
         />
         <div className={styles.logo}>GlamSync</div>
         <div className={styles.iconsContainer}>
