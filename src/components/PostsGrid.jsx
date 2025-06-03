@@ -1,4 +1,4 @@
-import react from "react";
+import React from "react";
 import styles from "../styles/PostsGrid.module.css";
 
 const posts = [
@@ -12,9 +12,11 @@ const posts = [
 
 const PostsGrid = () => (
     <div>
-        <div className={styles.postsHeader}>
-            <span>Posts</span>
-            <span className={styles.arrowDown}>▼</span>
+        <div className={styles.postsHeaderWrapper}>
+            <div className={styles.postsHeader}>
+                <span>Posts</span>
+                <span className={styles.arrowDown}>▼</span>
+            </div>
         </div>
         <div className={styles.postsGrid}>
             {posts.map((url, idx) => (

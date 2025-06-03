@@ -22,12 +22,13 @@
     display: flex;
     align-items: center;
     background: #fff;
+    border-bottom: 1.4px solid #e3e0e0;
 }
 
 .logo {
     font-weight: bold;
     font-size: 1.8rem;
-    latter-spacing: 1px;
+    letter-spacing: 1px;
     margin-left: 10px;
     color: #923e2b;
 }
@@ -53,7 +54,11 @@
     margin-right: 48px;
 }
 
-.menu, .iconCasa, .iconAdicionar, .iconSino, .iconChat{
+.menu,
+.iconCasa,
+.iconAdicionar,
+.iconSino,
+.iconChat {
     width: 35px;
     height: 35px;
     background-size: cover;
@@ -66,15 +71,19 @@
 .iconCasa {
     background-image: url('/icons/iconCasa.png');
 }
+
 .iconAdicionar {
     background-image: url('/icons/iconAdicionar.png');
 }
+
 .menu {
     background-image: url('/icons/users.png');
 }
+
 .iconSino {
     background-image: url('/icons/iconSino.png');
 }
+
 .iconChat {
     background-image: url('/icons/iconChat.png');
 }
