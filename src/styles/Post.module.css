@@ -15,13 +15,6 @@
   align-items: center;
 }
 
-.cardsContainer {
-  display: flex;
-  flex-direction: column;
-  gap: 2.5rem;
-  width: 100%;
-  max-width: 700px;
-}
 
 .all {
   display: flex;
@@ -30,19 +23,18 @@
   border-radius: 12px;
 }
 
-.postContent {
-  display: flex;
-  gap: 0.75rem;
-}
-
 .image {
-  border-radius: 12px;
+  height: auto;
+  max-width: 100%;
+  border-radius: 1rem;
   cursor: pointer;
+  flex-shrink: 0;
 }
 
 .icons {
   display: flex;
   gap: 0.5rem;
+  align-items: center;
   margin-top: 0.5rem;
 }
 
@@ -60,8 +52,16 @@
   align-items: center;
   gap: 1rem;
   margin-bottom: 1rem;
+  justify-content: space-between;
 }
 
+.cardsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  width: 100%;
+  max-width: 700px;
+}
 .avatar {
   border-radius: 50%;
 }
@@ -85,12 +85,30 @@
   outline: none;
   transition: background 0.2s, color 0.2s;
   box-shadow: 0 2px 8px rgba(100, 0, 0, 0.04);
-  margin-left: 12rem;
+  margin-left: 17.5rem;
+}
+
+.buttonTop{
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 6rem;
+  height: 3rem;
+  border-radius: 1.5rem;
+  font-weight: 500;
+  background-color: #ffffff;
+  color: #f79489;
+  cursor: pointer;
+  border: none;
 }
 
 .followBtn:hover {
   background: #ff6363;
   color: #fff;
+}
+
+.button{
+  display: flex;
 }
 
 .plus {
@@ -117,13 +135,10 @@
 .aside {
   display: flex;
   flex-direction: column;
-  padding-top: 1rem;
-  margin-top: 1rem;
 }
 
 .commentsTitle {
   font-size: 1.2rem;
-  margin-bottom: 1rem;
   color: #ff6363;
 }
 
@@ -137,7 +152,6 @@
   display: flex;
   align-items: flex-start;
   gap: 0.75rem;
-  margin-bottom: 1.2rem;
 }
 
 .username {
@@ -146,17 +160,12 @@
   color: #c45454;
 }
 
-.pagination {
-  margin-top: 2rem;
-  text-align: center;
-}
 
 .postContent {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
   gap: 2rem;
-  position: relative;
 }
 
 .image {

@@ -15,10 +15,12 @@ export default function Post({ rota, title }) {
     pageSize: 5,
   });
 
+  const [showButton, setShowButton] = useState(false);
   const [commentsByPostId, setCommentsByPostId] = useState({});
   const [openCommentsPostId, setOpenCommentsPostId] = useState(null);
   const [showLikes, setShowLikes] = useState({});
   const [showFollowing, setShowFollowing] = useState({});
+  
 
   useEffect(() => {
     const fetchPosts = async () => {
@@ -46,11 +48,22 @@ export default function Post({ rota, title }) {
     fetchPosts();
   }, []);
 
-  useEffect(() => {
-    if (!data.loading) {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+ useEffect(() => {
+  const handleScroll = () => {
+    if (window.scrollY > 5000) {
+      setShowButton(true);
+    } else {
+      setShowButton(false);
     }
-  }, [data.current, data.pageSize]);
+  };
+
+  window.addEventListener('scroll', handleScroll);
+  return () => window.removeEventListener('scroll', handleScroll);
+}, []);
+
+const scrollToTop = () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+};
 
   useEffect(() => {
     const fetchComments = async () => {
@@ -151,8 +164,8 @@ export default function Post({ rota, title }) {
                         : "/icons/220.svg"
                     }
                     alt={`Post de ${post.user_id}`}
-                    width={500}
-                    height={600}
+                    width={600}
+                    height={100}
                     unoptimized
                     onDoubleClick={() => handleLike(post.id)}
                   />
@@ -205,6 +218,13 @@ export default function Post({ rota, title }) {
           </div>
         )}
       </div>
+      {showButton && (
+      <button 
+        className={styles.buttonTop}
+        onClick={scrollToTop}>
+        Scroll Up
+      </button>
+    )}
     </div>
   );
 }
