@@ -99,46 +99,6 @@ export default function Post({rota, title}) {
           <div className={styles.cardsContainer}>
             {paginatedPosts().map((post) => (
               <div className={styles.all} key={post.id}>
-                <div className={styles.postContent}>
-                  <Image
-                    className={styles.image}
-                    src={
-                      post.photo
-                        ? `${process.env.NEXT_PUBLIC_IMG_URL}${post.photo}.jpg`
-                        : "/icons/220.svg"
-                    }
-                    alt={`Post de ${post.user_id}`}
-                    width={500}
-                    height={500}
-                    unoptimized
-                    onDoubleClick={() => handleLike(post.id)}
-                  />
-                  <div className={styles.icons}>
-                    <Image
-                      className={styles.icon} 
-                      src={
-                        showLikes[post.id]
-                          ? "/icons/coloredHeart.png"
-                          : "/icons/heart.png"
-                      }
-                      alt="Coração de Like"
-                      width={30}
-                      height={30}
-                      onClick={() => handleLike(post.id)}
-                    />
-                    <span>{post.likes + (showLikes[post.id] ? 1 : 0)}</span>
-                    <Image
-                      className={styles.icon}
-                      src="/icons/comments.png"
-                      alt="ícone de comentário"
-                      width={31}
-                      height={31.2}
-                      style={{ cursor: "pointer" }}
-                      onClick={() => handleCommentIconClick(post.id)}
-                    />
-                    <span>{post.comments}</span>
-                  </div>
-                </div>
                 <div className={styles.header}>
                   <Image
                     src={
@@ -168,38 +128,79 @@ export default function Post({rota, title}) {
                     )}
                   </button>
                 </div>
+
+
+                <div className={styles.postContent}>
+                  <Image
+                    className={styles.image}
+                    src={
+                      post.photo
+                        ? `${process.env.NEXT_PUBLIC_IMG_URL}${post.photo}.jpg`
+                        : "/icons/220.svg"
+                    }
+                    alt={`Post de ${post.user_id}`}
+                    width={500}
+                    height={500}
+                    unoptimized
+                    onDoubleClick={() => handleLike(post.id)}
+                  />
+                  {openCommentsPostId === post.id && (
+                    <aside className={styles.aside}>
+                      <h1 className={styles.title}>Comments</h1>
+                      <ul className={styles.commentList}>
+                        {comments.map((comment, id) => (
+                          <li key={id} className={styles.commentItem}>
+                            <Image
+                              src={comment.user.avatar}
+                              alt={comment.user.name}
+                              width={40}
+                              height={40}
+                              className={styles.avatar}
+                            />
+                            <div>
+                              <span className={styles.username}>@{comment.user.name}</span>
+                              <div>{comment.text}</div>
+                            </div>
+                          </li>
+                        ))}
+                      </ul>
+                    </aside>
+                  )}
+                  </div>
+                  <div className={styles.icons}>
+                    <Image
+                      className={styles.icon} 
+                      src={
+                        showLikes[post.id]
+                          ? "/icons/coloredHeart.png"
+                          : "/icons/heart.png"
+                      }
+                      alt="Coração de Like"
+                      width={30}
+                      height={30}
+                      onClick={() => handleLike(post.id)}
+                    />
+                    <span>{post.likes + (showLikes[post.id] ? 1 : 0)}</span>
+                    <Image
+                      className={styles.icon}
+                      src="/icons/comments.png"
+                      alt="ícone de comentário"
+                      width={31}
+                      height={31.2}
+                      style={{ cursor: "pointer" }}
+                      onClick={() => handleCommentIconClick(post.id)}
+                    />
+                    <span>{post.comments}</span>
+                </div>
                 <p className={styles.contentText}>{post.content}</p>
                 <span className={styles.date}>
                   {new Date(post.created_at).toLocaleString("pt-BR")}
                 </span>
-                {openCommentsPostId === post.id && (
-                  <aside className={styles.aside}>
-                    <h1 className={styles.title}>Comments</h1>
-                    <ul className={styles.commentList}>
-                      {comments.map((comment, id) => (
-                        <li key={id} className={styles.commentItem}>
-                          <Image
-                            src={comment.user.avatar}
-                            alt={comment.user.name}
-                            width={40}
-                            height={40}
-                            className={styles.avatar}
-                          />
-                          <div>
-                            <span className={styles.username}>@{comment.user.name}</span>
-                            <div>{comment.text}</div>
-                          </div>
-                        </li>
-                      ))}
-                    </ul>
-                  </aside>
-                )}
               </div>
             ))}
           </div>
         )}
-      </div>
-      <Pagination
+        <Pagination
         className={styles.pagination}
         current={data.current}
         pageSize={data.pageSize}
@@ -214,6 +215,7 @@ export default function Post({rota, title}) {
         showSizeChanger
         pageSizeOptions={["5", "10", "100"]}
       />
+      </div>
     </div>
   );
 }
