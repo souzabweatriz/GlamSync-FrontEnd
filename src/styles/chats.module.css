@@ -1,0 +1,37 @@
+.chat-gb {
+    min-height: 100vh;
+    width: 100vw;
+    background: radial-gradient(circle, #FDE7E5, #FFFFFF);
+    font-family: 'Montserrat', sans-serif;
+    padding: 0;
+}
+
+.chat-body {
+    padding: 30px 0 90px 0;
+    max-width: 700px;
+    margin: 0 auto;
+    min-height: 70vh;
+}
+
+.chat-message {
+    display: flex;
+    margin-bottom: 18px;
+    align-items: flex-end;
+}
+
+.chat-message.own {
+    justify-content: flex-end;
+}
+
+.chat-bubble {
+    background: #fff;
+    border-radius: 18px;
+    padding: 14px 18px;
+    max-width: 340px;
+    box-shadow: 0 2px 8px #0001;
+    position: relative;
+    font-size: 16px;
+    color: #222;
+    margin-left: 18px;
+    margin-right: 18px;
+}
