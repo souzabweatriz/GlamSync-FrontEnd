@@ -21,11 +21,11 @@ export default function Post({ rota, title }) {
       try {
         const { data } = await axios.get(rota, { headers: HEADERS });
         setPosts(data);
-        fetchAllComments(data)
-        setLoading(false);
+        await fetchAllComments(data);
       } catch {
         toast.error("Erro ao carregar posts");
         setPosts([]);
+      } finally {
         setLoading(false);
       }
     };
@@ -33,74 +33,31 @@ export default function Post({ rota, title }) {
     fetchPosts();
   }, [rota]);
 
-const fetchAllComments = async (postsData) => {
-  try {
-    const { data } = await axios.get(
-      `${process.env.NEXT_PUBLIC_API_URL}comments`,
-      { headers: HEADERS }
-    );
+  const fetchAllComments = async (postsData) => {
+    try {
+      const { data } = await axios.get(
+        `${process.env.NEXT_PUBLIC_API_URL}comments`,
+        { headers: HEADERS }
+      );
 
-    const allComments = Array.isArray(data)
-      ? data
-      : Array.isArray(data.comments)
+      const allComments = Array.isArray(data)
+        ? data
+        : Array.isArray(data.comments)
         ? data.comments
         : [];
 
-    const grouped = postsData.reduce((acc, post) => {
-      acc[post.id] = allComments
-        .filter((comment) => comment.post_id === post.id)
-        .sort((a, b) => new Date(b.date_comment) - new Date(a.date_comment));
-      return acc;
-    }, {});
+      const grouped = postsData.reduce((acc, post) => {
+        acc[post.id] = allComments
+          .filter((comment) => comment.post_id === post.id)
+          .sort((a, b) => new Date(b.date_comment) - new Date(a.date_comment));
+        return acc;
+      }, {});
 
-    setCommentsByPostId(grouped);
-  } catch (error) {
-    console.error("Erro ao carregar todos os comentários:", error);
-  }
-};
-
-  useEffect(() => {
-    const fetchComments = async () => {
-      try {
-        const { data } = await axios.get(
-          `${process.env.NEXT_PUBLIC_API_URL}comments`,
-          {
-            headers: HEADERS,
-          }
-        );
-
-        const allComments = Array.isArray(data)
-          ? data
-          : Array.isArray(data.comments)
-            ? data.comments
-            : [];
-
-        const filtered = allComments.filter(
-          (comment) => comment.post_id === openCommentsPostId
-        );
-
-        const sortedComments = filtered.sort(
-          (a, b) => new Date(b.date_comment) - new Date(a.date_comment)
-        );
-
-        setCommentsByPostId((prev) => ({
-          ...prev,
-          [openCommentsPostId]: sortedComments,
-        }));
-      } catch (error) {
-        if (axios.isAxiosError(error)) {
-          console.error(
-            "Erro ao carregar comentários:",
-            error.response?.status || error.message
-          );
-        } else {
-          console.error("Erro desconhecido:", error);
-        }
-        toast.error("Erro ao carregar comentários");
-      }
-    };
-    fetchComments();
-  }, [openCommentsPostId]);
+      setCommentsByPostId(grouped);
+    } catch (error) {
+      toast.error("Erro ao carregar comentários");
+    }
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -139,7 +96,7 @@ const fetchAllComments = async (postsData) => {
       <div className={styles.container}>
         {loading ? (
           <Image
-            src="/media/Flor.png"
+            src="/media/flowerGif.gif"
             width={100}
             height={100}
             alt="Gif Carregando"
@@ -167,13 +124,9 @@ const fetchAllComments = async (postsData) => {
                     onClick={() => handleFollow(post.user_id)}
                   >
                     {showFollowing[post.user_id] ? (
-                      <>
-                        Following <span className={styles.following}></span>
-                      </>
+                      <>Following <span className={styles.following}></span></>
                     ) : (
-                      <>
-                        Follow <span className={styles.plus}>+</span>
-                      </>
+                      <>Follow <span className={styles.plus}>+</span></>
                     )}
                   </button>
                 </div>
@@ -222,14 +175,12 @@ const fetchAllComments = async (postsData) => {
                           ))
                         ) : (
                           <li className={styles.commentItem}>
-                            Nenhum comentário disponível.
+                            Ainda não há comentários
                           </li>
                         )}
                       </ul>
                     </aside>
                   )}
-
-
                 </div>
 
                 <div className={styles.icons}>

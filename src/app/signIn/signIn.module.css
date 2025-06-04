@@ -1,16 +1,19 @@
-.container{
+.container {
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
     display: flex;
     background-size: cover;
-    background-position:center ;
+    background-position: center;
     background-repeat: no-repeat;
     min-height: 100vh;
-    min-width: 100vh;
+    width: 100%;
+    padding: 8rem 1rem;
     background-attachment: fixed;
     background-image: url("../../../public/Fundo.png");
+    box-sizing: border-box;
 }
+
 
 .title{
     color: #f79489;
@@ -259,29 +262,8 @@
  display: flex;
 }
 
-@media (max-width: 1029px) {
-    .container {
-        flex-direction: column;
-        min-width: 100vw;
-        min-height: 100vh;
-        padding: 2rem 0;
-    }
-    .card {
-        width: 90vw;
-        height: auto;
-        min-height: 60vh;
-        padding: 2rem 1rem;
-    }
-    .image {
-        width: 20rem;
-        height: 18rem;
-    }
-    .otherWay .lineArea {
-        width: 80vw;
-    }
-}
 
-/* Tablet (até 768px) */
+
 @media (max-width: 768px) {
     .container {
         flex-direction: column;
@@ -307,31 +289,46 @@
     }
 }
 
-/* Celular (até 480px) */
 @media (max-width: 480px) {
+    .header {
+        height: 1.5rem;
+        background-size: contain;
+        background-repeat: no-repeat;
+        margin: 1rem;
+        position: absolute;
+        top: 2rem;
+        left: 0.5rem;
+        z-index: 20;
+        cursor: pointer;
+    }
+    .texts{
+        font-size: 1.2rem;
+    }
     .container {
         padding: 0.5rem 0;
-        min-width: 100vw;
-        min-height: 100vh;
+        width: 90%;
+        height: 90%;
     }
     .card {
-        width: 98vw;
-        min-height: 40vh;
-        padding: 0.5rem 0.2rem;
+        width: 80vw;
+        height: 24rem;
         border-radius: 1rem;
     }
     .image {
-        width: 9rem;
-        height: 7rem;
+        background-image: url(/media/initialFlower.png);
+        height: 17rem;
+        width: 19rem;
+        margin-top: 2rem;
+        
     }
     .title {
         font-size: 1.2rem;
     }
     .description {
-        font-size: 0.9rem;
+        font-size: 1rem;
     }
     .input {
-        width: 90vw;
+        width: 60vw;
         min-width: 120px;
         height: 2.2rem;
         font-size: 14px;
@@ -343,6 +340,6 @@
         padding-left: 0.5rem;
     }
     .otherWay .lineArea {
-        width: 96vw;
+        width: 70vw;
     }
 }
