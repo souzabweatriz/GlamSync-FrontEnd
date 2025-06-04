@@ -1,0 +1,89 @@
+.main {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100%;
+    align-items: center;
+    background: radial-gradient(circle, #f8afa6 0%, #f79489 0%, #fff 100%);
+}
+
+.postCard {
+    background: #fff;
+    border-radius: 1rem;
+    box-shadow: 0 6px 22px 0 rgba(0, 0, 0, 0.10);
+    width: 42rem;
+    height: 35rem;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.cardHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 21rem;
+    margin-top: 3rem;
+}
+
+.title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #222;
+}
+
+.postButton {
+    background: linear-gradient(90deg, #ff8e94 0%, #fe7e85 100%);
+    color: #fff;
+    font-weight: 600;
+    border: none;
+    border-radius: 18px;
+    padding: 8px 26px;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    box-shadow: 0 2px 8px 0 rgba(255, 142, 148, 0.08);
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.postButton:hover {
+    opacity: 0.90;
+}
+
+.addPhotoArea {
+    background: #f4f4f6;
+    border-radius: 1rem;
+    width: 37rem;
+    min-height: 20rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #bdbdbd;
+    font-size: 1.1rem;
+    gap: 10px;
+    margin-bottom: 6px;
+}
+
+.addPhotoIcon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.inputPost {
+    background: #f4f4f6;
+    border: none;
+    border-radius: 1rem;
+    width: 35rem;
+    height: 3rem;
+    font-size: 1rem;
+    color: #666;
+    outline: none;
+    padding: 1rem;
+}
