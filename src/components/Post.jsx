@@ -8,13 +8,9 @@ import styles from "../styles/Post.module.css";
 const HEADERS = { "x-api-key": process.env.NEXT_PUBLIC_API_KEY };
 
 export default function Post({ rota, title }) {
-  const [data, setData] = useState({
-    posts: [],
-    loading: true,
-    current: 1,
-    pageSize: 5,
-  });
-
+  const [posts, setPosts] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [showButton, setShowButton] = useState(false);
   const [commentsByPostId, setCommentsByPostId] = useState({});
   const [openCommentsPostId, setOpenCommentsPostId] = useState(null);
   const [showLikes, setShowLikes] = useState({});
@@ -23,84 +19,98 @@ export default function Post({ rota, title }) {
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const { data: posts } = await axios.get(
-          `${rota}`,
-          { headers: HEADERS }
-        );
-        setData({
-          posts,
-          loading: false,
-          current: 1,
-          pageSize: 5,
-        });
+        const { data } = await axios.get(rota, { headers: HEADERS });
+        setPosts(data);
+        setLoading(false);
       } catch {
         toast.error("Erro ao carregar posts");
-        setData({
-          posts: [],
-          loading: false,
-          current: 1,
-          pageSize: 5,
-        });
+        setPosts([]);
+        setLoading(false);
       }
     };
-    fetchPosts();
-  }, []);
 
-  useEffect(() => {
-    if (!data.loading) {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-  }, [data.current, data.pageSize]);
+    fetchPosts();
+  }, [rota]);
 
   useEffect(() => {
     const fetchComments = async () => {
-      if (!openCommentsPostId) return;
-
       try {
-        const { data: comments } = await axios.get(
-          `${process.env.NEXT_PUBLIC_API_URL}comments/${openCommentsPostId}`,
-          { headers: HEADERS }
+        const { data } = await axios.get(
+          `${process.env.NEXT_PUBLIC_API_URL}comments`,
+          {
+            headers: HEADERS,
+          }
+        );
+
+        const allComments = Array.isArray(data)
+          ? data
+          : Array.isArray(data.comments)
+            ? data.comments
+            : [];
+
+        const filtered = allComments.filter(
+          (comment) => comment.post_id === openCommentsPostId
+        );
+
+        const sortedComments = filtered.sort(
+          (a, b) => new Date(b.date_comment) - new Date(a.date_comment)
         );
 
         setCommentsByPostId((prev) => ({
           ...prev,
-          [openCommentsPostId]: comments,
+          [openCommentsPostId]: sortedComments,
         }));
-      } catch {
+      } catch (error) {
+        if (axios.isAxiosError(error)) {
+          console.error(
+            "Erro ao carregar comentários:",
+            error.response?.status || error.message
+          );
+        } else {
+          console.error("Erro desconhecido:", error);
+        }
         toast.error("Erro ao carregar comentários");
       }
     };
-
     fetchComments();
   }, [openCommentsPostId]);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowButton(window.scrollY > 5000);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
-  function handleLike(postId) {
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const handleLike = (postId) => {
     setShowLikes((prev) => ({
       ...prev,
       [postId]: !prev[postId],
     }));
-  }
+  };
 
-  function handleFollow(userId) {
+  const handleFollow = (userId) => {
     setShowFollowing((prev) => ({
       ...prev,
       [userId]: !prev[userId],
     }));
-  }
+  };
 
-  function handleCommentIconClick(postId) {
-    setOpenCommentsPostId(prev =>
-      prev === postId ? null : postId
-    );
-  }
+  const handleCommentIconClick = (postId) => {
+    setOpenCommentsPostId((prev) => (prev === postId ? null : postId));
+  };
 
   return (
     <div className={styles.main}>
       <ToastContainer />
       <h1 className={styles.title}>{title}</h1>
       <div className={styles.container}>
-        {data.loading ? (
+        {loading ? (
           <Image
             src="/media/Flor.png"
             width={100}
@@ -109,7 +119,7 @@ export default function Post({ rota, title }) {
           />
         ) : (
           <div className={styles.cardsContainer}>
-            {data.posts.map((post) => (
+            {posts.map((post) => (
               <div className={styles.all} key={post.id}>
                 <div className={styles.header}>
                   <Image
@@ -141,7 +151,6 @@ export default function Post({ rota, title }) {
                   </button>
                 </div>
 
-
                 <div className={styles.postContent}>
                   <Image
                     className={styles.image}
@@ -151,26 +160,51 @@ export default function Post({ rota, title }) {
                         : "/icons/220.svg"
                     }
                     alt={`Post de ${post.user_id}`}
-                    width={500}
-                    height={600}
+                    width={600}
+                    height={100}
                     unoptimized
                     onDoubleClick={() => handleLike(post.id)}
                   />
                   {openCommentsPostId === post.id && (
                     <aside className={styles.aside}>
                       <h1 className={styles.title}>Comments</h1>
-                      {commentsByPostId[post.id]?.length ? (
-                        commentsByPostId[post.id].map((comment, index) => (
-                          <p key={index} className={styles.comment}>
-                            <strong>@{comment.user}:</strong> {comment.text}
-                          </p>
-                        ))
-                      ) : (
-                        <p className={styles.comment}>Nenhum comentário ainda.</p>
-                      )}
+                      <ul className={styles.commentList}>
+                        {(commentsByPostId[post.id] || []).length > 0 ? (
+                          commentsByPostId[post.id].map((comment) => (
+                            <li key={comment.id} className={styles.commentItem}>
+                              <Image
+                                src={
+                                  comment.user_photo
+                                    ? `${process.env.NEXT_PUBLIC_IMG_URL}${comment.user_photo}.jpg`
+                                    : "/icons/220.svg"
+                                }
+                                alt={`Foto de ${comment.user_name}`}
+                                width={40}
+                                height={40}
+                                className={styles.avatar}
+                                unoptimized
+                              />
+                              <div className={styles.commentContent}>
+                                <span className={styles.commentUser}>@{comment.user_name}</span>
+                                <p className={styles.commentText}>{comment.text_comment}</p>
+                                <span className={styles.commentDate}>
+                                  {new Date(comment.date_comment).toLocaleString("pt-BR")}
+                                </span>
+                              </div>
+                            </li>
+                          ))
+                        ) : (
+                          <li className={styles.commentItem}>
+                            Nenhum comentário disponível.
+                          </li>
+                        )}
+                      </ul>
                     </aside>
                   )}
+
+
                 </div>
+
                 <div className={styles.icons}>
                   <Image
                     className={styles.icon}
@@ -196,6 +230,7 @@ export default function Post({ rota, title }) {
                   />
                   <span>{post.comments}</span>
                 </div>
+
                 <p className={styles.contentText}>{post.content}</p>
                 <span className={styles.date}>
                   {new Date(post.created_at).toLocaleString("pt-BR")}
@@ -205,6 +240,11 @@ export default function Post({ rota, title }) {
           </div>
         )}
       </div>
+      {showButton && (
+        <button className={styles.buttonTop} onClick={scrollToTop}>
+          Scroll Up
+        </button>
+      )}
     </div>
   );
 }

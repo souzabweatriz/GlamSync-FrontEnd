@@ -76,8 +76,8 @@ export default function PrincipalFeed() {
                     <div>
                         <h3 style={contentStyle}>
                             <Image
-                                src="/carousel.png"
-                                alt="Svg para imagens não carregadas"
+                                src="/posters/poster1.png"
+                                alt="Poster com conteúdos do Site"
                                 width={960}
                                 height={320}
                             />
@@ -86,8 +86,8 @@ export default function PrincipalFeed() {
                     <div>
                         <h3 style={contentStyle}>
                             <Image
-                                src="/carousel.png"
-                                alt="Svg para imagens não carregadas"
+                                src="/posters/poster2.png"
+                                alt="Poster com conteúdos do Site"
                                 width={960}
                                 height={320}
                             />
@@ -96,8 +96,8 @@ export default function PrincipalFeed() {
                     <div>
                         <h3 style={contentStyle}>
                             <Image
-                                src="/carousel.png"
-                                alt="Svg para imagens não carregadas"
+                                src="/posters/poster3.png"
+                                alt="Poster com conteúdos do Site"
                                 width={960}
                                 height={320}
                             />
@@ -106,8 +106,8 @@ export default function PrincipalFeed() {
                     <div>
                         <h3 style={contentStyle}>
                             <Image
-                                src="/carousel.png"
-                                alt="Svg para imagens não carregadas"
+                                src="/posters/poster4.jpg"
+                                alt="Poster com conteúdos do Site"
                                 width={960}
                                 height={320}
                             />
