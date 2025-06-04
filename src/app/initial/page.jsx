@@ -29,7 +29,7 @@ export default function Initial() {
                             className={styles.button}
                             onClick={() => router.push("/signUp")}
                         >
-                            SignUp
+                            Sign Up
                             <span className={styles.icon}><Image className={styles.icon} src="/icons/user.png" alt="Logo do Google" width={32} height={32} /></span>
                         </button>
                     </div>
