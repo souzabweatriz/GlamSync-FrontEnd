@@ -41,7 +41,7 @@ export default function PrincipalFeed() {
       className={styles.iconsContainer}
     />
   </Link>
-  <Link href="/chat">
+  <Link href="/messages">
     <Image
       src="/icons/iconChat.png"
       alt="ícone de Chat marrom"

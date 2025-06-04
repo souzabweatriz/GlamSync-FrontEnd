@@ -107,8 +107,8 @@ export default function Post({ rota, title }) {
 
   return (
     <div className={styles.main}>
-      <ToastContainer />
       <h1 className={styles.title}>{title}</h1>
+      <ToastContainer />
       <div className={styles.container}>
         {loading ? (
           <Image
