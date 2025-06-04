@@ -258,36 +258,88 @@
 }
 
 .back-icon{
- cursor: pointer;
- display: flex;
+    cursor: pointer;
+    display: flex;
 }
 
 
 
-@media (max-width: 768px) {
+@media (max-width: 820px) {
+    .header {
+        height: 2rem;
+        background-size: contain;
+        background-repeat: no-repeat;
+        margin: 1rem;
+        position: absolute;
+        top: 2rem;
+        left: 2rem;
+        z-index: 20;
+        cursor: pointer;
+    }
+
+
+    .texts {
+        font-size: 1.8rem;
+        margin-bottom: 3rem;
+    }
+
+
     .container {
         flex-direction: column;
-        min-width: 100vw;
-        min-height: 100vh;
-        padding: 1rem 0;
+        padding: 1.5rem 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
     }
+
+
     .card {
-        width: 96vw;
-        padding: 1rem 0.5rem;
-        min-height: 50vh;
+        width: 80vw;
+        height: auto;
+        border-radius: 1.5rem;
+        padding: 2rem 1.5rem;
     }
+
+
     .image {
-        width: 13rem;
-        height: 10rem;
+        background-image: url("/LogoGrande.png");
+        height: 27rem;
+        width: 29rem;
+        margin-top: 2rem;
     }
+
+
+    .title {
+        font-size: 2.5rem;
+    }
+
+
+    .description {
+        font-size: 1.5rem;
+    }
+
+
     .input {
-        width: 90vw;
-        min-width: 180px;
+        width: 60vw;
+        height: 3rem;
+        font-size: 15px;
+        padding-left: 2.5rem;
     }
+
+
+    .iconInput {
+        width: 24px;
+        height: 24px;
+        padding-left: 0.8rem;
+    }
+
+
     .otherWay .lineArea {
-        width: 90vw;
+        width: 75vw;
     }
 }
+
 
 @media (max-width: 480px) {
     .header {
@@ -306,8 +358,8 @@
     }
     .container {
         padding: 0.5rem 0;
-        width: 90%;
-        height: 90%;
+        width: 100%;
+        height: 100%;
     }
     .card {
         width: 80vw;
