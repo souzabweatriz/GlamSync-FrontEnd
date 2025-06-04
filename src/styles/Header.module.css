@@ -14,8 +14,8 @@
     gap: 11px;
     width: auto;
     height: 5rem;
-    border-bottom-left-radius: 1rem;
-    border-bottom-right-radius: 1rem;
+    border-bottom-left-radius: 2rem;
+    border-bottom-right-radius: 2rem;
 }
 
 .header {

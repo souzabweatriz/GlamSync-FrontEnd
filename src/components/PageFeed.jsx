@@ -20,23 +20,6 @@ export default function Feed() {
         return () => clearTimeout(delayDebounce);
     }, [search]);
 
-    const fetchUsers = async (query) => {
-        try {
-            const { data } = await axios.get(
-                `${process.env.NEXT_PUBLIC_API_URL}users?search=${query}`,
-                {
-                    headers: {
-                        "x-api-key": process.env.NEXT_PUBLIC_API_KEY,
-                    },
-                }
-            );
-            setResults(data);
-        } catch (error) {
-            console.error("Erro ao buscar usuários:", error);
-            setResults([]);
-        }
-    };
-
     return (
         <div className={styles.main}>
             <div className={styles.inputContainer}>
@@ -51,32 +34,10 @@ export default function Feed() {
                     className={styles.iconInput}
                     src="/icons/lupa.png"
                     alt="Ícone de Lupa"
-                    width={16}
-                    height={16}
+                    width={15}
+                    height={15}
                 />
             </div>
-
-            {/* RESULTADOS DA BUSCA */}
-            {results.length > 0 && (
-                <ul className={styles.resultsList}>
-                    {results.map((user) => (
-                        <li key={user.id} className={styles.resultItem}>
-                            <Image
-                                src={
-                                    user.user_photo
-                                        ? `${process.env.NEXT_PUBLIC_IMG_URL}${user.user_photo}.jpg`
-                                        : "/icons/220.svg"
-                                }
-                                alt={`Foto de ${user.user_name}`}
-                                width={32}
-                                height={32}
-                                className={styles.avatar}
-                            />
-                            <span>@{user.user_name}</span>
-                        </li>
-                    ))}
-                </ul>
-            )}
 
             <div className={styles.sections}>
                 <ul className={styles.links}>

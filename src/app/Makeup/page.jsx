@@ -1,10 +1,10 @@
 import React from "react";
-import styles from "./Shoes.module.css";
+import styles from "../Makeup/makeup.module.css";
 import Header from "../../components/Header";
 import Post from "../../components/Post";
 import PageFeed from "../../components/PageFeed"
 
-export default function Shoes() {
+export default function Makeup() {
     return (
         <div className={styles.main}>
             <div className={styles.header}>
@@ -18,11 +18,11 @@ export default function Shoes() {
                 />
             </div>
             <div className={styles.container}>
-                        <PageFeed />
+                <PageFeed />
                 <Post
                     className={styles.post}
-                    title={"Shoes"}
-                    rota={`${process.env.NEXT_PUBLIC_API_URL}posts?categorie_id=3`}
+                    title={"MakeUp"}
+                    rota={`${process.env.NEXT_PUBLIC_API_URL}posts?categorie_id=4`}
                 />
             </div>
         </div>
