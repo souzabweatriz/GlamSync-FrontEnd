@@ -21,6 +21,7 @@ export default function Post({ rota, title }) {
       try {
         const { data } = await axios.get(rota, { headers: HEADERS });
         setPosts(data);
+        fetchAllComments(data)
         setLoading(false);
       } catch {
         toast.error("Erro ao carregar posts");
@@ -31,6 +32,32 @@ export default function Post({ rota, title }) {
 
     fetchPosts();
   }, [rota]);
+
+const fetchAllComments = async (postsData) => {
+  try {
+    const { data } = await axios.get(
+      `${process.env.NEXT_PUBLIC_API_URL}comments`,
+      { headers: HEADERS }
+    );
+
+    const allComments = Array.isArray(data)
+      ? data
+      : Array.isArray(data.comments)
+        ? data.comments
+        : [];
+
+    const grouped = postsData.reduce((acc, post) => {
+      acc[post.id] = allComments
+        .filter((comment) => comment.post_id === post.id)
+        .sort((a, b) => new Date(b.date_comment) - new Date(a.date_comment));
+      return acc;
+    }, {});
+
+    setCommentsByPostId(grouped);
+  } catch (error) {
+    console.error("Erro ao carregar todos os comentários:", error);
+  }
+};
 
   useEffect(() => {
     const fetchComments = async () => {
@@ -228,7 +255,7 @@ export default function Post({ rota, title }) {
                     style={{ cursor: "pointer" }}
                     onClick={() => handleCommentIconClick(post.id)}
                   />
-                  <span>{post.comments}</span>
+                  <span>{commentsByPostId[post.id]?.length ?? 0}</span>
                 </div>
 
                 <p className={styles.contentText}>{post.content}</p>
