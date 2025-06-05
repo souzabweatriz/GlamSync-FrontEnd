@@ -5,7 +5,9 @@ import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import Image from "next/image";
 import styles from "../styles/Chat.module.css";
+
 import { Link } from "react-router-dom";
+
 
 export default function Chat() {
   const [data, setData] = useState({
@@ -80,6 +82,7 @@ export default function Chat() {
                     }}
                   />
                   <div className={styles.chatInfo}>
+                    
                     <h2>{chat.user_name || "Usuário"}</h2>
                     <p>{chat.message || "Sem mensagens"}</p>
                   </div>
