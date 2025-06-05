@@ -88,7 +88,7 @@
   outline: none;
   transition: background 0.2s, color 0.2s;
   box-shadow: 0 2px 8px rgba(100, 0, 0, 0.04);
-  margin-left: 17.5rem;
+  margin-left: 16rem;
 }
 
 .buttonTop{
@@ -140,10 +140,10 @@
   flex-direction: column;
   background-color: #fff;
   border-radius: 1rem;
-  padding: 1.5rem;
   margin-top: 1.5rem;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
-  max-height: 400px;
+  max-height: 80rem;
+  width: 40rem;
   overflow-y: auto;
 }
 

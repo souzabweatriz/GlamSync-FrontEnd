@@ -5,7 +5,7 @@
   margin: 0;
   width: 100%;
   align-items: center;
-  background: linear-gradient(to bottom, #fccfca, #f9f1f0, white, white, white);
+    background: linear-gradient(to bottom, #fbd4d0, #f9f1f0, white, white, white);
   position: relative;
   box-sizing: border-box;
 }

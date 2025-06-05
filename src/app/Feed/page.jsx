@@ -50,7 +50,7 @@ export default function PrincipalFeed() {
       className={styles.iconsContainer}
     />
   </Link>
-  <Link href="/usuarios">
+  <Link href="/profile">
     <Image
       src="/icons/users.png"
       alt="ícone de Usuário marrom"
