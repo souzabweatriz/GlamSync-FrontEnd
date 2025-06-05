@@ -2,7 +2,6 @@ import React from 'react';
 import styles from '../../styles/messages.module.css';
 import Header from '../../components/Header';
 import OnlineContacts from '../../components/OnlineContacts';
-import RecentContacts from '../../components/RecentContacts';
 import lupaIcon from "../../../public/icons/lupa.png";
 import Image from 'next/image';
 import Chat from '../../components/Chat';
@@ -24,7 +23,7 @@ const MessagesPage = () => {
                 <div className={styles.grid}>
                     <OnlineContacts />
                     <div className={styles.RecentContacts}>
-                            <RecentContacts />
+
                     </div>
                 </div>
             </div>
