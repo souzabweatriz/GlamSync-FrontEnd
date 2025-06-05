@@ -138,7 +138,7 @@
 .aside {
   display: flex;
   flex-direction: column;
-background-color: #fff;
+  background-color: #fff;
   border-radius: 1rem;
   padding: 1.5rem;
   margin-top: 1.5rem;
@@ -146,6 +146,14 @@ background-color: #fff;
   max-height: 400px;
   overflow-y: auto;
 }
+
+.title2 {
+  margin-bottom: 2rem;
+  color: #4a4a4a;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
 
 .commentList {
   list-style: none;
