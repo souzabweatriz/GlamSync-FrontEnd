@@ -1,225 +1,241 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-.signUp {
-    width: 100%;
-    height: 100vh;
-    background-color: #fff;
+.body .html {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.container {
+    min-height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    background: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.card {
+    background: transparent;
+    border-radius: 0;
+    box-shadow:none ;
+    padding: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    width: 100vw;
+    min-height: 100vh;
 }
 
 .header {
-    width: 100%;
-    height: 20vh;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    position: fixed;
-    top: 1rem;
-}
-
-.header .icon {
-    position: fixed;
-    left: 3rem;
-}
-
-.icon .back_icon{
-    width: 50px;
-    height: 50px;
-}
-
-.header .text {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    margin-bottom: 2rem;
+    width: 100%;
+    position: relative;
 }
 
-.text h1 {
-    color: #DD776C;
+.backButton {
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.title {
+    color: var(--primary);
     font-size: 5rem;
-    margin-top: 4rem;
+    font-weight: 600;
+    color: #dd776c;
+    margin: 0.5rem 0 0 0;
+    font-style: italic;
+    letter-spacing: 1px;
 }
 
-.text h2 {
-    color: #A4A4A4;
-    font-size: 1.7rem;
+.subtitle {
+    color: var(--gray);
+    font-size: 1rem;
+    font-weight: 400;
+    margin: 0.2rem 0 0 0;
 }
 
-.main {
-    width: 100%;
-    height: 80vh;
+.form {
+    width: 100vw;
+    max-width: 100vw;
+    min-height: 100vh;  
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    gap: 1rem;
-    position: fixed;
-    bottom: 0;
+    justify-content: center; 
+    gap: 2.2rem; 
 }
 
-.main .inputs {
+.inputGroup {
+    width: 100vw;
+    max-width: 100vw;
     display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    width: 50%;
+    background: var(--input-bg);
+    border-radius: 48px; 
+    box-shadow: var(--input-shadow);
+    padding: 2.4rem 4rem; 
+    margin-bottom: 0.6rem;
+    position: relative;
 }
 
-.inputs .input {
-    width: 90%;
-    height: 3rem;
-    margin: 1rem 0;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    box-shadow: inset 0 0 7px rgba(0, 0, 0, 0.2);
-    border-radius: 50px;
-    background-color: rgba(240, 240, 240, 0.445);
+.inputIcon {
+    width: 40px;
+    height: 40px;
+    margin-right: 1.2rem;
+    opacity: 0.7;
 }
 
-.inputs .input input {
-    width: 80%;
-    height: 80%;
+.input {
+    flex: 1;
     border: none;
     outline: none;
-    padding-left: 1rem;
-    font-size: 1rem;
-    font-family: 'Figtree', sans-serif;
-    background-color: #ffffff00;
+    background: #f9f9f9;
+    font-size: 2.2rem;
+    border-radius: 48px;
+    color: #444;
+    font-family: 'Montserrat', sans-serif;
+    padding: 1.4rem 0; 
 }
 
-.input .icon {
-    width: 30px;
-    height: 30px;
+.checkIcon {
+    width: 32px;
+    height: 32px;
+    margin-left: 1rem;
 }
 
-.inputs button {
-    width: 40%;
-    height: 2rem;
-    margin: 1rem 0;
-    background-color: #DD776C;
-    color: #fff;
-    border: none;
-    border-radius: 50px;
-    font-size: 1rem;
-    font-weight: 200;
-}
-
-.inputs button:hover {
-    background-color: #C65A4D;
-    cursor: pointer;
-}
-.inputs button:active {
-    background-color: #d66d55;
-}
-
-.inputs .check {
+.phoneGroup {
     display: flex;
-    flex-direction: row;
     align-items: center;
-    justify-content: center;
-    width: 30%;
-    gap: 0.5rem;
-}
-
-.inputs .check input:hover {
-    cursor: pointer;
-}
-
-.check p {
-    color: #757575;
-}
-
-.otherWay {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-}
-
-.otherWay .lineArea {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    width: 500px;
-}
-
-.lineArea .line {
-    width: 100%;
-    height: 1px;
-    background-color: #A4A4A4;
-}
-
-.lineArea p {
-    color: #757575;
-    white-space: nowrap;
-    font-size: 1rem;
-    font-weight: 200;
-    margin: 0 1rem;
-    width: 55%;
-}
-
-.otherWay .text span{
-    color: #DD776C;
-    font-weight: 600;
-    font-size: 1rem;
-}
-
-.otherWay .text span:hover {
-    cursor: pointer;
-    text-decoration: underline;
-}
-.otherWay .text span:active {
-    text-decoration: none;
-}
-
-.eye_icon {
-    width: 20px;
-    height: 20px;
-    cursor: pointer;
-    margin-left: -30px;
-    position: relative;
-}
-
-.input {
-    position: relative;
-}
-
-
-.input {
-    padding-left: 30px;
-}
-
-.signUpIcon {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    width: 20%;
-    height: 35%;
-    gap: 1rem;
-}
-
-.signUpIcon .icon:hover {
-    cursor: pointer;
-    transform: scale(1.05);
-}
-
-.signUpIcon .icon:active {
-    transform: scale(0.9);
+    flex: 1;
 }
 
 .ddd {
-    margin-right: 6px;
-    margin-left: 10px;
-    padding: 5px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    font-size: 14px;
+    border: none;
+    background: pink;
+    border-radius: 16px;
+    font-size: 2rem;
+    color: #444;
+    padding: 0.6rem 1.4rem;
+    margin-right: 1rem;
+    margin-left: 0.4rem;
+    outline: none;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.phoneInput {
+    flex: 1;
+    border: none;
+    background: transparent;
+    font-size: 2.2rem;
+    color: #444;
+    padding: 1.4rem 0;
+    font-family: 'Montserrat', sans-serif;
+    outline: none;
+}
+
+.eyeIcon {
+    width: 36px;
+    height: 36px;
+    cursor: pointer;
+    margin-left: 1rem;
+    opacity: 0.7;
+}
+
+.signUpBtn {
+    width: 100%;
+    background: var(--primary);
+    color: #fff;
+    border: none;
+    border-radius: 48px;
+    font-size: 2.3rem;
+    font-weight: 700;
+    padding: 1.6rem 0;
+    background: #f79489;
+    margin-top: 1rem;
+    margin-bottom: 0.4rem;
+    cursor: pointer;
+    transition: background 0.3s;
+    box-shadow: 0 4px 16px rgba(221, 119, 108, 0.12);
+}
+
+.signUpBtn:hover {
+    background: #c65a4d;
+}
+
+.rememberMe {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    margin-top: 0.3rem;
+    margin-bottom: 0.5rem;
+    gap: 0.5rem;
+    color: #A4A4A4;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.dividerArea {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin: 1.2rem 0 0.7rem 0;
+}
+
+.divider {
+    flex: 1;
+    height: 1px;
+    background: #E0E0E0;
+}
+
+.orText {
+    color: #A4A4A4;
+    font-size: 1rem;
+    font-weight: 500;
+    margin: 0 1rem;
+    white-space: nowrap;
+}
+
+.socialIcons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.2rem;
+    margin-bottom: 1.1rem;
+    margin-top: 0.2rem;
+}
+
+.loginArea {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1rem;
+    color: #757575;
+}
+
+.loginLink {
+  color: var(--primary);
+  font-weight: bold;
+  cursor: pointer;
+  color: #f79489;
+  text-decoration: underline;
+  margin-left: 0.2rem;
+}
+
+.loginLink:hover {
+  text-decoration: none;
 }
