@@ -1,0 +1,57 @@
+.top {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 14px;
+    width: auto;
+    height: 1.3rem;
+    padding: 6px 20px 6px 20px;
+    background: #fff;
+    border-bottom-left-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+    border-bottom: 1.4px solid #e3e0e0;
+}
+
+.back {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -13px;
+    cursor: pointer;
+    padding: 0;
+    border: none;
+}
+
+.user {
+    display: flex;
+    align-items: flex-start;
+    margin-top: -8px;
+    gap: 10px;
+    font-size: 1rem;
+    color: #222;
+    font-weight: bold;
+}
+
+.icon {
+    width: 39px;
+    margin-top: -9px;
+    height: 39px;
+}
+
+.info {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: #ffeaea;
+    color: #ff8a8a;
+    font-weight: bold;
+    font-size: 1.1rem;
+    border: 1.5px solid #ff8a8a;
+    cursor: pointer;
+}

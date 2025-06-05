@@ -1,41 +1,29 @@
-import React from 'react';
-import Image from 'next/image';
-import styles from '../styles/chats.module.css';
+import React from "react";
+import styles from "../styles/chats.module.css";
 
-export default function ChatMessage({ own, text, time, post }) {
+export default function ChatMessage({ text, own, post, time }) {
     return (
         <div className={`${styles["chat-message"]} ${own ? styles["own"] : ""}`}>
-            <div className={styles["chat-bubble"]}>
-                {post ? (
-                    <>
-                        {/* Mostra o texto do post, se existir */}
-                        {post.text && (
-                            <div className={styles["post-text"]}>{post.text}</div>
-                        )}
-                        {/* Mostra o usuário do post, se existir */}
+            <div className={styles["chat-bubble"]} style={{ position: "relative" }}>
+                {text && <span>{text}</span>}
+                {post && (
+                    <div>
+                        {post.text && <span>{post.text}</span>}
                         {post.user && (
-                            <div className={styles["post-user"]}>{post.user}</div>
-                        )}
-                        {/* Mostra a imagem do post, se existir */}
-                        {post.img && (
-                            <div className={styles["post-img"]}>
-                                <Image
-                                    src={post.img}
-                                    alt="post"
-                                    width={260}
-                                    height={260}
-                                    style={{ borderRadius: "12px", objectFit: "cover" }}
-                                />
+                            <div>
+                                <span>{post.user}</span>
+                                {post.img && (
+                                    <img
+                                        src={post.img}
+                                        alt={post.user}
+                                        className={styles["coco-img"]}
+                                    />
+                                )}
                             </div>
                         )}
-                        <span className={styles["chat-time"]}>{time}</span>
-                    </>
-                ) : (
-                    <>
-                        {text}
-                        <span className={styles["chat-time"]}>{time}</span>
-                    </>
+                    </div>
                 )}
+                {time && <span className={styles["chat-time"]}>{time}</span>}
             </div>
         </div>
     );
