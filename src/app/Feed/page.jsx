@@ -59,7 +59,7 @@ export default function PrincipalFeed() {
       className={styles.iconsContainer}
     />
   </Link>
-  <Link href="/notificacoes">
+  <Link href="/notification">
     <Image
       src="/icons/iconSino.png"
       alt="ícone de Sino marrom"
