@@ -52,6 +52,16 @@
     color: #ff8a8a;
     font-weight: bold;
     font-size: 1.1rem;
-    border: 1.5px solid #ff8a8a;
+    border: 5px solid #ff8a8a;
     cursor: pointer;
+}
+
+.infoIcon {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2px;
+    margin-left: 1570px;
 }
