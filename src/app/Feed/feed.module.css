@@ -7,6 +7,7 @@
   align-items: center;
   background: linear-gradient(to bottom, #fccfca, #f9f1f0, white, white, white);
   position: relative;
+  box-sizing: border-box;
 }
 
 .section {
@@ -53,6 +54,7 @@
   margin-top: 3rem;
 }
 
+
 @media (max-width: 768px) {
   .section {
     top: 0.5rem;
@@ -66,10 +68,42 @@
 
   .container {
     padding-top: 4rem;
+    width: 100%;
+    height: auto;
+    overflow-x: hidden;
   }
 
   .image img {
     width: 200px !important;
     height: auto !important;
+  }
+
+  .carousel {
+    width: 100%;
+    height: auto;
+    max-height: 300px;
+    border-radius: 1.5rem;
+  }
+
+  .iconsContainer {
+    justify-content: center;
+    gap: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .section {
+    top: 0.5rem;
+    right: 0.5rem;
+    padding: 0.4rem 0.6rem;
+    gap: 0.4rem;
+  }
+
+  .carousel {
+    height: 10rem;
+  }
+
+  .image img {
+    width: 150px !important;
   }
 }

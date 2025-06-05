@@ -216,15 +216,68 @@ background-color: #fff;
   max-width: 300px;
 }
 
+
 @media (max-width: 768px) {
+  .main {
+    padding: 1rem;
+    align-items: center;
+  }
+
   .postContent {
     flex-direction: column;
     align-items: center;
   }
 
   .aside {
+    width: 90%;
+    max-width: none;
+  }
+
+  .followBtn {
+    margin-left: 0;
+    width: 7rem;
+    text-align: center;
+    align-items: center;
+  }
+
+  .cardsContainer {
     max-width: 100%;
-    width: 100%;
-    margin-top: 1rem;
+    padding: 0 1rem;
+  }
+
+  .header {
+    display: flex;
+    align-items: center;
+  }
+
+  .title {
+    margin-top: 12rem;
+    font-size: 1.2rem;
+    text-align: center;
+  }
+
+    .title2 {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+
+  .contentText {
+    font-size: 0.9rem;
+  }
+
+  .buttonTop {
+    width: 5rem;
+    height: 2.5rem;
+    bottom: 1rem;
+    right: 1rem;
+    font-size: 0.85rem;
+  }
+
+  .commentText {
+    font-size: 0.85rem;
+  }
+
+  .user {
+    font-size: 1rem;
   }
 }
