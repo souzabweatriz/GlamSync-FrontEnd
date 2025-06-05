@@ -229,15 +229,15 @@ background-color: #fff;
   }
 
   .aside {
-    width: 100%;
+    width: 90%;
     max-width: none;
   }
 
   .followBtn {
     margin-left: 0;
-    width: 100%;
+    width: 7rem;
     text-align: center;
-    margin-top: 1rem;
+    align-items: center;
   }
 
   .cardsContainer {
@@ -247,11 +247,16 @@ background-color: #fff;
 
   .header {
     display: flex;
-    align-items: center
+    align-items: center;
   }
 
   .title {
     margin-top: 12rem;
+    font-size: 1.2rem;
+    text-align: center;
+  }
+
+    .title2 {
     font-size: 1.2rem;
     text-align: center;
   }

@@ -147,7 +147,7 @@ export default function Post({ rota, title }) {
                   />
                   {openCommentsPostId === post.id && (
                     <aside className={styles.aside}>
-                      <h1 className={styles.title}>Comments</h1>
+                      <h1 className={styles.title2}>Comments</h1>
                       <ul className={styles.commentList}>
                         {(commentsByPostId[post.id] || []).length > 0 ? (
                           commentsByPostId[post.id].map((comment) => (
