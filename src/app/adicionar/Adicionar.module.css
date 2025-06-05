@@ -8,6 +8,14 @@
     background: radial-gradient(circle, #f8afa6 0%, #f79489 0%, #fff 100%);
 }
 
+.back {
+    display: flex;
+    align-self: flex-start;
+    margin-left: 3rem ;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
 .postCard {
     background: #fff;
     border-radius: 1rem;
@@ -86,4 +94,48 @@
     color: #666;
     outline: none;
     padding: 1rem;
+}
+
+@media (max-width: 768px) {
+
+    .back {
+    align-self: flex-start;
+    margin: 1rem 0 1rem 1rem;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+    .main{
+    min-height: 100vh;
+    width: 100%;
+    }
+
+    .postCard{
+        width: 23rem;
+    }
+
+    .cardHeader {
+        align-items: flex-start;
+        gap: 7rem;
+    }
+
+    .title {
+        font-size: 1rem;
+    }
+
+    .postButton {
+        width: 100%;
+        text-align: center;
+    }
+
+    .addPhotoArea {
+        width: 20rem;
+        height: 10rem;
+        font-size: 1rem;
+    }
+
+    .inputPost {
+        width: 18rem;
+        height: auto;
+    }
 }
