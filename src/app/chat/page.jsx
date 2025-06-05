@@ -18,7 +18,13 @@ export default function ChatPage() {
                 <span className={chatHeader.user}>
                     <Image src="/icons/users.png" alt="Usuário" width={24} height={22} className={chatHeader.icon} />
                     @username
-                </span>
+                    <Image
+                        src="/icons/info-icon.png"
+                        alt="Informação"
+                        width={29}
+                        height={29}
+                        className={chatHeader.infoIcon}
+                    />                </span>
             </div>
             <div className={styles["chat-body"]}>
                 <ChatMessage text="Ei! Você viu o novo Work Shop que a Dolce Gabbana está fazendo agora? Tá muito legal!" time="16:00" />
