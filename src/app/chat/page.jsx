@@ -16,7 +16,7 @@ export default function ChatPage() {
                     <Image src="/icons/back-icon.png" alt="Voltar" width={39} height={39} />
                 </button>
                 <span className={chatHeader.user}>
-                    <Image src="/icons/users.png" alt="Usuário" width={24} height={24} className={chatHeader.icon} />
+                    <Image src="/icons/users.png" alt="Usuário" width={24} height={22} className={chatHeader.icon} />
                     @username
                 </span>
             </div>
