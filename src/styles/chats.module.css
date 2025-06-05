@@ -38,7 +38,7 @@
     position: relative;
     font-size: 16px;
     color: #222;
-    margin-left: 0;
+    margin-left: 18px;
     margin-right: 18px;
     word-break: break-word;
 }
@@ -46,28 +46,30 @@
 .chat-message:not(.own) .chat-bubble::before {
     content: '';
     position: absolute;
-    left: -14px;
+    left: -12px;
     top: 50%;
     transform: translateY(-50%);
     width: 0;
+    right: auto;
     height: 0;
-    border-top: 12px solid transparent;
-    border-bottom: 12px solid transparent;
-    border-right: 16px solid #ba4646; /* mesma cor do balão recebido */
+    border-top: 14px solid transparent;
+    border-bottom: 14px solid transparent;
+    border-right: 18px solid #fff; 
+    border-left: none;
     z-index: 1;
 }
 
 .chat-message.own .chat-bubble::after {
     content: '';
     position: absolute;
-    right: -14px;
+    right: -10px;
     top: 50%;
     transform: translateY(-50%);
     width: 0;
     height: 0;
-    border-top: 12px solid transparent;
-    border-bottom: 12px solid transparent;
-    border-left: 16px solid #dcf8c6; /* mesma cor do balão enviado */
+    border-top: 14px solid transparent;
+    border-bottom: 14px solid transparent;
+    border-left: 18px solid #dcf8c6; 
     z-index: 1;
 }
 
