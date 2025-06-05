@@ -46,14 +46,29 @@
 .chat-message:not(.own) .chat-bubble::before {
     content: '';
     position: absolute;
-    left: -18px;
-    top: 46px;
+    left: -14px;
+    top: 50%;
+    transform: translateY(-50%);
     width: 0;
     height: 0;
-    border-top: 18px solid transparent;
-    border-right: 18px solid #fff;
-    border-bottom: 0 solid transparent;
-    border-left: 0 solid transparent;
+    border-top: 12px solid transparent;
+    border-bottom: 12px solid transparent;
+    border-right: 16px solid #ba4646; /* mesma cor do balão recebido */
+    z-index: 1;
+}
+
+.chat-message.own .chat-bubble::after {
+    content: '';
+    position: absolute;
+    right: -14px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-top: 12px solid transparent;
+    border-bottom: 12px solid transparent;
+    border-left: 16px solid #dcf8c6; /* mesma cor do balão enviado */
+    z-index: 1;
 }
 
 .chat-input-container {
@@ -121,19 +136,6 @@
     color: #222;
     margin-left: 0;
     margin-right: 18px;
-}
-
-.chat-message.own .chat-bubble::after {
-    content: '';
-    position: absolute;
-    right: -18px;
-    top: 44px;
-    width: 0;
-    height: 0;
-    border-top: 18px solid transparent;
-    border-right: 0 solid transparent;
-    border-bottom: 0 solid transparent;
-    border-left: 18px solid #dcf8c6;
 }
 
 .coco-img {
