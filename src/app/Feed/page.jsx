@@ -27,8 +27,8 @@ export default function PrincipalFeed() {
     <Image
       src="/icons/home.png"
       alt="ícone de casa marrom"
-      width={23}
-      height={23}
+      width={35}
+      height={35}
       className={styles.iconsContainer}
     />
   </Link>
@@ -36,8 +36,8 @@ export default function PrincipalFeed() {
     <Image
       src="/icons/iconAdicionar.png"
       alt="ícone de Adicionar marrom"
-      width={24}
-      height={24}
+      width={35}
+      height={35}
       className={styles.iconsContainer}
     />
   </Link>
@@ -45,8 +45,8 @@ export default function PrincipalFeed() {
     <Image
       src="/icons/iconChat.png"
       alt="ícone de Chat marrom"
-      width={24}
-      height={24}
+      width={35}
+      height={35}
       className={styles.iconsContainer}
     />
   </Link>
@@ -54,8 +54,8 @@ export default function PrincipalFeed() {
     <Image
       src="/icons/users.png"
       alt="ícone de Usuário marrom"
-      width={24}
-      height={24}
+      width={35}
+      height={35}
       className={styles.iconsContainer}
     />
   </Link>
@@ -63,8 +63,8 @@ export default function PrincipalFeed() {
     <Image
       src="/icons/iconSino.png"
       alt="ícone de Sino marrom"
-      width={24}
-      height={24}
+      width={35}
+      height={35}
       className={styles.iconsContainer}
     />
   </Link>

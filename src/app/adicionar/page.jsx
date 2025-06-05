@@ -4,6 +4,13 @@ import Image from "next/image";
 export default function Adicionar() {
     return (
         <div className={styles.main}>
+                <Image
+                className={styles.back}
+                src="/icons/back-icon.png"
+                width={32}
+                height={32}
+                alt="ícone de voltar rosa"
+                />
             <div className={styles.postCard}>
                 <div className={styles.cardHeader}>
                     <span className={styles.title}>What's Up?</span>

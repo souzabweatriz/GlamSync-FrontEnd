@@ -227,8 +227,9 @@
 
 @media (max-width: 768px) {
   .main {
+    align-items: flex-start;
     padding: 1rem;
-    align-items: center;
+    display: flex;
   }
 
   .postContent {
@@ -259,14 +260,14 @@
   }
 
   .title {
-    margin-top: 12rem;
+    margin-top: 1rem;
     font-size: 1.2rem;
-    text-align: center;
+    display: flex;
   }
 
     .title2 {
     font-size: 1.2rem;
-    text-align: center;
+    text-align: flex;
   }
 
   .contentText {

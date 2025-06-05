@@ -34,7 +34,7 @@ export default function Feed() {
                     className={styles.iconInput}
                     src="/icons/lupa.png"
                     alt="Ícone de Lupa"
-                    width={15}
+                    width={30}
                     height={15}
                 />
             </div>
