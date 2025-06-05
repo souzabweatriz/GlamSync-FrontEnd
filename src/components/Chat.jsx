@@ -5,7 +5,6 @@ import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import Image from "next/image";
 import styles from "../styles/Chat.module.css";
-import { Pagination } from "antd";
 
 export default function Chat() {
   const [data, setData] = useState({
@@ -17,38 +16,21 @@ export default function Chat() {
 
   useEffect(() => {
     const fetchChats = async () => {
-      const apiUrl = process.env.NEXT_PUBLIC_API_URL;
-      const apiKey = process.env.NEXT_PUBLIC_API_KEY;
-
-      if (!apiUrl || !apiKey) {
-        toast.error("Variáveis de ambiente não configuradas.");
-        console.error("Verifique .env.local: faltando API_URL ou API_KEY.");
-        setData((prev) => ({ ...prev, loading: false }));
-        return;
-      }
-
       try {
-        const response = await axios.get(`${apiUrl}chat`, {
-          headers: { "x-api-key": apiKey },
-        });
-
-        if (!Array.isArray(response.data)) {
-          throw new Error("Resposta inesperada da API: esperado um array.");
-        }
+        const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}chat`);
+        const chats = Array.isArray(res.data)
+          ? res.data
+          : res.data.chats || [];
 
         setData((prev) => ({
           ...prev,
-          chats: response.data,
+          chats,
           loading: false,
         }));
       } catch (error) {
-        console.error("Erro ao carregar chats:", error);
-        toast.error("Erro ao carregar chats.");
-        setData((prev) => ({
-          ...prev,
-          chats: [],
-          loading: false,
-        }));
+        console.error("Erro ao carregar as conversas:", error);
+        toast.error("Erro ao carregar as conversas.");
+        setData((prev) => ({ ...prev, loading: false }));
       }
     };
 
@@ -76,35 +58,34 @@ export default function Chat() {
       ) : (
         <>
           <div className={styles.chatList}>
-            {paginatedChats().map((chat) => (
-              <div key={chat.id} className={styles.chatItem}>
-                <Image
-                  className={styles.image}
-                  src={chat.user?.avatar || "/media/Flor.png"}
-                  alt="Avatar"
-                  width={50}
-                  height={50}
-                />
-                <div className={styles.chatInfo}>
-                  <h2>{chat.user?.name || "Usuário"}</h2>
-                  <p>{chat.lastMessage || "Sem mensagens"}</p>
-                </div>
-              </div>
-            ))}
-          </div>
+            {paginatedChats().map((chat) => {
+              const userPhoto = chat.user_photo;
+              const imgSrc = userPhoto
+                ? userPhoto.startsWith("5a9acfba") // Exemplo para diferenciar se precisa /media ou /users (ajuste se necessário)
+                  ? `${process.env.NEXT_PUBLIC_API_URL}api/media/${userPhoto}`
+                  : `${process.env.NEXT_PUBLIC_API_URL}api/users/${userPhoto}`
+                : "/media/Flor.png";
 
-          <Pagination
-            current={data.current}
-            pageSize={data.pageSize}
-            total={data.chats.length}
-            onChange={(page, pageSize) =>
-              setData((prev) => ({
-                ...prev,
-                current: page,
-                pageSize,
-              }))
-            }
-          />
+              return (
+                <div key={chat.id} className={styles.chatItem}>
+                  <Image
+                    className={styles.image}
+                    src="/icons/comments.png"
+                    alt="Avatar"
+                    width={50}
+                    height={50}
+                    onError={(e) => {
+                      e.currentTarget.src = "/media/Flor.png";
+                    }}
+                  />
+                  <div className={styles.chatInfo}>
+                    <h2>{chat.user_name || "Usuário"}</h2>
+                    <p>{chat.message || "Sem mensagens"}</p>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
         </>
       )}
     </div>

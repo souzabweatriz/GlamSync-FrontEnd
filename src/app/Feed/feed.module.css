@@ -7,6 +7,7 @@
   align-items: center;
   position: relative;
   box-sizing: border-box;
+    background: linear-gradient(to bottom, #fccfca, #f9f1f0, white, white, white);
 }
 
 .section {
@@ -52,7 +53,6 @@
   border-radius: 4rem;
   height: 30rem;
   width: 60rem;
-  margin-top: 3rem;
 }
 
 
