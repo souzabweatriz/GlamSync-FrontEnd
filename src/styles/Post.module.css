@@ -224,9 +224,14 @@
   max-width: 300px;
 }
 
+.linkSemEstilo {
+  text-decoration: none;
+  color: inherit;
+}
 
 @media (max-width: 768px) {
   .main {
+    margin-top: 12rem;
     align-items: flex-start;
     padding: 1rem;
     display: flex;

@@ -74,7 +74,7 @@ export default function PrincipalFeed() {
             <div className={styles.carousel}>
                 <Carousel autoplay autoplaySpeed={2000}>
                     <div>
-                        <h3 style={contentStyle}>
+                        <h3>
                             <Image
                                 src="/posters/poster1.png"
                                 alt="Poster com conteúdos do Site"
@@ -84,7 +84,7 @@ export default function PrincipalFeed() {
                         </h3>
                     </div>
                     <div>
-                        <h3 style={contentStyle}>
+                        <h3>
                             <Image
                                 src="/posters/poster2.png"
                                 alt="Poster com conteúdos do Site"
@@ -94,7 +94,7 @@ export default function PrincipalFeed() {
                         </h3>
                     </div>
                     <div>
-                        <h3 style={contentStyle}>
+                        <h3>
                             <Image
                                 src="/posters/poster3.png"
                                 alt="Poster com conteúdos do Site"
@@ -104,7 +104,7 @@ export default function PrincipalFeed() {
                         </h3>
                     </div>
                     <div>
-                        <h3 style={contentStyle}>
+                        <h3>
                             <Image
                                 src="/posters/poster4.jpg"
                                 alt="Poster com conteúdos do Site"
