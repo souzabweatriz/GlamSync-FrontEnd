@@ -23,7 +23,7 @@ const Header = () => (
             <Link href="/messages">
                 <div className={styles.iconChat}></div>
             </Link>
-            <Link href="/menu">
+            <Link href="/profile">
                 <div className={styles.menu}></div>
             </Link>
             <Link href="/notificacoes">

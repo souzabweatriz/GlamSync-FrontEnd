@@ -5,6 +5,7 @@ import styles from "../../styles/chats.module.css";
 import ChatMessage from "../../components/ChatMessage";
 import ChatInput from "../../components/ChatInput";
 import Image from "next/image";
+import Link from 'next/link';
 
 
 export default function ChatPage() {
@@ -12,9 +13,9 @@ export default function ChatPage() {
         <div className={styles["chat-gb"]}>
             <Header />
             <div className={chatHeader.top}>
-                <button className={chatHeader.back}>
+                <Link href="/messages" className={chatHeader.back}>
                     <Image src="/icons/back-icon.png" alt="Voltar" width={39} height={39} />
-                </button>
+                </Link>
                 <span className={chatHeader.user}>
                     <Image src="/icons/users.png" alt="Usuário" width={24} height={22} className={chatHeader.icon} />
                     @username

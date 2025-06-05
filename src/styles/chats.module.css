@@ -18,10 +18,9 @@
 
 .chat-message {
     display: flex;
-    margin-bottom: 18px;
+    margin-bottom: 30px;
     align-items: flex-end;
     justify-content: flex-start;
-    ;
 }
 
 .chat-message.own {
@@ -31,11 +30,10 @@
 .chat-bubble {
     background: #fff;
     border-radius: 18px;
-    padding: 28px 48px;
-    max-width: 700px;
-    min-width: 320px;
-    box-shadow: 0 2px 8px #0001;
-    position: relative;
+    padding: 20px 48px 20px 24px;
+    max-width: 90%;
+    min-width: 120px;
+    box-shadow: 0 40px 40px #0001;
     font-size: 16px;
     color: #222;
     margin-left: 18px;
@@ -113,7 +111,7 @@
     border-radius: 50%;
     width: 48px;
     height: 48px;
-    box-shadow: 0 2px 8px #0001;
+    box-shadow: 0 12px 8px #0001;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -141,8 +139,12 @@
 }
 
 .coco-img {
-    max-width: 260px;
-    width: 100%;
+    max-width: none;
+    display: block;
+    width: 80%;
     display: block;
     margin-top: 8px;
+    border-radius: 12px;
+    margin-left: 30px;
+    margin-right: -15px;
 }

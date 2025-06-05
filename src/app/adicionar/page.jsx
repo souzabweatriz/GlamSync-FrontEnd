@@ -1,9 +1,20 @@
 import styles from "../Adicionar/Adicionar.module.css"
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Adicionar() {
     return (
         <div className={styles.main}>
+            <div className={styles.back}>
+            <Link href="/Feed">
+                <Image
+                src="/icons/back-icon.png"
+                width={50}
+                height={50}
+                alt="ícone de voltar rosa"
+                />
+            </Link>
+            </div>
             <div className={styles.postCard}>
                 <div className={styles.cardHeader}>
                     <span className={styles.title}>What's Up?</span>

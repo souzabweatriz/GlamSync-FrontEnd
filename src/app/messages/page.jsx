@@ -31,7 +31,9 @@ const MessagesPage = () => {
                 <div className={styles.grid}>
                   
                     <div className={styles.RecentContacts}>
+
                     <OnlineContacts />
+
                     </div>
                 </div>
                 <Chat />

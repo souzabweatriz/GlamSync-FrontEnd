@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import Image from "next/image";
+import Link from "next/link";
 import styles from "../styles/Post.module.css";
 
 const HEADERS = { "x-api-key": process.env.NEXT_PUBLIC_API_KEY };
@@ -106,19 +107,23 @@ export default function Post({ rota, title }) {
             {posts.map((post) => (
               <div className={styles.all} key={post.id}>
                 <div className={styles.header}>
-                  <Image
-                    src={
-                      post.user_photo
-                        ? `${process.env.NEXT_PUBLIC_IMG_URL}${post.user_photo}.jpg`
-                        : "/icons/220.svg"
-                    }
-                    alt={`Foto de ${post.user_name}`}
-                    width={40}
-                    height={40}
-                    className={styles.avatar}
-                    unoptimized
-                  />
-                  <p className={styles.user}>@{post.user_name}</p>
+                  <Link href={`/profile/${post.user_id}`} className={styles.linkSemEstilo}>
+                    <Image
+                      src={
+                        post.user_photo
+                          ? `${process.env.NEXT_PUBLIC_IMG_URL}${post.user_photo}.jpg`
+                          : "/icons/220.svg"
+                      }
+                      alt={`Foto de ${post.user_name}`}
+                      width={40}
+                      height={40}
+                      className={styles.avatar}
+                      unoptimized
+                    />
+                  </Link>
+                  <Link href={`/profile/${post.user_id}`} className={styles.linkSemEstilo}>
+                    <p className={styles.user}>@{post.user_name}</p>
+                  </Link>
                   <button
                     className={styles.followBtn}
                     onClick={() => handleFollow(post.user_id)}

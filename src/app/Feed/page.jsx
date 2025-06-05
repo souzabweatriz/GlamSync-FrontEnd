@@ -27,8 +27,8 @@ export default function PrincipalFeed() {
     <Image
       src="/icons/home.png"
       alt="ícone de casa marrom"
-      width={23}
-      height={23}
+      width={35}
+      height={35}
       className={styles.iconsContainer}
     />
   </Link>
@@ -36,8 +36,8 @@ export default function PrincipalFeed() {
     <Image
       src="/icons/iconAdicionar.png"
       alt="ícone de Adicionar marrom"
-      width={24}
-      height={24}
+      width={35}
+      height={35}
       className={styles.iconsContainer}
     />
   </Link>
@@ -45,26 +45,26 @@ export default function PrincipalFeed() {
     <Image
       src="/icons/iconChat.png"
       alt="ícone de Chat marrom"
-      width={24}
-      height={24}
+      width={35}
+      height={35}
       className={styles.iconsContainer}
     />
   </Link>
-  <Link href="/usuarios">
+  <Link href="/profile">
     <Image
       src="/icons/users.png"
       alt="ícone de Usuário marrom"
-      width={24}
-      height={24}
+      width={35}
+      height={35}
       className={styles.iconsContainer}
     />
   </Link>
-  <Link href="/notificacoes">
+  <Link href="/notification">
     <Image
       src="/icons/iconSino.png"
       alt="ícone de Sino marrom"
-      width={24}
-      height={24}
+      width={35}
+      height={35}
       className={styles.iconsContainer}
     />
   </Link>
@@ -74,7 +74,7 @@ export default function PrincipalFeed() {
             <div className={styles.carousel}>
                 <Carousel autoplay autoplaySpeed={2000}>
                     <div>
-                        <h3 style={contentStyle}>
+                        <h3>
                             <Image
                                 src="/posters/poster1.png"
                                 alt="Poster com conteúdos do Site"
@@ -84,7 +84,7 @@ export default function PrincipalFeed() {
                         </h3>
                     </div>
                     <div>
-                        <h3 style={contentStyle}>
+                        <h3>
                             <Image
                                 src="/posters/poster2.png"
                                 alt="Poster com conteúdos do Site"
@@ -94,7 +94,7 @@ export default function PrincipalFeed() {
                         </h3>
                     </div>
                     <div>
-                        <h3 style={contentStyle}>
+                        <h3>
                             <Image
                                 src="/posters/poster3.png"
                                 alt="Poster com conteúdos do Site"
@@ -104,7 +104,7 @@ export default function PrincipalFeed() {
                         </h3>
                     </div>
                     <div>
-                        <h3 style={contentStyle}>
+                        <h3>
                             <Image
                                 src="/posters/poster4.jpg"
                                 alt="Poster com conteúdos do Site"
