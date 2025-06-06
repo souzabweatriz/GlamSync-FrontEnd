@@ -7,6 +7,7 @@ import { useState } from "react";
 export default function SignUp() {
     const router = useRouter();
     const [showPassword, setShowPassword] = useState(false);
+    const [rememberMe, setRememberMe] = useState(false);
 
     const togglePasswordVisibility = () => {
         setShowPassword(!showPassword);
@@ -30,7 +31,6 @@ export default function SignUp() {
                     <div className={styles.inputGroup}>
                         <Image className={styles.inputIcon} src="/icons/email-icon.png" alt="Email" width={24} height={24} />
                         <input className={styles.input} type="text" placeholder="yourname@gmail.com" />
-                        <Image className={styles.checkIcon} src="/icons/check.png" alt="Check" width={20} height={20} />
                     </div>
                     <div className={styles.inputGroup}>
                         <Image className={styles.inputIcon} src="/icons/iconsTelefone.png" alt="Telefone" width={24} height={24} />
@@ -69,7 +69,6 @@ export default function SignUp() {
                                 <option value="+33">+33 (FR)</option>
                             </select>
                             <input className={styles.phoneInput} type="text" placeholder="Phone number" />
-                            <Image className={styles.checkIcon} src="/icons/check.png" alt="Check" width={20} height={20} />
                         </div>
                     </div>
                     <div className={styles.inputGroup}>
@@ -87,20 +86,25 @@ export default function SignUp() {
                         />
                     </div>
                     <button className={styles.signUpBtn} type="submit">Sign Up</button>
-                    <div className={styles.rememberMe}>
-                        <Image src="/icons/check-red.png" alt="Check" width={20} height={20} />
-                        <span>Remember Me</span>
+                    <label className={styles.check}>
+                        <input
+                            className={styles.checkbox}
+                            type="checkbox" checked={rememberMe}
+                            onChange={(e) => setRememberMe(e.target.checked)}
+                        />
+                        <span className={styles.checkCustom}></span>
+                        <p className={styles.description}>Remember Me</p>
+                    </label>
+                    <div className={styles.dividerArea}>
+                        <div className={styles.divider}></div>
+                        <span className={styles.orText}>Or continue with</span>
+                        <div className={styles.divider}></div>
+                    </div>
+                    <div className={styles.socialIcons}>
+                        <Image src="/icons/GoogleIcon.png" alt="Google" width={32} height={32} />
+                        <Image src="/icons/AppleIcon.png" alt="Apple" width={32} height={32} />
                     </div>
                 </form>
-                <div className={styles.dividerArea}>
-                    <div className={styles.divider}></div>
-                    <span className={styles.orText}>Or continue with</span>
-                    <div className={styles.divider}></div>
-                </div>
-                <div className={styles.socialIcons}>
-                    <Image src="/icons/GoogleIcon.png" alt="Google" width={32} height={32} />
-                    <Image src="/icons/AppleIcon.png" alt="Apple" width={32} height={32} />
-                </div>
                 <div className={styles.loginArea}>
                     <span>Already have an account?</span>
                     <span
