@@ -1,5 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+.body {
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 .container {
     height: 100vh;
     width: 100vw;
@@ -12,8 +19,6 @@
 .card {
     width: 95vw;
     max-width: 420px;
-    min-height: unset;
-    height: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -38,6 +43,7 @@
     background: none;
     border: none;
     cursor: pointer;
+    margin-top: 4rem;
 }
 
 .title {
@@ -45,6 +51,7 @@
     font-weight: 600;
     color: #dd776c;
     margin: 0;
+    margin-top: 1rem;
     font-style: italic;
     letter-spacing: 1px;
     width: 100%;
@@ -65,7 +72,6 @@
 
 .form {
     width: 100%;
-    height: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -105,11 +111,6 @@
     font-family: 'Montserrat', sans-serif;
 }
 
-.checkIcon {
-    width: 20px;
-    height: 20px;
-    margin-left: 1rem;
-}
 
 .phoneGroup {
     display: flex;
@@ -139,15 +140,15 @@
 }
 
 .eyeIcon {
-    width: 16px;
-    height: 16px;
+    width: 18px;
+    height: 18px;
     cursor: pointer;
     margin-left: -25px;
     opacity: 0.7;
 }
 
 .signUpBtn {
-    width: 60%;
+    width: 50%;
     height: 2.1rem;
     margin: 0.7rem 0 0.3rem 0;
     color: #fff;
@@ -168,17 +169,6 @@
 
 .signUpBtn:active {
     background-color: #d66d55;
-}
-
-.check {
-    margin: 0.2rem 0 0.5rem 0;
-    display: flex;
-    align-items: center;
-    gap: 0.4rem;
-    cursor: pointer;
-    font-size: 13px;
-    font-family: Arial, sans-serif;
-    align-self: flex-start;
 }
 
 .dividerArea {
@@ -237,34 +227,7 @@
 }
 
 .loginLink:active {
-   text-decoration: none;
-}
-
-/* Responsivo para telas pequenas */
-@media (max-width: 500px) {
-    .card {
-        min-width: unset;
-        padding: 0.5rem 0.1rem;
-    }
-    .title {
-        font-size: 1.5rem;
-    }
-    .inputGroup {
-        padding: 0.2rem 0.3rem;
-    }
-    .inputIcon {
-        width: 18px;
-        height: 18px;
-        margin-right: 0.4rem;
-    }
-    .input, .phoneInput {
-        font-size: 0.9rem;
-        height: 1.7rem;
-    }
-    .signUpBtn {
-        font-size: 0.95rem;
-        height: 1.7rem;
-    }
+    text-decoration: none;
 }
 
 .check {
@@ -278,11 +241,6 @@
     justify-content: center;
     align-self: center;
 }
-
-.label{
-    display: flex;
-}
-
 .checkbox {
     position: absolute;
     opacity: 0;
@@ -322,4 +280,37 @@
     border: solid white;
     border-width: 0 2px 2px 0;
     transform: rotate(45deg);
+}
+
+/* Responsivo para telas pequenas */
+@media (max-width: 500px) {
+    .card {
+        padding: 0.5rem 0.1rem;
+    }
+    .title {
+        font-size: 1.5rem;
+    }
+    .inputGroup {
+        padding: 0.2rem 0.3rem;
+    }
+    .inputIcon {
+        width: 18px;
+        height: 18px;
+        margin-right: 0.4rem;
+    }
+    .input, .phoneInput {
+        font-size: 0.9rem;
+        height: 1.7rem;
+    }
+    .signUpBtn {
+        font-size: 0.95rem;
+        height: 1.7rem;
+    }
+    .backButton {
+        margin: 1.5rem auto 0 auto;
+        width: 40px;
+        height: 40px;
+        display: block;
+        align-self: center;
+    }
 }

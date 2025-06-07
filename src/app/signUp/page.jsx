@@ -18,9 +18,9 @@ export default function SignUp() {
             <div className={styles.card}>
                 <div className={styles.header}>
                     <button className={styles.backButton} onClick={() => router.push("/initial")}>
-                        <Image src="/icons/back-icon.png" alt="icon de voltar" width={32} height={32} />
+                        <Image src="/icons/back-icon.png" alt="icon de voltar" width={50} height={50} />
                     </button>
-                    <h1 className={styles.title}>Sing Up</h1>
+                    <h1 className={styles.title}>Sign Up</h1>
                     <h2 className={styles.subtitle}>Create your new account</h2>
                 </div>
                 <form className={styles.form}>
