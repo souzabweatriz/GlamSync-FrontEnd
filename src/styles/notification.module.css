@@ -191,3 +191,64 @@
 .iconChat {
     background-image: url('/icons/iconChat.png');
 }
+
+
+@media (max-width: 700px) {
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        padding: 16px 10px;
+    }
+    .content {
+        flex-direction: column;
+        padding: 12px;
+        gap: 24px;
+    }
+
+    .notifications, .suggestions {
+        width: 100%;
+        gap: 8px;
+    }
+
+    .notification {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 12px;
+        gap: 8px;
+    }
+
+    .avatar {
+        width: 32px;
+        height: 32px;
+        margin-right: 8px;
+        margin-bottom: 8px;
+    }
+
+    .profilePic {
+        width: 36px;
+        height: 36px;
+        margin-right: 10px;
+    }
+
+    .suggestion {
+        flex-direction: row;
+        padding: 8px;
+        gap: 8px;
+    }
+
+    .iconsContainer {
+        gap: 8px;
+        margin-right: 0;
+    }
+
+    .menu, .iconCasa, .iconAdicionar, .iconSino, .iconChat {
+        width: 32px;
+        height: 32px;
+    }
+
+    .logo {
+        font-size: 1.1rem;
+    }
+
+}
