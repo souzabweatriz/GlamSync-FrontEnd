@@ -4,19 +4,6 @@ import styles from "../styles/profileHeader.module.css";
 
 const ProfileHeader = () => (
     <div className={styles.profileHeader}>
-        <div className={styles.avatarSection}>
-            <div className={styles.avatarTopBar}>
-                <span className={styles.username}>@username</span>
-                <button className={styles.followBtn}>Follow <span className={styles.plus}>+</span></button>
-            </div>
-            <Image
-                src="/user.png"
-                alt="Avatar"
-                width={90}
-                height={90}
-                className={styles.avatarImg}
-            />
-        </div>
         <div className={styles.profileMainInfo}>
             <div className={styles.profileName}>
                 <span className={styles.username}>Your Name</span>
@@ -34,6 +21,20 @@ const ProfileHeader = () => (
                     </div>
                 </div>
             </div>
+        </div>
+        {/* Bloco da foto depois */}
+        <div className={styles.avatarSection}>
+            <div className={styles.avatarTopBar}>
+                <span className={styles.username}>@username</span>
+                <button className={styles.followBtn}>Follow <span className={styles.plus}>+</span></button>
+            </div>
+            <Image
+                src="/user.png"
+                alt="Avatar"
+                width={90}
+                height={90}
+                className={styles.avatarImg}
+            />
         </div>
     </div>
 );

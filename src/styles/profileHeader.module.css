@@ -24,6 +24,7 @@
     align-items: flex-start;
     min-width: 160px;
     position: relative;
+    margin-right: 32px;
 }
 
 .avatarImg {
@@ -38,7 +39,7 @@
 
 .username {
     font-weight: 700;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     margin-top: -32px;
 
 }
@@ -50,6 +51,7 @@
     align-items: flex-start;
     gap: 16px;
     margin-top: 50px;
+    margin-left: 32px;
 }
 
 .profileStats {
@@ -111,4 +113,47 @@
 .plus {
     font-size: 1.2em;
     margin-left: 2px;
+}
+
+@media (max-width: 700px) {
+    .profileHeader {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+        padding: 24px 8px 16px 8px;
+    }
+
+    .avatarSection {
+        flex-direction: row;
+        align-items: center;
+        margin-right: 0;
+        margin-bottom: 16px;
+        min-width: unset;
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    .avatarImg {
+        width: 70px;
+        height: 70px;
+        margin-bottom: 0;
+        margin-right: 16px;
+    }
+
+    .avatarTopBar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+        margin-bottom: 0;
+    }
+
+    .profileMainInfo {
+        margin-top: 0;
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .profileStats {
+        gap: 16px;
+    }
 }
