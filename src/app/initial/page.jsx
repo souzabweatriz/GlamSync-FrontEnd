@@ -11,28 +11,31 @@ export default function Initial() {
         <main className={styles.fundo}>
             <div className={styles.container}>
                 <h1 className={styles.title}>WELCOME!</h1>
-                <div className={styles.logo}></div>
+                <div className={styles.logo}>
+                    <h1 className={styles.logoOverlay1}>Glam</h1>
+                    <h1 className={styles.logoOverlay2}>Sync</h1>
+                </div>
                 <div className={styles.description}>
                     <p>Fashion that conects</p>
                     <p>Style that impacts</p>
                 </div>
             </div>
             <div className={styles.buttons}>
-                        <button
-                            className={styles.button}
-                            onClick={() => router.push("/signIn")}
-                        >
-                            Log In
-                            <span className={styles.icon}><Image className={styles.icon} src="/icons/icon-entrar.png" alt="Logo do Google" width={32} height={32} /></span>
-                        </button>
-                        <button
-                            className={styles.button}
-                            onClick={() => router.push("/signUp")}
-                        >
-                            Sign Up
-                            <span className={styles.icon}><Image className={styles.icon} src="/icons/user.png" alt="Logo do Google" width={32} height={32} /></span>
-                        </button>
-                    </div>
+                <button
+                    className={styles.button}
+                    onClick={() => router.push("/signIn")}
+                >
+                    Log In
+                    <span className={styles.icon}><Image className={styles.icon} src="/icons/icon-entrar.png" alt="Logo do Google" width={32} height={32} /></span>
+                </button>
+                <button
+                    className={styles.button}
+                    onClick={() => router.push("/signUp")}
+                >
+                    Sign Up
+                    <span className={styles.icon}><Image className={styles.icon} src="/icons/user.png" alt="Logo do Google" width={32} height={32} /></span>
+                </button>
+            </div>
 
         </main>
     )
