@@ -9,7 +9,7 @@ import Link from 'next/link';
 export default function SignIn() {
     const router = useRouter();
 
-    const [showPassword, setShowPassword] = useState(false); 
+    const [showPassword, setShowPassword] = useState(false);
 
     const togglePasswordVisibility = () => {
         setShowPassword(!showPassword);
@@ -28,7 +28,7 @@ export default function SignIn() {
             setMatch(true);
             setError("Sucesso ao entrar!");
             setTimeout(() => {
-                router.push("/Feed"); 
+                router.push("/Feed");
             }, 1000);
         }
     };
@@ -36,22 +36,25 @@ export default function SignIn() {
     return (
         <main className={styles.container}>
             <div className={styles.header}>
-            <Link href="/initial">
-                    <Image 
-                    className={styles.back_icon} 
-                    src="/icons/back-icon-claro.png" 
-                    alt="icon de voltar"  
-                    width={50} 
-                    height={50} />
-            </Link>
+                <Link href="/initial">
+                    <Image
+                        className={styles.back_icon}
+                        src="/icons/back-icon-claro.png"
+                        alt="icon de voltar"
+                        width={50}
+                        height={50} />
+                </Link>
+            </div>
+            <div className={styles.initial}>
+                <div className={styles.image}>
+                    <h1 className={styles.logoOverlay1}>Glam</h1>
+                    <h1 className={styles.logoOverlay2}>Sync</h1>
                 </div>
-                <div className={styles.initial}>
-                <div className={styles.image}></div>
                 <div className={styles.texts}>
                     <p>Fashion that conects</p>
                     <p>Style that impacts</p>
                 </div>
-                </div>
+            </div>
             <div className={styles.card}>
                 <h1 className={styles.title}>Welcome Back!</h1>
                 <p className={styles.description}>Log in to your account</p>
@@ -89,21 +92,21 @@ export default function SignIn() {
                         />
                         <Image className={styles.eye_icon} src={showPassword ? "/icons/iconEye.png" : "/icons/olho.png"} alt="" width={32} height={32} onClick={togglePasswordVisibility} />
                     </div>
-                <div className={styles.label}>
-                    <label className={styles.check}>
-                        <input
-                            className={styles.checkbox}
-                            type="checkbox" checked={rememberMe}
-                            onChange={(e) => setRememberMe(e.target.checked)}
-                        />
-                        <span className={styles.checkCustom}></span>
-                        <p className={styles.description}>Remember Me</p>
-                    </label>
-                </div>
-                <div className={styles.button}>
-                <Button action={handleCheck} props="Log In" className={styles.button} />
-                {match !== null && <p className={styles.error}>{error}</p>}
-                </div>
+                    <div className={styles.label}>
+                        <label className={styles.check}>
+                            <input
+                                className={styles.checkbox}
+                                type="checkbox" checked={rememberMe}
+                                onChange={(e) => setRememberMe(e.target.checked)}
+                            />
+                            <span className={styles.checkCustom}></span>
+                            <p className={styles.description}>Remember Me</p>
+                        </label>
+                    </div>
+                    <div className={styles.button}>
+                        <Button action={handleCheck} props="Log In" className={styles.button} />
+                        {match !== null && <p className={styles.error}>{error}</p>}
+                    </div>
                 </div>
                 <p className={styles.text}>
                     Don't have an account?{" "}

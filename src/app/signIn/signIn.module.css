@@ -17,7 +17,7 @@
 
 .title{
     color: #f79489;
-    font-weight: 500;
+    font-weight: 700;
     font-size: 2.3rem;
     font-style: italic;
 }
@@ -29,15 +29,17 @@
 }
 
 .card{
+    padding: 1rem 0;
     border-radius: 2rem;
     display: flex;
     width: 50rem;
-    height: 40rem;
+    height: 38rem;
     background-color: rgb(255, 255, 255);
     flex-direction: column;
     align-items: center;
     justify-content: center;
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.24);
+    gap: 1rem;
 }
 
 .initial{
@@ -49,17 +51,34 @@
 .texts{
     color: white;
     display: flex;
-    justify-content: justify;
+    text-align: center;
     flex-direction: column;
     font-size: 1.5rem;
+    font-weight: 500;
 }
 
 .image{
-    width: 28rem;
-    height: 27rem;
+    width: 31rem;
+    height: 28rem;
     display: flex;
+    align-items: center;
     justify-content: center;
-    background-image: url(../../../public/LogoGrande.png);
+    background-image: url(../../../public/logoGlamSync.png);
+}
+
+.logoOverlay1 {
+    font-family: 'Emblema One', 'Montserrat';
+    color: white;
+    font-weight: 800;
+    font-size: 3.5rem;
+}
+
+.logoOverlay2 {
+    font-family: 'Montserrat';
+    font-style: italic;
+    color: white;
+    font-weight: 600;
+    font-size: 3rem;
 }
 
 .icon{
@@ -69,6 +88,12 @@
 
 .icons{
     display: flex;
+}
+
+.inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
 }
 
 .inputContainer {
@@ -101,19 +126,18 @@
     height: 32px;
 }
 
-
 .check {
     margin: 1rem 0;
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 0.5rem; 
     cursor: pointer;
-    font-size: 14px;
-    font-family: Arial, sans-serif;
 }
 
 .label{
     display: flex;
+    align-items: center;
 }
 
 .checkbox {
@@ -122,12 +146,25 @@
     cursor: pointer;
 }
 
+.description {
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.signUpIcon {
+    display: flex;
+    padding: 1rem 0 0 0;
+    align-items: center;
+    justify-content: space-around;
+    width: 40%;
+}
+
 .checkCustom {
-    width: 20px;
-    height: 20px;
-    background-color: #fcbdb5;
+    padding: 0.65rem;
+    border-color: #fcbdb5;
+    border-style: solid;
+    border-width: 2px;
     border-radius: 50%;
-    display: inline-block;
     position: relative;
     transition: all 0.3s ease;
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
