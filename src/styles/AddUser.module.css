@@ -1,0 +1,63 @@
+.container {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ background-color: #EDEDED;
+ width: 48px;
+ height: 48px;
+ min-width: 48px;
+ min-height: 48px;
+ border-radius: 50%;
+ padding: 0;
+ gap: 8px; 
+}
+
+.img {
+ display: block;
+ width: 32px;
+ height: 32px;
+ border-radius: 50%;
+ object-fit: cover;
+}
+
+.addUserRight {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  width: 100%;
+  padding-right: 2rem;
+  margin-top: 1.2rem;
+  transform: translateX(-2.5rem); /* aumente o deslocamento para a esquerda */
+}
+
+@media (max-width: 1024px) {
+  .addUserRight {
+    padding-right: 1.2rem;
+    margin-top: 0.8rem;
+    transform: translateX(-1.5rem);
+  }
+}
+
+@media (max-width: 900px) {
+  .addUserRight {
+    padding-right: 0.7rem;
+    margin-top: 0.5rem;
+    transform: translateX(-1rem);
+  }
+}
+
+@media (max-width: 600px) {
+  .addUserRight {
+    padding-right: 0.2rem;
+    margin-top: 0.2rem;
+    transform: translateX(-0.5rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .addUserRight {
+    padding-right: 0.1rem;
+    margin-top: 0.1rem;
+    transform: translateX(-0.2rem);
+  }
+}
