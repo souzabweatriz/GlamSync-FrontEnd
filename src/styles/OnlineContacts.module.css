@@ -24,28 +24,19 @@
 }
 
 .avatar {
-   text-align: center;
-   font-size: 0.85rem;
-   color: #333;
-   font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 0.85rem;
+    color: #333;
+    font-weight: 500;
 }
 
 .image {
     width: 50px;
     height: 50px;
     margin-bottom: 6px;
-    position: relative;
-    display: inline-block;
-}
-
-.image::after {
-    content: '';
-    position: absolute;
-    width: 12px;
-    height: 12px;
-    background-color: limegreen;
-    border-radius: 50%;
-    bottom: 0;
-    right: 0;
-    border: 2px solid white;
+    display: block;
 }

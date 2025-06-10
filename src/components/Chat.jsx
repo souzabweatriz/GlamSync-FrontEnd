@@ -7,6 +7,8 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "../styles/Chat.module.css";
 
+const HEADERS = { headers: { "x-api-key": process.env.NEXT_PUBLIC_API_KEY } };
+
 export default function Chat() {
   const [data, setData] = useState({
     chats: [],
@@ -18,7 +20,10 @@ export default function Chat() {
   useEffect(() => {
     const fetchChats = async () => {
       try {
-        const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}chat`);
+        const res = await axios.get(
+          `${process.env.NEXT_PUBLIC_API_URL}chat`,
+          HEADERS
+        );
         const chats = Array.isArray(res.data)
           ? res.data
           : res.data.chats || [];
@@ -62,7 +67,7 @@ export default function Chat() {
             {paginatedChats().map((chat, idx) => {
               const userPhoto = chat.user_photo;
               const imgSrc = userPhoto
-                ? userPhoto.startsWith("5a9acfba") 
+                ? userPhoto.startsWith("5a9acfba")
                   ? `${process.env.NEXT_PUBLIC_API_URL}api/media/${userPhoto}`
                   : `${process.env.NEXT_PUBLIC_API_URL}api/users/${userPhoto}`
                 : "/media/Flor.png";
@@ -77,7 +82,7 @@ export default function Chat() {
                   <div className={styles.chatItem}>
                     <Image
                       className={styles.image}
-                      src="/icons/comments.png"
+                      src="/icons/messages.png"
                       alt="Avatar"
                       width={50}
                       height={50}
