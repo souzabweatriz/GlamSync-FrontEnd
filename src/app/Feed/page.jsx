@@ -15,6 +15,7 @@ export default function PrincipalFeed() {
         background: '#364d79',
     };
 
+    const HEADERS = { "x-api-key": process.env.NEXT_PUBLIC_API_KEY };
 
     return (
         <div className={styles.container}>
@@ -23,7 +24,7 @@ export default function PrincipalFeed() {
                     <Image src="/Logo.png" alt="Logo GlamSync" width={300} height={300} />
                 </div>
               <div className={styles.section}>
-  <Link href="/home">
+  <Link href="/Feed">
     <Image
       src="/icons/home.png"
       alt="ícone de casa marrom"

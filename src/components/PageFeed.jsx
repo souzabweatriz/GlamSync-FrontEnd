@@ -2,7 +2,6 @@
 import React, { useEffect, useState } from "react";
 import styles from "../styles/PageFeed.module.css";
 import Image from "next/image";
-import axios from "axios";
 
 export default function Feed() {
     const [search, setSearch] = useState("");

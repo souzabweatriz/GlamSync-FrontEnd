@@ -84,10 +84,9 @@
   }
 
   .carousel {
-    width: 100%;
-    height: auto;
-    max-height: 300px;
-    border-radius: 1.5rem;
+    width: 80%;
+    height: 3rem;
+    padding-bottom: 19rem;
   }
 
   .iconsContainer {
@@ -106,6 +105,7 @@
 
   .carousel {
     height: 10rem;
+    padding-bottom: 18rem;
   }
 
   .image img {
