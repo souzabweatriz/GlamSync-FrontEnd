@@ -80,7 +80,7 @@ export default function Post({ rota, title }) {
     }));
   };
 
-    const handleSave = (postId) => {
+  const handleSave = (postId) => {
     setShowSave((prev) => ({
       ...prev,
       [postId]: !prev[postId],
@@ -115,7 +115,10 @@ export default function Post({ rota, title }) {
             {posts.map((post) => (
               <div className={styles.all} key={post.id}>
                 <div className={styles.header}>
-                  <Link href={`/profile/${post.user_id}`} className={styles.linkSemEstilo}>
+                  <Link
+                    href={`/profile/${post.user_id}`}
+                    className={styles.linkSemEstilo}
+                  >
                     <Image
                       src={
                         post.user_photo
@@ -129,7 +132,10 @@ export default function Post({ rota, title }) {
                       unoptimized
                     />
                   </Link>
-                  <Link href={`/profile/${post.user_id}`} className={styles.linkSemEstilo}>
+                  <Link
+                    href={`/profile/${post.user_id}`}
+                    className={styles.linkSemEstilo}
+                  >
                     <p className={styles.user}>@{post.user_name}</p>
                   </Link>
                   <button
@@ -137,9 +143,13 @@ export default function Post({ rota, title }) {
                     onClick={() => handleFollow(post.user_id)}
                   >
                     {showFollowing[post.user_id] ? (
-                      <>Following <span className={styles.following}></span></>
+                      <>
+                        Following <span className={styles.following}></span>
+                      </>
                     ) : (
-                      <>Follow <span className={styles.plus}>+</span></>
+                      <>
+                        Follow <span className={styles.plus}>+</span>
+                      </>
                     )}
                   </button>
                 </div>
@@ -178,10 +188,16 @@ export default function Post({ rota, title }) {
                                 unoptimized
                               />
                               <div className={styles.commentContent}>
-                                <span className={styles.commentUser}>@{comment.user_name}</span>
-                                <p className={styles.commentText}>{comment.text_comment}</p>
+                                <span className={styles.commentUser}>
+                                  @{comment.user_name}
+                                </span>
+                                <p className={styles.commentText}>
+                                  {comment.text_comment}
+                                </p>
                                 <span className={styles.commentDate}>
-                                  {new Date(comment.date_comment).toLocaleString("pt-BR")}
+                                  {new Date(
+                                    comment.date_comment
+                                  ).toLocaleString("pt-BR")}
                                 </span>
                               </div>
                             </li>
@@ -220,21 +236,20 @@ export default function Post({ rota, title }) {
                     onClick={() => handleCommentIconClick(post.id)}
                   />
                   <span>{commentsByPostId[post.id]?.length ?? 0}</span>
-                </div>
-                <div className={styles.save}>
-                   <div onClick={() => handleSave(post.id)} style={{ cursor: "pointer" }}>
-        <Image
-          className={styles.icon}
-          src={showSave[post.id] ? "/icons/saved.png" : "/icons/save.png"}
-          alt="ícone de salvar"
-          width={30}
-          height={30}
-        />
-      </div>
-      <span>
-        {post.likes + (showSave[post.id] ? 1 : 0)}
-      </span>
-      <p className={styles.contentText}>{post.content}</p>
+                      <Image
+                        className={styles.iconSave}
+                        src={
+                          showSave[post.id]
+                            ? "/icons/saved.png"
+                            : "/icons/save.png"
+                        }
+                        alt="ícone de salvar"
+                        width={30}
+                        height={30}
+                        onClick={() => handleSave(post.id)}
+                      style={{ cursor: "pointer" }}
+                        />
+                        <span>{post.likes + (showSave[post.id] ? 1 : 0)}</span>
                 </div>
                 <p className={styles.contentText}>{post.content}</p>
                 <span className={styles.date}>

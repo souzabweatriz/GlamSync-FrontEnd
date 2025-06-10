@@ -13,14 +13,14 @@ import Link from 'next/link';
 const MessagesPage = () => {
     return (
         <div className={styles.body}>
-              <Header />
+            <Header />
             <div className={styles.container}>
                 <div className={styles.botao}>
                     <Link href="/Feed">
                         <Image src={backIcon} alt="Voltar Pro feed" width={44} height={44} />
                     </Link>
                 </div>
-             
+
                 <div className={styles.header}>
                     <h2>Messages</h2>
                     <div className={styles.search}>
