@@ -22,7 +22,12 @@ const SuggestionItem = ({ username, text, image }) => {
                 <div className={styles.username}>{username}</div>
                 <div className={styles.description}>{text}</div>
             </div>
-            <button className={`${styles.followButton} ${isFollowing ? styles.following: ""}`} onClick={handleFollowClick}> {isFollowing ? "Unfollow" : "Follow"}</button>
+            <div style={{marginLeft: 'auto', display: 'flex', alignItems: 'center'}}>
+                <button className={`${styles.followButton} ${isFollowing ? styles.following: ""}`} onClick={handleFollowClick}>
+                    {isFollowing ? "Unfollow" : "Follow"}
+                    {!isFollowing && <span style={{fontWeight: 'bold', fontSize: '18px', color: '#f79489', marginLeft: 6}}>+</span>}
+                </button>
+            </div>
         </div>
     );
 };

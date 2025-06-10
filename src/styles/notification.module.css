@@ -121,9 +121,9 @@
 }
 
 .followButton {
-    background-color: #f79489;
-    color: #fff;
-    border: none;
+    background-color: #ffffff;
+    color: #f79489;
+    border: 2px solid #f79489;
     border-radius: 19px;
     padding: 8px 16px;
     cursor: pointer;
@@ -152,7 +152,7 @@
 }
 
 .following {
-    background-color: #f14b2e;
+    background-color: #f79489;
     color: white;
     padding: 9px 12px;
     font-size: 14px;
@@ -251,4 +251,10 @@
         font-size: 1.1rem;
     }
 
+    .date {
+        position: static;
+        display: block;
+        margin-top: 4px;
+        text-align: left;
+    }
 }
