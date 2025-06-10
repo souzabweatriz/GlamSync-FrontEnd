@@ -1,16 +1,17 @@
 .postsHeader {
     font-weight: 700;
     font-size: 1.2rem;
-    margin: 0 0 0 48px;
+    margin: 0;
     padding: 24px 0 12px 0;
     display: flex;
     align-items: center;
     gap: 4px;
+    justify-content: space-between;
 }
 
 .arrowDown {
     font-size: 1.1em;
-    margin-left: 6px;
+    margin-left: 390px;
     color: #222;
 }
 
@@ -30,12 +31,117 @@
 }
 
 .postsHeaderWrapper {
-    width: fit-content;
-    margin: 0 0 0 48px;
+    min-width: 220px;
+    width: 900px;
+    margin: 0 auto;
+    margin-bottom: 24px;
     background: #fff;
     border-radius: 8px;
     box-shadow: 0 1px 4px rgba(0,0,0,0.4);
-    padding: 4px 18px;
+    padding: 8px ;
     display: flex;
     align-items: center;
+}
+
+@media (max-width: 900px) {
+    .postsHeaderWrapper {
+        max-width: 100%;
+        padding: 8px 4px;
+    }
+    .arrowDown {
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 600px) {
+    .postsHeaderWrapper {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 8px 2px;
+    }
+    .postsHeader {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2px;
+        font-size: 1rem;
+        padding: 16px 0 8px 0;
+    }
+    .arrowDown {
+        margin-left: 0;
+        font-size: 1em;
+    }
+}
+
+.postsGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+    margin: 0;
+}
+
+
+
+@media (max-width: 900px) {
+    .postsGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .postsGrid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.postsImage {
+    width: 100%;
+    aspect-ratio: 1 /1;
+    object-fit: cover;
+    border-radius: 0;
+    background: #eee;
+}
+
+.postsHeaderWrapper {
+    min-width: 0;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    margin-bottom: 24px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.4);
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+/*header*/
+@media (max-width: 900px) {
+    .postsHeaderWrapper {
+        max-width: 100%;
+        padding: 8px 4px;
+    }
+    .arrowDown {
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 600px) {
+    .postsHeaderWrapper{
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 8px 2px;
+    }
+    .postsHeader{
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2px;
+        font-size: 1rem;
+        padding: 16px 0 8px 0;
+    }
+    .arrowDown {
+        margin-left: 0;
+        font-size: 1em;
+    }
 }

@@ -1,10 +1,10 @@
 import React from "react";
 import Header from "../../components/Header";
-import Post from "../../components/Post"
+
 import ProfileHeader from "../../components/ProfileHeader";
 import AboutSection from "../../components/AboutSection";
 import styles from "../profile/profile.module.css";
-import Image from "next/image";
+import PostsGrid from "../../components/PostsGrid";
 
 const ProfilePage = () => {
     return (
@@ -13,7 +13,7 @@ const ProfilePage = () => {
             <div className={styles.profileContent}>
                 <ProfileHeader />
                 <AboutSection />
-                <Post rota={`${process.env.NEXT_PUBLIC_API_URL}posts`} />
+                <PostsGrid />
             </div>
         </div>
     );

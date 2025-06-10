@@ -6,7 +6,8 @@ const ProfileHeader = () => (
     <div className={styles.profileHeader}>
         <div className={styles.profileMainInfo}>
             <div className={styles.profileName}>
-                <span className={styles.username}>Your Name</span>
+                <span className={styles.username}>@samanthabr_</span>
+                <span className={styles.realName}>Samantha Rios</span>
             </div>
             <div className={styles.profileStats}>
                 <div className={styles.statItem}>
@@ -22,14 +23,13 @@ const ProfileHeader = () => (
                 </div>
             </div>
         </div>
-        {/* Bloco da foto depois */}
+
         <div className={styles.avatarSection}>
             <div className={styles.avatarTopBar}>
-                <span className={styles.username}>@username</span>
                 <button className={styles.followBtn}>Follow <span className={styles.plus}>+</span></button>
             </div>
             <Image
-                src="/user.png"
+                src="/media/perfilSaman.png"
                 alt="Avatar"
                 width={90}
                 height={90}
