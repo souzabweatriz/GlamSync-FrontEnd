@@ -1,3 +1,5 @@
+"use client";
+
 import React from 'react';
 import styles from '../../styles/messages.module.css';
 import Header from '../../components/Header';
@@ -11,11 +13,11 @@ import Link from 'next/link';
 const MessagesPage = () => {
     return (
         <div className={styles.body}>
+              <Header />
             <div className={styles.container}>
-            <Header />
                 <div className={styles.botao}>
                     <Link href="/Feed">
-                        <Image src={backIcon} alt="Voltar Pro feed" width={54} height={54} />
+                        <Image src={backIcon} alt="Voltar Pro feed" width={44} height={44} />
                     </Link>
                 </div>
              
@@ -29,14 +31,15 @@ const MessagesPage = () => {
                     </div>
                 </div>
                 <div className={styles.grid}>
-                  
-                    <div className={styles.RecentContacts}>
-
-                    <OnlineContacts />
-
+                    <div className={styles.contentRow}>
+                        <div className={styles.RecentContacts}>
+                            <OnlineContacts />
+                        </div>
+                        <div className={styles.chatContainer}>
+                            <Chat />
+                        </div>
                     </div>
                 </div>
-                <Chat />
             </div>
         </div>
     );

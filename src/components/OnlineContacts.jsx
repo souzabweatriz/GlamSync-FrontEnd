@@ -1,5 +1,6 @@
 "use client";
 
+import React from "react";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import styles from "../styles/OnlineContacts.module.css";
@@ -11,7 +12,7 @@ export default function OnlineContacts() {
         const fetchUsers = async () => {
             try {
                 const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}users`);
-                const fetchedUsers = res.data.users || []; // garante compatibilidade com { users: [...] }
+                const fetchedUsers = res.data.users || [];
                 setUsers(fetchedUsers);
             } catch (error) {
                 console.error("Erro ao buscar usuários:", error);
@@ -32,7 +33,7 @@ export default function OnlineContacts() {
                         <img
                             src={
                                 user.photo
-                                    ? `${process.env.NEXT_PUBLIC_API_URL}comments/${user.photo}`
+                                    ? `${process.env.NEXT_PUBLIC_API_URL}users/${user.photo}.jpg`
                                     : "/icons/ongrayuser-icon.png"
                             }
                             alt={`Avatar de ${user.username}`}
