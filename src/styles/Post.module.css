@@ -41,6 +41,13 @@
   margin-top: 0.5rem;
 }
 
+.iconSave {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  margin-left: 27rem;
+}
+
 .icon {
   cursor: pointer;
   transition: transform 0.2s ease;
@@ -103,6 +110,7 @@
   color: #f79489;
   cursor: pointer;
   border: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.566);
 }
 
 .followBtn:hover {
@@ -294,4 +302,9 @@
   .user {
     font-size: 1rem;
   }
+  .iconSave {
+  display: flex;
+  align-items: center;
+  margin-left: 0rem;
+}
 }

@@ -77,7 +77,7 @@
     margin-top: 8px;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 800px) {
     .inputContainer {
         max-width: 100%;
         padding: 0 1rem;
@@ -85,8 +85,8 @@
 
     .input {
         font-size: 1rem;
-        height: 2.2rem;
-        width: 18rem;
+        height: 2.5rem;
+        width: 20rem;
     }
 
     .iconInput {
@@ -123,9 +123,6 @@
 
     .input {
         font-size: 0.9rem;
-        height: 2rem;
-        width: 10rem;
-        padding-left: 3.5rem;
     }
 
     .iconInput {

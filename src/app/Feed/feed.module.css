@@ -63,9 +63,9 @@
 @media (max-width: 768px) {
   .section {
     top: 4rem;
-    right: 5rem;
-    gap: 0.6rem;
-    padding: 0.5rem 0.8rem;
+    right: 1rem;
+    gap: 1rem;
+    padding: 0.2rem 0.8rem;
     height: auto;
     flex-wrap: wrap;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
@@ -101,7 +101,7 @@
     top: 2rem;
     right: 0.5rem;
     padding: 0.4rem 0.6rem;
-    gap: 0.4rem;
+    gap: 1rem;
   }
 
   .carousel {
