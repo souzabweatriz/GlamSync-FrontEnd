@@ -4,10 +4,8 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import Image from "next/image";
+import Link from "next/link";
 import styles from "../styles/Chat.module.css";
-
-import { Link } from "react-router-dom";
-
 
 export default function Chat() {
   const [data, setData] = useState({
@@ -61,32 +59,38 @@ export default function Chat() {
       ) : (
         <>
           <div className={styles.chatList}>
-            {paginatedChats().map((chat) => {
+            {paginatedChats().map((chat, idx) => {
               const userPhoto = chat.user_photo;
               const imgSrc = userPhoto
-                ? userPhoto.startsWith("5a9acfba") // Exemplo para diferenciar se precisa /media ou /users (ajuste se necessário)
+                ? userPhoto.startsWith("5a9acfba") 
                   ? `${process.env.NEXT_PUBLIC_API_URL}api/media/${userPhoto}`
                   : `${process.env.NEXT_PUBLIC_API_URL}api/users/${userPhoto}`
                 : "/media/Flor.png";
 
               return (
-                <div key={chat.id} className={styles.chatItem}>
-                  <Image
-                    className={styles.image}
-                    src="/icons/comments.png"
-                    alt="Avatar"
-                    width={50}
-                    height={50}
-                    onError={(e) => {
-                      e.currentTarget.src = "/media/Flor.png";
-                    }}
-                  />
-                  <div className={styles.chatInfo}>
-                    
-                    <h2>{chat.user_name || "Usuário"}</h2>
-                    <p>{chat.message || "Sem mensagens"}</p>
+                <Link
+                  href="/chat"
+                  className={styles.link}
+                  key={idx}
+                  style={{ textDecoration: "none", color: "inherit" }}
+                >
+                  <div className={styles.chatItem}>
+                    <Image
+                      className={styles.image}
+                      src="/icons/comments.png"
+                      alt="Avatar"
+                      width={50}
+                      height={50}
+                      onError={(e) => {
+                        e.currentTarget.src = "/media/Flor.png";
+                      }}
+                    />
+                    <div className={styles.chatInfo}>
+                      <h2>{chat.user_name || "Usuário"}</h2>
+                      <p>{chat.message || "Sem mensagens"}</p>
+                    </div>
                   </div>
-                </div>
+                </Link>
               );
             })}
           </div>
