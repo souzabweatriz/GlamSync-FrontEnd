@@ -7,7 +7,11 @@
   align-items: center;
   position: relative;
   box-sizing: border-box;
-    background: linear-gradient(to bottom, #fccfca, #f9f1f0, white, white, white);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-image: url(../../../public/feedFundo.png);
 }
 
 .section {
@@ -49,7 +53,7 @@
   justify-content: center;
 }
 
-.carousel{
+.carousel {
   border-radius: 4rem;
   height: 30rem;
   width: 60rem;
