@@ -133,7 +133,7 @@ export default function Post({ rota, title }) {
                     />
                   </Link>
                   <Link
-                    href={`/profile/${post.user_id}`}
+                    href={`/profile`}
                     className={styles.linkSemEstilo}
                   >
                     <p className={styles.user}>@{post.user_name}</p>

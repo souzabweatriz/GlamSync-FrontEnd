@@ -23,7 +23,7 @@ export default function Dresses() {
                     className={styles.post}
                     title={"Dresses"}
                     rota={`${process.env.NEXT_PUBLIC_API_URL}posts?categorie_id=1`}
-                />
+                    />
             </div>
         </div>
     );
