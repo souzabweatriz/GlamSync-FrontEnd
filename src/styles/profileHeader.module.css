@@ -25,11 +25,12 @@
     min-width: 160px;
     position: relative;
     margin-right: 32px;
+    gap: 16px;
 }
 
 .avatarImg {
-    width: 90px;
-    height: 90px;
+    width: 140px;
+    height: 140px;
     border-radius: 50%;
     border: 4px solid #222;
     background: #fff;
@@ -40,8 +41,7 @@
 .username {
     font-weight: 700;
     font-size: 1.4rem;
-    margin-top: -32px;
-
+    margin-top: -80px;
 }
 
 .profileMainInfo {
@@ -49,9 +49,9 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 16px;
-    margin-top: 50px;
-    margin-left: 32px;
+    gap: 30px;
+    margin-top: 0;
+    margin-left: 36px;
 }
 
 .profileStats {
@@ -95,7 +95,7 @@
     font-size: 1rem;
     cursor: pointer;
     transition: background 0.2s, color 0.2s;
-    margin-top: 8px;
+    margin-top: -9px;
     outline: none;
     display: flex;
     gap: 4px;
@@ -106,8 +106,11 @@
 
 }
 
-.followBtn:hover {
-    background: #ffe6ee;
+
+.following {
+    background: #f79489;
+    color: #fff;
+    border: 1.5px solid #f79489;
 }
 
 .plus {
@@ -130,6 +133,13 @@
     margin-top: 2px;
 }
 
+.checkMark {
+    color: #fff;
+    font-size: 1.2em;
+    margin-left: 6px;
+    font-weight: bold;
+}
+
 
 @media (max-width: 700px) {
     .profileHeader {
@@ -147,11 +157,12 @@
         min-width: unset;
         width: 100%;
         justify-content: flex-start;
+        gap: 12px;
     }
 
     .avatarImg {
-        width: 70px;
-        height: 70px;
+        width: 90px;
+        height: 90px;
         margin-bottom: 0;
         margin-right: 16px;
     }
@@ -167,9 +178,24 @@
         margin-top: 0;
         width: 100%;
         margin-left: 0;
+        gap: 20px;
     }
 
     .profileStats {
-        gap: 16px;
+        gap: 12px;
+        flex-wrap: wrap;
+    }
+
+    .followBtn, .following {
+        width: 100%;
+        min-width: unset;
+        margin-top: 0;
+        margin-bottom: 12px;
+        justify-content: center;
+    }
+
+    .username {
+        font-size: 1.1rem;
+        margin-top: -40px;
     }
 }
