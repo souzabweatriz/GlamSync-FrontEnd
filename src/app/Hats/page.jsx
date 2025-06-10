@@ -1,10 +1,10 @@
 import React from "react";
-import styles from "../Dresses/dresses.module.css";
+import styles from "../Hats/hat.module.css"
 import Header from "../../components/Header";
 import Post from "../../components/Post";
 import PageFeed from "../../components/PageFeed"
 
-export default function Dresses() {
+export default function Hat() {
     return (
         <div className={styles.main}>
             <div className={styles.header}>
@@ -21,8 +21,8 @@ export default function Dresses() {
                 <PageFeed />
                 <Post
                     className={styles.post}
-                    title={"Dresses"}
-                    rota={`${process.env.NEXT_PUBLIC_API_URL}posts?categorie_id=1`}
+                    title={"Hats"}
+                    rota={`${process.env.NEXT_PUBLIC_API_URL}posts?categorie_id=2`}
                 />
             </div>
         </div>
