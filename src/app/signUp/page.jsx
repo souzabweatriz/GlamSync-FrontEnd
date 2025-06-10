@@ -8,9 +8,18 @@ export default function SignUp() {
     const router = useRouter();
     const [showPassword, setShowPassword] = useState(false);
     const [rememberMe, setRememberMe] = useState(false);
+    const [success, setSuccess] = useState(null);
 
     const togglePasswordVisibility = () => {
         setShowPassword(!showPassword);
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        setSuccess("Conta criada com sucesso!");
+        setTimeout(() => {
+            router.push("/Feed");
+        }, 1000);
     };
 
     return (
@@ -23,7 +32,7 @@ export default function SignUp() {
                     <h1 className={styles.title}>Sign Up</h1>
                     <h2 className={styles.subtitle}>Create your new account</h2>
                 </div>
-                <form className={styles.form}>
+                <form className={styles.form} onSubmit={handleSubmit}>
                     <div className={styles.inputGroup}>
                         <Image className={styles.inputIcon} src="/icons/UserIcon.png" alt="Usuário" width={24} height={24} />
                         <input className={styles.input} type="text" placeholder="Full Name" />
@@ -86,6 +95,7 @@ export default function SignUp() {
                         />
                     </div>
                     <button className={styles.signUpBtn} type="submit">Sign Up</button>
+                    {success && <p className={styles.success}>{success}</p>}
                     <label className={styles.check}>
                         <input
                             className={styles.checkbox}
