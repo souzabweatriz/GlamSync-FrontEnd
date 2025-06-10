@@ -15,6 +15,7 @@ export default function Post({ rota, title }) {
   const [commentsByPostId, setCommentsByPostId] = useState({});
   const [openCommentsPostId, setOpenCommentsPostId] = useState(null);
   const [showLikes, setShowLikes] = useState({});
+  const [showSave, setShowSave] = useState({});
   const [showFollowing, setShowFollowing] = useState({});
 
   useEffect(() => {
@@ -74,6 +75,13 @@ export default function Post({ rota, title }) {
 
   const handleLike = (postId) => {
     setShowLikes((prev) => ({
+      ...prev,
+      [postId]: !prev[postId],
+    }));
+  };
+
+    const handleSave = (postId) => {
+    setShowSave((prev) => ({
       ...prev,
       [postId]: !prev[postId],
     }));
@@ -213,7 +221,21 @@ export default function Post({ rota, title }) {
                   />
                   <span>{commentsByPostId[post.id]?.length ?? 0}</span>
                 </div>
-
+                <div className={styles.save}>
+                   <div onClick={() => handleSave(post.id)} style={{ cursor: "pointer" }}>
+        <Image
+          className={styles.icon}
+          src={showSave[post.id] ? "/icons/saved.png" : "/icons/save.png"}
+          alt="ícone de salvar"
+          width={30}
+          height={30}
+        />
+      </div>
+      <span>
+        {post.likes + (showSave[post.id] ? 1 : 0)}
+      </span>
+      <p className={styles.contentText}>{post.content}</p>
+                </div>
                 <p className={styles.contentText}>{post.content}</p>
                 <span className={styles.date}>
                   {new Date(post.created_at).toLocaleString("pt-BR")}

@@ -103,6 +103,7 @@
   color: #f79489;
   cursor: pointer;
   border: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.566);
 }
 
 .followBtn:hover {
