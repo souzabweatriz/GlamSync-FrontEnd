@@ -282,7 +282,14 @@
     transform: rotate(45deg);
 }
 
-/* Responsivo para telas pequenas */
+.success {
+    color: #27ae60;
+    text-align: center;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+
 @media (max-width: 500px) {
     .container{
         margin-top: 3rem;
