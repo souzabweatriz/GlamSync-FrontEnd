@@ -4,6 +4,7 @@ import Post from "../../components/Post"
 import ProfileHeader from "../../components/ProfileHeader";
 import AboutSection from "../../components/AboutSection";
 import styles from "../profile/profile.module.css";
+import Image from "next/image";
 
 const ProfilePage = () => {
     return (
@@ -12,7 +13,7 @@ const ProfilePage = () => {
             <div className={styles.profileContent}>
                 <ProfileHeader />
                 <AboutSection />
-                <Post rota={`${process.env.NEXT_PUBLIC_API_URL}posts`}  />
+                <Post rota={`${process.env.NEXT_PUBLIC_API_URL}posts`} />
             </div>
         </div>
     );

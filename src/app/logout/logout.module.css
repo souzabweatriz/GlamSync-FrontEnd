@@ -1,0 +1,33 @@
+.logoutContainer {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: radial-gradient(circle, #fde7e5, #fff);
+}
+
+.title {
+    color: #923e2b;
+    font-size: 2rem;
+    margin-bottom: 8px;
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    margin-bottom: 24px;
+}
+
+.button {
+    padding: 10px 32px;
+    background-color: #923e2b;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.button:hover {
+    background-color: #b54a3c;
+}

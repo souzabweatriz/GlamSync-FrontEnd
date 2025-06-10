@@ -18,3 +18,14 @@
     align-items: center;
     gap: 24px;
 }
+
+.profileHeaderRow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.menuIcon {
+    cursor: pointer;
+    padding-left: 10px;
+}
