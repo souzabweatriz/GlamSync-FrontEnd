@@ -1,24 +1,31 @@
 .logoutContainer {
-    min-height: 100vh;
+    width: 100%;
+    min-height: 99vh;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     background: radial-gradient(circle, #fde7e5, #fff);
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
 }
 
 .title {
     color: #923e2b;
-    font-size: 2rem;
+    font-size: 3.5rem;
     margin-bottom: 8px;
+    align-items: center;
 }
 
 .subtitle {
     font-size: 1.1rem;
-    margin-bottom: 24px;
+    margin-bottom: 10px;
 }
 
 .button {
-    padding: 10px 32px;
+    margin-top: 10px;
+    padding: 10px 36px;
     background-color: #923e2b;
     color: #fff;
     border: none;
@@ -30,4 +37,28 @@
 
 .button:hover {
     background-color: #b54a3c;
+}
+
+@media (max-width: 500px) {
+    .logoutContainer {
+        padding: 1.5rem 0.5rem;
+        min-height: 100vh;
+        box-sizing: border-box;
+    }
+    .title {
+        font-size: 2rem;
+        text-align: center;
+        margin-bottom: 6px;
+    }
+    .subtitle {
+        font-size: 1rem;
+        text-align: center;
+        margin-bottom: 24px;
+    }
+    .button {
+        font-size: 0.95rem;
+        padding: 8px 0;
+        width: 100%;
+        max-width: 220px;
+    }
 }
