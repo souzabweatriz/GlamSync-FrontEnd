@@ -52,7 +52,8 @@
 .iconCasa,
 .iconAdicionar,
 .iconSino,
-.iconChat {
+.iconChat,
+.iconMenu {
     width: 35px;
     height: 35px;
     background-size: cover;
@@ -80,6 +81,10 @@
 
 .iconChat {
     background-image: url('/icons/iconChat.png');
+}
+
+.iconMenu {
+    background-image: url('/icons/menu-dots.png');
 }
 
 @media (max-width: 768px) {
@@ -110,7 +115,8 @@
     .iconCasa,
     .iconAdicionar,
     .iconSino,
-    .iconChat {
+    .iconChat,
+    .iconMenu {
         width: 1rem;
         height: 1rem;
     }
