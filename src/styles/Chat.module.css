@@ -1,26 +1,31 @@
 .container {
-  max-width: 600px;
-  margin: 40px auto;
+  max-width: 37.5rem;
+  margin: 2.5rem auto;
   background: #fff;
-  border-radius: 16px;
-  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
-  padding: 32px 24px;
+  border-radius: 1rem;
+  box-shadow: 0 0.125rem 1rem rgba(0, 0, 0, 0.08);
+  padding: 2rem 1.5rem;
+  margin-top: 0.3rem;
 }
 
 .chatList {
   display: flex;
   flex-direction: column;
-  gap: 18px;
-  margin-bottom: 24px;
+  gap: 1rem;
+  padding: 0;
+  list-style: none;
+  margin: 0;
+  max-height: 30rem;
+  overflow-y: auto;
+  margin-bottom: 1.5rem;
 }
 
 .chatItem {
   display: flex;
   align-items: center;
   background: #f7f7fa;
-  border-radius: 10px;
-  padding: 14px 18px;
-  transition: background 0.2s;
+  border-radius: 0.625rem;
+  padding: 0.875rem 1.125rem;
   cursor: pointer;
 }
 
@@ -29,12 +34,12 @@
 }
 
 .chatInfo {
-  margin-left: 18px;
+  margin-left: 1.125rem;
   flex: 1;
 }
 
 .chatInfo h2 {
-  margin: 0 0 4px 0;
+  margin: 0 0 0.25rem 0;
   font-size: 1.1rem;
   color: #22223b;
   font-weight: 600;
@@ -47,135 +52,4 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-}
-
-/* Responsividade: Tablets */
-@media (max-width: 768px) {
-  .container {
-    margin: 24px 16px;
-    padding: 24px 16px;
-  }
-
-  .chatItem {
-    flex-direction: row;
-    padding: 12px 14px;
-  }
-
-  .chatInfo h2 {
-    font-size: 1rem;
-  }
-
-  .chatInfo p {
-    font-size: 0.9rem;
-  }
-}
-
-/* Responsividade: Celulares */
-@media (max-width: 480px) {
-  .container {
-    margin: 16px 12px;
-    padding: 20px 12px;
-  }
-
-  .chatItem {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-  }
-
-  .chatInfo {
-    margin-left: 0;
-  }
-
-  .chatInfo h2 {
-    font-size: 0.95rem;
-  }
-
-  .chatInfo p {
-    font-size: 0.85rem;
-  }
-}
-
-/* Responsividade: Telas grandes */
-@media (min-width: 1200px) {
-  .container {
-    max-width: 1400px;
-    padding: 40px 32px;
-  }
-
-  .chatItem {
-    padding: 16px 20px;
-  }
-
-  .chatInfo h2 {
-    font-size: 1.3rem;
-  }
-
-  .chatInfo p {
-    font-size: 1.1rem;
-  }
-}
-
-/* Responsividade: Telas muito pequenas */
-@media (max-width: 360px) {
-  .container {
-    margin: 12px 8px;
-    padding: 16px 8px;
-  }
-
-  .chatItem {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
-    padding: 10px 8px;
-  }
-
-  .chatInfo h2 {
-    font-size: 0.85rem;
-  }
-
-  .chatInfo p {
-    font-size: 0.75rem;
-  }
-}
-
-/* Responsividade: Telas médias (entre tablets e desktops grandes) */
-@media (min-width: 900px) and (max-width: 1199px) {
-  .container {
-    max-width: 900px;
-    padding: 36px 28px;
-  }
-
-  .chatItem {
-    padding: 15px 18px;
-  }
-
-  .chatInfo h2 {
-    font-size: 1.15rem;
-  }
-
-  .chatInfo p {
-    font-size: 1rem;
-  }
-}
-
-/* Responsividade: Telas pequenas (phablets) */
-@media (max-width: 400px) {
-  .container {
-    margin: 8px 4px;
-    padding: 12px 4px;
-  }
-
-  .chatItem {
-    padding: 8px 4px;
-    gap: 6px;
-  }
-
-  .chatInfo h2 {
-    font-size: 0.8rem;
-  }
-
-  .chatInfo p {
-    font-size: 0.7rem;
-  }
 }
