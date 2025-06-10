@@ -27,7 +27,92 @@
   width: 100%;
   padding-right: 2rem;
   margin-top: 1.2rem;
-  transform: translateX(-2.5rem); /* aumente o deslocamento para a esquerda */
+  transform: translateX(-2.5rem); 
+}
+
+.addUserRight {
+    position: relative;
+}
+
+.container {
+    cursor: pointer;
+}
+
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modalContent {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    position: relative;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.closeButton {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.input {
+  margin-top: 1rem;
+    display: block;
+    width: 100%;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    background: transparent;
+    border: none; 
+    outline: none; 
+}
+
+.button[type="submit"] {
+    padding: 0.5rem 1rem;
+    background: transparent;
+    color: rgb(255, 161, 161);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* Centraliza o botão no modal */
+.modalActions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.image {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+}
+
+.modalHeader {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+    margin-bottom: 1rem;
 }
 
 @media (max-width: 1024px) {

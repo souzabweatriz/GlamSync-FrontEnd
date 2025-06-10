@@ -4,14 +4,19 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import styles from "../styles/OnlineContacts.module.css";
 
+const HEADERS = { headers: { "x-api-key": process.env.NEXT_PUBLIC_API_KEY } };
+
 export default function OnlineContacts() {
     const [users, setUsers] = useState([]);
 
     useEffect(() => {
         const fetchUsers = async () => {
             try {
-                const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}users`);
-                const fetchedUsers = res.data.users || []; // garante compatibilidade com { users: [...] }
+                const res = await axios.get(
+                    `${process.env.NEXT_PUBLIC_API_URL}users`,
+                    HEADERS
+                );
+                const fetchedUsers = res.data.users || [];
                 setUsers(fetchedUsers);
             } catch (error) {
                 console.error("Erro ao buscar usuários:", error);
@@ -27,25 +32,29 @@ export default function OnlineContacts() {
                 Online Contacts <span className={styles.onlineDot}></span>
             </h3>
             <div className={styles.avatars}>
-                {users.slice(0, 5).map((user) => (
-                    <div key={user.id} className={styles.avatar}>
-                        <img
-                            src={
-                                user.photo
-                                    ? `${process.env.NEXT_PUBLIC_API_URL}comments/${user.photo}`
-                                    : "/icons/ongrayuser-icon.png"
-                            }
-                            alt={`Avatar de ${user.username}`}
-                            width={50}
-                            height={50}
-                            className={styles.image}
-                            onError={(e) => {
-                                e.currentTarget.src = "/icons/ongrayuser-icon.png";
-                            }}
-                        />
-                        <span>@{user.username}</span>
-                    </div>
-                ))}
+                {users.slice(0, 3).map((user) => {
+                    const photoUrl = user.photo
+                        ? `${process.env.NEXT_PUBLIC_API_URL}users/${user.photo}` // Ajuste o caminho aqui se for diferente
+                        : "/icons/ongrayuser-icon.png";
+
+                    console.log("URL da imagem:", photoUrl);
+
+                    return (
+                        <div key={user.id} className={styles.avatar}>
+                            <img
+                                src={photoUrl}
+                                alt={`Avatar de ${user.username}`}
+                                width={50}
+                                height={50}
+                                className={styles.image}
+                                onError={(e) => {
+                                    e.currentTarget.src = "/icons/ongrayuser-icon.png";
+                                }}
+                            />
+                            <span>@{user.username}</span>
+                        </div>
+                    );
+                })}
             </div>
         </div>
     );
